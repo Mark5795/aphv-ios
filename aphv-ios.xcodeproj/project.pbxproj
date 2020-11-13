@@ -7,12 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E54B9724255EC9B900CE8EA9 /* VideoGroeiberekeningUitleg.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54B9723255EC9B900CE8EA9 /* VideoGroeiberekeningUitleg.swift */; };
+		E54B972A255ED65300CE8EA9 /* VideoThumbnail in Resources */ = {isa = PBXBuildFile; fileRef = E54B9729255ED65300CE8EA9 /* VideoThumbnail */; };
 		E5557089255A99BF00BB269E /* aphv_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5557088255A99BF00BB269E /* aphv_iosApp.swift */; };
 		E555708B255A99BF00BB269E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E555708A255A99BF00BB269E /* ContentView.swift */; };
 		E555708D255A99BF00BB269E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E555708C255A99BF00BB269E /* Assets.xcassets */; };
 		E5557090255A99BF00BB269E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E555708F255A99BF00BB269E /* Preview Assets.xcassets */; };
 		E555709B255A99C000BB269E /* aphv_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E555709A255A99C000BB269E /* aphv_iosTests.swift */; };
 		E55570A6255A99C000BB269E /* aphv_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55570A5255A99C000BB269E /* aphv_iosUITests.swift */; };
+		E5572F0D255E83C000D25FA4 /* UitlegGroeiberekeningResultaten.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E5572F06255E81BF00D25FA4 /* UitlegGroeiberekeningResultaten.mp4 */; };
+		E55BA692255EC11000028DC2 /* TopCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55BA691255EC11000028DC2 /* TopCurve.swift */; };
+		E55E5BEB255D76600038DA41 /* GroeiberekeningIntro.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E5BEA255D76600038DA41 /* GroeiberekeningIntro.swift */; };
+		E55E5BF3255D7C370038DA41 /* GroeiberekeningStap1.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E5BF2255D7C370038DA41 /* GroeiberekeningStap1.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E54B9723255EC9B900CE8EA9 /* VideoGroeiberekeningUitleg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoGroeiberekeningUitleg.swift; sourceTree = "<group>"; };
+		E54B9729255ED65300CE8EA9 /* VideoThumbnail */ = {isa = PBXFileReference; lastKnownFileType = folder; name = VideoThumbnail; path = ../../../../../VideoThumbnail; sourceTree = "<group>"; };
 		E5557085255A99BF00BB269E /* aphv-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "aphv-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5557088255A99BF00BB269E /* aphv_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aphv_iosApp.swift; sourceTree = "<group>"; };
 		E555708A255A99BF00BB269E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,6 +53,10 @@
 		E55570A1255A99C000BB269E /* aphv-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "aphv-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E55570A5255A99C000BB269E /* aphv_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aphv_iosUITests.swift; sourceTree = "<group>"; };
 		E55570A7255A99C000BB269E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5572F06255E81BF00D25FA4 /* UitlegGroeiberekeningResultaten.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = UitlegGroeiberekeningResultaten.mp4; sourceTree = "<group>"; };
+		E55BA691255EC11000028DC2 /* TopCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCurve.swift; sourceTree = "<group>"; };
+		E55E5BEA255D76600038DA41 /* GroeiberekeningIntro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroeiberekeningIntro.swift; sourceTree = "<group>"; };
+		E55E5BF2255D7C370038DA41 /* GroeiberekeningStap1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroeiberekeningStap1.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +84,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E54B9728255ED63100CE8EA9 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				E54B9729255ED65300CE8EA9 /* VideoThumbnail */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		E555707C255A99BF00BB269E = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +115,9 @@
 		E5557087255A99BF00BB269E /* aphv-ios */ = {
 			isa = PBXGroup;
 			children = (
+				E5572F04255E81A700D25FA4 /* Content */,
+				E55E5BFA255D8C2F0038DA41 /* Extensions */,
+				E55E5BE9255D75D40038DA41 /* Views */,
 				E5557088255A99BF00BB269E /* aphv_iosApp.swift */,
 				E555708A255A99BF00BB269E /* ContentView.swift */,
 				E555708C255A99BF00BB269E /* Assets.xcassets */,
@@ -128,6 +151,41 @@
 				E55570A7255A99C000BB269E /* Info.plist */,
 			);
 			path = "aphv-iosUITests";
+			sourceTree = "<group>";
+		};
+		E5572F04255E81A700D25FA4 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				E54B9728255ED63100CE8EA9 /* Images */,
+				E5572F05255E81B300D25FA4 /* Videos */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		E5572F05255E81B300D25FA4 /* Videos */ = {
+			isa = PBXGroup;
+			children = (
+				E5572F06255E81BF00D25FA4 /* UitlegGroeiberekeningResultaten.mp4 */,
+			);
+			path = Videos;
+			sourceTree = "<group>";
+		};
+		E55E5BE9255D75D40038DA41 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E55E5BEA255D76600038DA41 /* GroeiberekeningIntro.swift */,
+				E55E5BF2255D7C370038DA41 /* GroeiberekeningStap1.swift */,
+				E55BA691255EC11000028DC2 /* TopCurve.swift */,
+				E54B9723255EC9B900CE8EA9 /* VideoGroeiberekeningUitleg.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E55E5BFA255D8C2F0038DA41 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +291,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5572F0D255E83C000D25FA4 /* UitlegGroeiberekeningResultaten.mp4 in Resources */,
+				E54B972A255ED65300CE8EA9 /* VideoThumbnail in Resources */,
 				E5557090255A99BF00BB269E /* Preview Assets.xcassets in Resources */,
 				E555708D255A99BF00BB269E /* Assets.xcassets in Resources */,
 			);
@@ -260,6 +320,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E555708B255A99BF00BB269E /* ContentView.swift in Sources */,
+				E55E5BEB255D76600038DA41 /* GroeiberekeningIntro.swift in Sources */,
+				E54B9724255EC9B900CE8EA9 /* VideoGroeiberekeningUitleg.swift in Sources */,
+				E55E5BF3255D7C370038DA41 /* GroeiberekeningStap1.swift in Sources */,
+				E55BA692255EC11000028DC2 /* TopCurve.swift in Sources */,
 				E5557089255A99BF00BB269E /* aphv_iosApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

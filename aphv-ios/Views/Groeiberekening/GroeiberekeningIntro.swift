@@ -22,22 +22,25 @@ struct GroeiberekeningIntro: View {
                         .font(.system(size: 16))
                         .fontWeight(.medium)
                         .multilineTextAlignment(.center)
-                        .padding(.vertical, 20.0)
-                        .frame(width: 340.0)
+                        .padding(.vertical, 15.0)
+                        .frame(width: 340.0, height: 250)
                         
-                        NavigationLink(destination: GroeiberekeningStap1()) {
-                            Text("Start Groeiberekening")
-                                .font(.system(size: 20))
-                                .fontWeight(.medium)
-                                .foregroundColor(Color.white)
-                                .multilineTextAlignment(.center)
+                    NavigationLink(destination: GroeiberekeningStap1()) {
+                        Text("Start Groeiberekening")
+                            .font(.system(size: 20))
+                            .fontWeight(.medium)
+                            .foregroundColor(Color.white)
+                            .multilineTextAlignment(.center)
                             
-                        }
+                    }
                         .frame(width: 335.0, height: 45.0)
                         .background(Color("ASMgreen"))
                         .cornerRadius(5)
+                        .zIndex(0)
+                    
+                    TabBarSporterOud()
+                        .zIndex(/*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
                 }
-                .padding(.top, -70.0)
             }
             .navigationTitle(Text(""))
         }

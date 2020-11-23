@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="75.739" height="336.515" viewBox="0 0 75.739 336.515">
+  <g id="Totale_lengte_mannetje" data-name="Totale lengte mannetje" transform="translate(-587 -139.492)">
+    <path id="Path_64" data-name="Path 64" d="M770.625,411.55h-12.25c-10.147,0-18.375-13.568-18.375-30.3V308.3c0-16.733,8.228-30.3,18.375-30.3h12.25C780.772,278,789,291.568,789,308.3v72.947C789,397.982,780.772,411.55,770.625,411.55Z" transform="translate(-132.239 -61.852)" fill="#dc2972"/>
+    <line id="Line_33" data-name="Line 33" y1="336.5" x2="0.739" transform="translate(658.5 139.5)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="7"/>
+    <line id="Line_34" data-name="Line 34" x1="68" transform="translate(587 164.5)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="7"/>
+    <line id="Line_35" data-name="Line 35" x1="68" transform="translate(587 472.5)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="7"/>
+    <path id="Path_69" data-name="Path 69" d="M641.16,449H613.83c-6.26,0-11.34,4.03-11.34,9h0c0,4.97,5.07,9,11.34,9h27.33c6.26,0,11.34-4.03,11.34-9h0C652.5,453.03,647.43,449,641.16,449Z" fill="#dc2972" stroke="#dc2972" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="5"/>
+    <path id="Path_70" data-name="Path 70" d="M621.4,350.5v85a10,10,0,0,0,10,10h4.94a10,10,0,0,0,10-10v-85a10,10,0,0,0-10-10H631.4A10,10,0,0,0,621.4,350.5Z" transform="translate(0 4)" fill="#dc2972" stroke="#dc2972" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="5"/>
+    <path id="Path_72" data-name="Path 72" d="M621.15,230.49l-2.34,66.96a10,10,0,0,0,9.64,10.34l5.02.18a10,10,0,0,0,10.34-9.64l2.34-66.96a10,10,0,0,0-9.64-10.34l-5.02-.18A9.993,9.993,0,0,0,621.15,230.49Z" transform="translate(0 3)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="5"/>
+    <circle id="Ellipse_31" data-name="Ellipse 31" cx="20.5" cy="20.5" r="20.5" transform="translate(612.5 171.5)" fill="#dc2972" stroke="#dc2972" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="5"/>
+  </g>
+</svg>

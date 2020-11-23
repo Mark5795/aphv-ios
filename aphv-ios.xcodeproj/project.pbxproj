@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E5177A95256BC1FE0006AC6D /* GrafiekManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5177A94256BC1FE0006AC6D /* GrafiekManager.swift */; };
+		E5177A9D256BC4ED0006AC6D /* ValueItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5177A9C256BC4ED0006AC6D /* ValueItem.swift */; };
+		E5177AA2256BC56F0006AC6D /* GroeiberekeningResultaatData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5177AA1256BC56F0006AC6D /* GroeiberekeningResultaatData.swift */; };
+		E5177AAB256C31500006AC6D /* RegistreerSporterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5177AAA256C31500006AC6D /* RegistreerSporterView.swift */; };
+		E5177AB3256C358C0006AC6D /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5177AB2256C358C0006AC6D /* UserModel.swift */; };
+		E5177AB8256C38400006AC6D /* RadioButtonFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5177AB7256C38400006AC6D /* RadioButtonFieldView.swift */; };
+		E52938392562D3F900635E51 /* TabBarSporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52938382562D3F900635E51 /* TabBarSporter.swift */; };
+		E533B94B25669CC6000A186F /* GroeiberekeningResultaat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E533B94A25669CC6000A186F /* GroeiberekeningResultaat.swift */; };
+		E533B95025669E73000A186F /* HelpInstructiefilmpje.swift in Sources */ = {isa = PBXBuildFile; fileRef = E533B94F25669E73000A186F /* HelpInstructiefilmpje.swift */; };
 		E54B9724255EC9B900CE8EA9 /* VideoGroeiberekeningUitleg.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54B9723255EC9B900CE8EA9 /* VideoGroeiberekeningUitleg.swift */; };
 		E54B972A255ED65300CE8EA9 /* VideoThumbnail in Resources */ = {isa = PBXBuildFile; fileRef = E54B9729255ED65300CE8EA9 /* VideoThumbnail */; };
 		E5557089255A99BF00BB269E /* aphv_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5557088255A99BF00BB269E /* aphv_iosApp.swift */; };
@@ -19,6 +28,17 @@
 		E55BA692255EC11000028DC2 /* TopCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55BA691255EC11000028DC2 /* TopCurve.swift */; };
 		E55E5BEB255D76600038DA41 /* GroeiberekeningIntro.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E5BEA255D76600038DA41 /* GroeiberekeningIntro.swift */; };
 		E55E5BF3255D7C370038DA41 /* GroeiberekeningStap1.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E5BF2255D7C370038DA41 /* GroeiberekeningStap1.swift */; };
+		E566CCAF2562903200695A98 /* TabBarSporterOud.swift in Sources */ = {isa = PBXBuildFile; fileRef = E566CCAE2562903200695A98 /* TabBarSporterOud.swift */; };
+		E566CCB42562936000695A98 /* HomeSporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E566CCB32562936000695A98 /* HomeSporter.swift */; };
+		E566CCB9256293C200695A98 /* CoachesPagina.swift in Sources */ = {isa = PBXBuildFile; fileRef = E566CCB8256293C200695A98 /* CoachesPagina.swift */; };
+		E575D0182567C7AF00BAC36E /* LineGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = E575D0172567C7AF00BAC36E /* LineGraph.swift */; };
+		E575D01E2567C8BA00BAC36E /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E575D01D2567C8BA00BAC36E /* GraphView.swift */; };
+		E575D0262567CEEF00BAC36E /* MeerdereGrafiekenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E575D0252567CEEF00BAC36E /* MeerdereGrafiekenView.swift */; };
+		E575D02B2567CF6300BAC36E /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = E575D02A2567CF6300BAC36E /* Data.swift */; };
+		E575D031256806B400BAC36E /* ResultaatItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E575D030256806B400BAC36E /* ResultaatItem.swift */; };
+		E5C51DA325655D5200198EBD /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C51DA225655D5200198EBD /* Color.swift */; };
+		E5C51DA8256565C600198EBD /* GroeiberekeningStap2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C51DA7256565C600198EBD /* GroeiberekeningStap2.swift */; };
+		E5C51DAD2565791800198EBD /* GroeiberekeningStap3.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C51DAC2565791800198EBD /* GroeiberekeningStap3.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +59,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E5177A94256BC1FE0006AC6D /* GrafiekManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrafiekManager.swift; sourceTree = "<group>"; };
+		E5177A9C256BC4ED0006AC6D /* ValueItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueItem.swift; sourceTree = "<group>"; };
+		E5177AA1256BC56F0006AC6D /* GroeiberekeningResultaatData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroeiberekeningResultaatData.swift; sourceTree = "<group>"; };
+		E5177AAA256C31500006AC6D /* RegistreerSporterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistreerSporterView.swift; sourceTree = "<group>"; };
+		E5177AB2256C358C0006AC6D /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		E5177AB7256C38400006AC6D /* RadioButtonFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonFieldView.swift; sourceTree = "<group>"; };
+		E52938382562D3F900635E51 /* TabBarSporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarSporter.swift; sourceTree = "<group>"; };
+		E533B94A25669CC6000A186F /* GroeiberekeningResultaat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroeiberekeningResultaat.swift; sourceTree = "<group>"; };
+		E533B94F25669E73000A186F /* HelpInstructiefilmpje.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpInstructiefilmpje.swift; sourceTree = "<group>"; };
 		E54B9723255EC9B900CE8EA9 /* VideoGroeiberekeningUitleg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoGroeiberekeningUitleg.swift; sourceTree = "<group>"; };
 		E54B9729255ED65300CE8EA9 /* VideoThumbnail */ = {isa = PBXFileReference; lastKnownFileType = folder; name = VideoThumbnail; path = ../../../../../VideoThumbnail; sourceTree = "<group>"; };
 		E5557085255A99BF00BB269E /* aphv-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "aphv-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +86,17 @@
 		E55BA691255EC11000028DC2 /* TopCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCurve.swift; sourceTree = "<group>"; };
 		E55E5BEA255D76600038DA41 /* GroeiberekeningIntro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroeiberekeningIntro.swift; sourceTree = "<group>"; };
 		E55E5BF2255D7C370038DA41 /* GroeiberekeningStap1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroeiberekeningStap1.swift; sourceTree = "<group>"; };
+		E566CCAE2562903200695A98 /* TabBarSporterOud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarSporterOud.swift; sourceTree = "<group>"; };
+		E566CCB32562936000695A98 /* HomeSporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSporter.swift; sourceTree = "<group>"; };
+		E566CCB8256293C200695A98 /* CoachesPagina.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachesPagina.swift; sourceTree = "<group>"; };
+		E575D0172567C7AF00BAC36E /* LineGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineGraph.swift; sourceTree = "<group>"; };
+		E575D01D2567C8BA00BAC36E /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		E575D0252567CEEF00BAC36E /* MeerdereGrafiekenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeerdereGrafiekenView.swift; sourceTree = "<group>"; };
+		E575D02A2567CF6300BAC36E /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		E575D030256806B400BAC36E /* ResultaatItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultaatItem.swift; sourceTree = "<group>"; };
+		E5C51DA225655D5200198EBD /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		E5C51DA7256565C600198EBD /* GroeiberekeningStap2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroeiberekeningStap2.swift; sourceTree = "<group>"; };
+		E5C51DAC2565791800198EBD /* GroeiberekeningStap3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroeiberekeningStap3.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +124,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E5177A93256BC1AB0006AC6D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E5177A94256BC1FE0006AC6D /* GrafiekManager.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		E5177AA9256C31180006AC6D /* Registreren */ = {
+			isa = PBXGroup;
+			children = (
+				E5177AAA256C31500006AC6D /* RegistreerSporterView.swift */,
+				E5177AB7256C38400006AC6D /* RadioButtonFieldView.swift */,
+			);
+			path = Registreren;
+			sourceTree = "<group>";
+		};
 		E54B9728255ED63100CE8EA9 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +172,8 @@
 		E5557087255A99BF00BB269E /* aphv-ios */ = {
 			isa = PBXGroup;
 			children = (
+				E5177A93256BC1AB0006AC6D /* ViewModels */,
+				E575D02F2567F52400BAC36E /* Models */,
 				E5572F04255E81A700D25FA4 /* Content */,
 				E55E5BFA255D8C2F0038DA41 /* Extensions */,
 				E55E5BE9255D75D40038DA41 /* Views */,
@@ -123,6 +182,7 @@
 				E555708C255A99BF00BB269E /* Assets.xcassets */,
 				E5557091255A99BF00BB269E /* Info.plist */,
 				E555708E255A99BF00BB269E /* Preview Content */,
+				E575D02A2567CF6300BAC36E /* Data.swift */,
 			);
 			path = "aphv-ios";
 			sourceTree = "<group>";
@@ -153,6 +213,21 @@
 			path = "aphv-iosUITests";
 			sourceTree = "<group>";
 		};
+		E55588AC25669978001EA75B /* Groeiberekening */ = {
+			isa = PBXGroup;
+			children = (
+				E575D01C2567C8A700BAC36E /* Grafiek */,
+				E55E5BEA255D76600038DA41 /* GroeiberekeningIntro.swift */,
+				E54B9723255EC9B900CE8EA9 /* VideoGroeiberekeningUitleg.swift */,
+				E55E5BF2255D7C370038DA41 /* GroeiberekeningStap1.swift */,
+				E5C51DA7256565C600198EBD /* GroeiberekeningStap2.swift */,
+				E5C51DAC2565791800198EBD /* GroeiberekeningStap3.swift */,
+				E533B94A25669CC6000A186F /* GroeiberekeningResultaat.swift */,
+				E533B94F25669E73000A186F /* HelpInstructiefilmpje.swift */,
+			);
+			path = Groeiberekening;
+			sourceTree = "<group>";
+		};
 		E5572F04255E81A700D25FA4 /* Content */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,10 +248,13 @@
 		E55E5BE9255D75D40038DA41 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E55E5BEA255D76600038DA41 /* GroeiberekeningIntro.swift */,
-				E55E5BF2255D7C370038DA41 /* GroeiberekeningStap1.swift */,
+				E5177AA9256C31180006AC6D /* Registreren */,
+				E55588AC25669978001EA75B /* Groeiberekening */,
 				E55BA691255EC11000028DC2 /* TopCurve.swift */,
-				E54B9723255EC9B900CE8EA9 /* VideoGroeiberekeningUitleg.swift */,
+				E566CCAE2562903200695A98 /* TabBarSporterOud.swift */,
+				E566CCB32562936000695A98 /* HomeSporter.swift */,
+				E566CCB8256293C200695A98 /* CoachesPagina.swift */,
+				E52938382562D3F900635E51 /* TabBarSporter.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -184,8 +262,30 @@
 		E55E5BFA255D8C2F0038DA41 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				E5C51DA225655D5200198EBD /* Color.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E575D01C2567C8A700BAC36E /* Grafiek */ = {
+			isa = PBXGroup;
+			children = (
+				E575D0172567C7AF00BAC36E /* LineGraph.swift */,
+				E575D01D2567C8BA00BAC36E /* GraphView.swift */,
+				E575D0252567CEEF00BAC36E /* MeerdereGrafiekenView.swift */,
+			);
+			path = Grafiek;
+			sourceTree = "<group>";
+		};
+		E575D02F2567F52400BAC36E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E575D030256806B400BAC36E /* ResultaatItem.swift */,
+				E5177A9C256BC4ED0006AC6D /* ValueItem.swift */,
+				E5177AA1256BC56F0006AC6D /* GroeiberekeningResultaatData.swift */,
+				E5177AB2256C358C0006AC6D /* UserModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,12 +419,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5177AA2256BC56F0006AC6D /* GroeiberekeningResultaatData.swift in Sources */,
 				E555708B255A99BF00BB269E /* ContentView.swift in Sources */,
+				E566CCB9256293C200695A98 /* CoachesPagina.swift in Sources */,
+				E5C51DA325655D5200198EBD /* Color.swift in Sources */,
+				E5177AAB256C31500006AC6D /* RegistreerSporterView.swift in Sources */,
+				E5C51DA8256565C600198EBD /* GroeiberekeningStap2.swift in Sources */,
+				E575D0182567C7AF00BAC36E /* LineGraph.swift in Sources */,
 				E55E5BEB255D76600038DA41 /* GroeiberekeningIntro.swift in Sources */,
+				E5177AB3256C358C0006AC6D /* UserModel.swift in Sources */,
+				E5177AB8256C38400006AC6D /* RadioButtonFieldView.swift in Sources */,
+				E566CCAF2562903200695A98 /* TabBarSporterOud.swift in Sources */,
 				E54B9724255EC9B900CE8EA9 /* VideoGroeiberekeningUitleg.swift in Sources */,
+				E5177A9D256BC4ED0006AC6D /* ValueItem.swift in Sources */,
+				E575D0262567CEEF00BAC36E /* MeerdereGrafiekenView.swift in Sources */,
+				E566CCB42562936000695A98 /* HomeSporter.swift in Sources */,
+				E5177A95256BC1FE0006AC6D /* GrafiekManager.swift in Sources */,
 				E55E5BF3255D7C370038DA41 /* GroeiberekeningStap1.swift in Sources */,
+				E52938392562D3F900635E51 /* TabBarSporter.swift in Sources */,
 				E55BA692255EC11000028DC2 /* TopCurve.swift in Sources */,
+				E5C51DAD2565791800198EBD /* GroeiberekeningStap3.swift in Sources */,
+				E575D01E2567C8BA00BAC36E /* GraphView.swift in Sources */,
+				E533B94B25669CC6000A186F /* GroeiberekeningResultaat.swift in Sources */,
+				E575D02B2567CF6300BAC36E /* Data.swift in Sources */,
 				E5557089255A99BF00BB269E /* aphv_iosApp.swift in Sources */,
+				E575D031256806B400BAC36E /* ResultaatItem.swift in Sources */,
+				E533B95025669E73000A186F /* HelpInstructiefilmpje.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

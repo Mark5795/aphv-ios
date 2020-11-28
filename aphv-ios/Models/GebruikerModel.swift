@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct UserModel: Identifiable {
-    let id = UUID()
+struct GebruikerModel: Codable {
+    let Id = UUID()
     let Rol: Bool
     let Voornaam: String
     let Achternaam: String
     let Sport: String
-    let Geslacht: Bool
-    let Geboortedatum: Int
-    let Emailadres: String
-    let wachtwoord: String
+    let Geslacht: String
+    let Geboortedatum: String
+    let Email: String
+    let Wachtwoord: String
 }

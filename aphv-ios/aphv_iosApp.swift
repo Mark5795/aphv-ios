@@ -11,7 +11,7 @@ import SwiftUI
 struct aphv_iosApp: App {
     var body: some Scene {
         WindowGroup {
-            RegistreerSporterView()
+            RegisterSporterView()
         }
     }
 }

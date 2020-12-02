@@ -7,14 +7,8 @@
 
 import Foundation
 
-struct RegistreerResponse: Decodable {
-    let email: String
-    let firstName: String
-    let lastName: String
-    let password: String
-    let dateOfBirth: String
-    let gender: String
-    let sport: String
+struct RegisterResponse: Decodable {
+    let email, firstName, lastName, password, dateOfBirth, gender, sport: String
     
     enum CodingKeys: String, CodingKey {
         case email = "email"

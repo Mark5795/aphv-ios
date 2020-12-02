@@ -16,24 +16,16 @@ enum RequestError: Error {
     case genericError(Error)
 }
 
-struct APIRequest {
-    let resourceURL : URL
+final class RegisterService: ObservableObject {
     
-    init(endpoint: String) {
-        let resourceString = "https://aphv.azurewebsites.net/api/\(endpoint)"
-        guard let resourceURL = URL(string: resourceString) else {fatalError()}
+    static let shared = RegisterService()
         
-        self.resourceURL = resourceURL
-    }
-}
-
-final class RegistreerService: ObservableObject {
-    static let shared = RegistreerService()
     private var cancellable: AnyCancellable?
     
-    func Registeer(role: String, email: String, firstName: String, lastName: String, password: String, dateOfBirth: String, gender: String, sport: String, completion: @escaping (Result<RegistreerResponse, RequestError>) -> Void) {
+//    func Register(role: String, email: String, firstName: String, lastName: String, password: String, dateOfBirth: String, gender: String, sport: String, completion: @escaping (Result<RegisterResponse, RequestError>) -> Void) {
+    func Register(userModel : UserModel, completion: @escaping (Result<RegisterResponse, RequestError>) -> Void) {
 
-        var role = role
+        var role = userModel.role
         if role == "Sporter" {
             role = "child"
         }
@@ -47,21 +39,21 @@ final class RegistreerService: ObservableObject {
         urlRequest.httpMethod = "POST"
 
 
-                let parameters = RegistreerRequest(
-                    email: email,
-                    firstName: firstName,
-                    lastName: lastName,
-                    password: password,
-                    dateOfBirth: dateOfBirth,
-                    gender: gender,
-                    sport: sport
+                let parameters = RegisterRequest(
+                    email: userModel.email,
+                    firstName: userModel.firstName,
+                    lastName: userModel.lastName,
+                    password: userModel.password,
+                    dateOfBirth: userModel.dateOfBirth,
+                    gender: userModel.gender,
+                    sport: userModel.sport
                 )
 
                 urlRequest.httpBody = try! JSONEncoder().encode(parameters)
 
                 cancellable = URLSession.shared.dataTaskPublisher(for: urlRequest)
                     .map({ $0.data })
-                    .decode(type: RegistreerResponse.self, decoder: JSONDecoder())
+                    .decode(type: RegisterResponse.self, decoder: JSONDecoder())
                     .receive(on: DispatchQueue.main)
                     .sink(receiveCompletion: { result in
                         switch result {

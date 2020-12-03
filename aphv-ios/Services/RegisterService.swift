@@ -22,16 +22,17 @@ final class RegisterService: ObservableObject {
         
     private var cancellable: AnyCancellable?
     
-//    func Register(role: String, email: String, firstName: String, lastName: String, password: String, dateOfBirth: String, gender: String, sport: String, completion: @escaping (Result<RegisterResponse, RequestError>) -> Void) {
     func Register(userModel : UserModel, completion: @escaping (Result<RegisterResponse, RequestError>) -> Void) {
 
-        var role = userModel.role
+        var role : String?
+        role = userModel.role
+        
         if role == "Sporter" {
             role = "child"
         }
 
         let api = "https://aphv.azurewebsites.net"
-        let endpoint = "/api/users/\(role)"
+        let endpoint = "/api/users/\(role ?? "")"
         let url = URL(string: api + endpoint)!
 
         var urlRequest = URLRequest(url: url)
@@ -40,13 +41,13 @@ final class RegisterService: ObservableObject {
 
 
                 let parameters = RegisterRequest(
-                    email: userModel.email,
-                    firstName: userModel.firstName,
-                    lastName: userModel.lastName,
-                    password: userModel.password,
-                    dateOfBirth: userModel.dateOfBirth,
-                    gender: userModel.gender,
-                    sport: userModel.sport
+                    email: userModel.email ?? "",
+                    firstName: userModel.firstName ?? "",
+                    lastName: userModel.lastName ?? "",
+                    password: userModel.password ?? "",
+                    dateOfBirth: userModel.dateOfBirth ?? "",
+                    gender: userModel.gender ?? "",
+                    sport: userModel.sport ?? ""
                 )
 
                 urlRequest.httpBody = try! JSONEncoder().encode(parameters)

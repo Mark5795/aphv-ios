@@ -10,35 +10,100 @@ import Combine
 
 class UserViewModel: ObservableObject {
     
-    @Published var passwordCheck : String = ""
+    var passwordCheck : String = ""
+    var checkedConditions : Bool = false
+    var checkedApproval : Bool = false
+    
     @Published var userModel : UserModel
+    
+    @Published var alertTitle : String = "Error"
+    @Published var alertMessage : String = "Error"
+    @Published var alertSucces : Bool = false
+    
     
     init(userModel : UserModel) {
         self.userModel = userModel
     }
     
-
+    func updateUserModel(role : String, firstName : String, lastName : String, sport : String, gender : String, dateOfBirth : String, email : String, password : String, passwordCheck : String, checkedConditions : Bool, checkedApproval: Bool) {
+        
+        userModel.role = role
+        userModel.firstName = firstName
+        userModel.lastName = lastName
+        userModel.sport = sport
+        userModel.gender = gender
+        userModel.dateOfBirth = dateOfBirth
+        userModel.email = email
+        userModel.password = password
+        self.passwordCheck = passwordCheck
+        self.checkedConditions = checkedConditions
+        self.checkedApproval = checkedApproval
+    }
     
-//    func checkPasswordMatch() -> Bool {
-//    if(passwordCheck == UserModel.password) {
-//            return true
-//        }
-//        return false
-//    }
-//
-//    func RegisterUser() -> Void {
-//        if (checkPasswordMatch() == true) {
-//            RegisterService.Register(UserModel)
-//        }
-//    }
+    func checkConditions() -> Bool {
+        if (checkUserInput() == false) {
+            alertTitle = "Verplichte velden"
+            alertMessage = "Er mogen geen velden leeg gelaten worden."
+            return false
+        }
+        if (checkCheckedConditions() == false) {
+            alertTitle = "Voorwaarden accepteren"
+            alertMessage = "De voorwaarden moet worden geaccepteerd voor het aanmaken van een account."
+            return false
+        }
+        if (checkCheckedApproval() == false) {
+            alertTitle = "Goedkeuring persoonsgegevens"
+            alertMessage = "Voor het aanmaken van een account moet je goedkeuring hebben van een ouder, voogd of coach of je bent 18 jaar of ouder."
+            return false
+        }
+        if (checkPasswordMatch() == false) {
+            alertTitle = "Wachtwoorden ongelijk"
+            alertMessage = "De ingevoerde wachtwoorden zijn niet het zelfde."
+            return false
+        }
+        return true
+    }
     
-    func registerUser() {
-        RegisterService.shared.Register(userModel: userModel) { (result) in
-            switch result {
-            case .success(let response):
-                print("gelukt", response)
-            case .failure(_):
-                print("Mislukt")
+    func checkUserInput() -> Bool {
+        if (userModel.role == "" || userModel.firstName == "" || userModel.lastName == "" || userModel.sport == "" || userModel.gender == "" || userModel.dateOfBirth == "" || userModel.email == "" || userModel.password == "") {
+            return false
+        }
+        return true
+    }
+    
+    func checkCheckedConditions() -> Bool {
+    if(checkedConditions) {
+            return true
+        }
+        return false
+    }
+    
+    func checkCheckedApproval() -> Bool {
+    if(checkedApproval) {
+            return true
+        }
+        return false
+    }
+    
+    func checkPasswordMatch() -> Bool {
+    if(passwordCheck == userModel.password) {
+            return true
+        }
+        return false
+    }
+    
+    func sendRegisterUserRequest() {
+        if (checkConditions()) {
+            RegisterService.shared.Register(userModel: userModel) { (result) in
+                switch result {
+                case .success(_):
+                    self.alertTitle = "Je account is aangemaakt!"
+                    self.alertMessage = "Druk op de bevestigingslink in je email om je account te activeren."
+                    self.alertSucces = true
+                case .failure(_):
+                    self.alertTitle = "Registreren Mislukt"
+                    self.alertMessage = "Het registreren is mislukt, heb je een goede wifi verbinding? Probeer het nog een keer."
+                }
             }
         }
     }

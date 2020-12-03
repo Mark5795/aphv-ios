@@ -39,6 +39,7 @@
 		E566CCAF2562903200695A98 /* TabBarSporterOud.swift in Sources */ = {isa = PBXBuildFile; fileRef = E566CCAE2562903200695A98 /* TabBarSporterOud.swift */; };
 		E566CCB42562936000695A98 /* HomeSporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E566CCB32562936000695A98 /* HomeSporter.swift */; };
 		E566CCB9256293C200695A98 /* CoachesPagina.swift in Sources */ = {isa = PBXBuildFile; fileRef = E566CCB8256293C200695A98 /* CoachesPagina.swift */; };
+		E5683680257967CD00F1BBD8 /* SuccesModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E568367F257967CD00F1BBD8 /* SuccesModal.swift */; };
 		E56885FA2576819B00B37DA0 /* DropDownModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56885F92576819B00B37DA0 /* DropDownModel.swift */; };
 		E575D0182567C7AF00BAC36E /* LineGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = E575D0172567C7AF00BAC36E /* LineGraph.swift */; };
 		E575D01E2567C8BA00BAC36E /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E575D01D2567C8BA00BAC36E /* GraphView.swift */; };
@@ -107,6 +108,7 @@
 		E566CCAE2562903200695A98 /* TabBarSporterOud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarSporterOud.swift; sourceTree = "<group>"; };
 		E566CCB32562936000695A98 /* HomeSporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSporter.swift; sourceTree = "<group>"; };
 		E566CCB8256293C200695A98 /* CoachesPagina.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachesPagina.swift; sourceTree = "<group>"; };
+		E568367F257967CD00F1BBD8 /* SuccesModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccesModal.swift; sourceTree = "<group>"; };
 		E56885F92576819B00B37DA0 /* DropDownModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownModel.swift; sourceTree = "<group>"; };
 		E575D0172567C7AF00BAC36E /* LineGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineGraph.swift; sourceTree = "<group>"; };
 		E575D01D2567C8BA00BAC36E /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
@@ -153,14 +155,15 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		E5177AA9256C31180006AC6D /* Registreren */ = {
+		E5177AA9256C31180006AC6D /* Register */ = {
 			isa = PBXGroup;
 			children = (
 				E5177AAA256C31500006AC6D /* RegisterSporterView.swift */,
 				E5177AB7256C38400006AC6D /* RadioButtonFieldView.swift */,
 				E5634898257550770090E490 /* DropDownView.swift */,
+				E568367F257967CD00F1BBD8 /* SuccesModal.swift */,
 			);
-			path = Registreren;
+			path = Register;
 			sourceTree = "<group>";
 		};
 		E53E0EE2256FDD7200371C89 /* Responses */ = {
@@ -188,12 +191,12 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
-		E554E12E256E9FF7008AC163 /* Inloggen */ = {
+		E554E12E256E9FF7008AC163 /* Login */ = {
 			isa = PBXGroup;
 			children = (
 				E554E12F256EA016008AC163 /* LoginView.swift */,
 			);
-			path = Inloggen;
+			path = Login;
 			sourceTree = "<group>";
 		};
 		E554E137256EA24A008AC163 /* Services */ = {
@@ -316,12 +319,12 @@
 		E55E5BE9255D75D40038DA41 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E554E12E256E9FF7008AC163 /* Inloggen */,
-				E5177AA9256C31180006AC6D /* Registreren */,
+				E568367825795F5400F1BBD8 /* Homepage */,
+				E554E12E256E9FF7008AC163 /* Login */,
+				E5177AA9256C31180006AC6D /* Register */,
 				E55588AC25669978001EA75B /* Groeiberekening */,
 				E55BA691255EC11000028DC2 /* TopCurve.swift */,
 				E566CCAE2562903200695A98 /* TabBarSporterOud.swift */,
-				E566CCB32562936000695A98 /* HomeSporter.swift */,
 				E566CCB8256293C200695A98 /* CoachesPagina.swift */,
 				E52938382562D3F900635E51 /* TabBarSporter.swift */,
 				E53E0EF52570015C00371C89 /* InputTextFieldView.swift */,
@@ -336,6 +339,14 @@
 				E5C51DA225655D5200198EBD /* Color.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E568367825795F5400F1BBD8 /* Homepage */ = {
+			isa = PBXGroup;
+			children = (
+				E566CCB32562936000695A98 /* HomeSporter.swift */,
+			);
+			path = Homepage;
 			sourceTree = "<group>";
 		};
 		E575D01C2567C8A700BAC36E /* Grafiek */ = {
@@ -493,6 +504,7 @@
 				E555708B255A99BF00BB269E /* ContentView.swift in Sources */,
 				E566CCB9256293C200695A98 /* CoachesPagina.swift in Sources */,
 				E53E0EFB2570293400371C89 /* CheckboxFieldView.swift in Sources */,
+				E5683680257967CD00F1BBD8 /* SuccesModal.swift in Sources */,
 				E5C51DA325655D5200198EBD /* Color.swift in Sources */,
 				E5634899257550770090E490 /* DropDownView.swift in Sources */,
 				E5177AAB256C31500006AC6D /* RegisterSporterView.swift in Sources */,

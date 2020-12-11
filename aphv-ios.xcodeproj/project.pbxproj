@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -50,6 +50,11 @@
 		E5C51DA8256565C600198EBD /* GroeiberekeningStap2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C51DA7256565C600198EBD /* GroeiberekeningStap2.swift */; };
 		E5C51DAD2565791800198EBD /* GroeiberekeningStap3.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C51DAC2565791800198EBD /* GroeiberekeningStap3.swift */; };
 		E5C7B49F2571422B0097AF84 /* GetUsersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C7B49E2571422B0097AF84 /* GetUsersResponse.swift */; };
+		E5CF07A52580D7DB007E6855 /* Intro2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CF07A42580D7DB007E6855 /* Intro2View.swift */; };
+		E5CF07AC2580E00D007E6855 /* SwiftUIPager in Frameworks */ = {isa = PBXBuildFile; productRef = E5CF07AB2580E00D007E6855 /* SwiftUIPager */; };
+		E5DAC211257FD60900B527E8 /* Intro1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DAC210257FD60900B527E8 /* Intro1View.swift */; };
+		E5DAC219257FF45300B527E8 /* IntroPagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DAC218257FF45300B527E8 /* IntroPagerView.swift */; };
+		E5F173B425825BC00029E33E /* IntroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F173B325825BC00029E33E /* IntroViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +124,10 @@
 		E5C51DA7256565C600198EBD /* GroeiberekeningStap2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroeiberekeningStap2.swift; sourceTree = "<group>"; };
 		E5C51DAC2565791800198EBD /* GroeiberekeningStap3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroeiberekeningStap3.swift; sourceTree = "<group>"; };
 		E5C7B49E2571422B0097AF84 /* GetUsersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUsersResponse.swift; sourceTree = "<group>"; };
+		E5CF07A42580D7DB007E6855 /* Intro2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intro2View.swift; sourceTree = "<group>"; };
+		E5DAC210257FD60900B527E8 /* Intro1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intro1View.swift; sourceTree = "<group>"; };
+		E5DAC218257FF45300B527E8 /* IntroPagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPagerView.swift; sourceTree = "<group>"; };
+		E5F173B325825BC00029E33E /* IntroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5CF07AC2580E00D007E6855 /* SwiftUIPager in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +161,7 @@
 			children = (
 				E5177A94256BC1FE0006AC6D /* GrafiekManager.swift */,
 				E556FCC7256D808000EACAF5 /* UserViewModel.swift */,
+				E5F173B325825BC00029E33E /* IntroViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -319,6 +330,7 @@
 		E55E5BE9255D75D40038DA41 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E5DAC20F257FD58200B527E8 /* Intro */,
 				E568367825795F5400F1BBD8 /* Homepage */,
 				E554E12E256E9FF7008AC163 /* Login */,
 				E5177AA9256C31180006AC6D /* Register */,
@@ -369,6 +381,16 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		E5DAC20F257FD58200B527E8 /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				E5DAC210257FD60900B527E8 /* Intro1View.swift */,
+				E5DAC218257FF45300B527E8 /* IntroPagerView.swift */,
+				E5CF07A42580D7DB007E6855 /* Intro2View.swift */,
+			);
+			path = Intro;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -385,6 +407,9 @@
 			dependencies = (
 			);
 			name = "aphv-ios";
+			packageProductDependencies = (
+				E5CF07AB2580E00D007E6855 /* SwiftUIPager */,
+			);
 			productName = "aphv-ios";
 			productReference = E5557085255A99BF00BB269E /* aphv-ios.app */;
 			productType = "com.apple.product-type.application";
@@ -456,6 +481,9 @@
 				Base,
 			);
 			mainGroup = E555707C255A99BF00BB269E;
+			packageReferences = (
+				E5CF07AA2580E00D007E6855 /* XCRemoteSwiftPackageReference "SwiftUIPager" */,
+			);
 			productRefGroup = E5557086255A99BF00BB269E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -507,6 +535,7 @@
 				E5683680257967CD00F1BBD8 /* SuccesModal.swift in Sources */,
 				E5C51DA325655D5200198EBD /* Color.swift in Sources */,
 				E5634899257550770090E490 /* DropDownView.swift in Sources */,
+				E5DAC211257FD60900B527E8 /* Intro1View.swift in Sources */,
 				E5177AAB256C31500006AC6D /* RegisterSporterView.swift in Sources */,
 				E5C51DA8256565C600198EBD /* GroeiberekeningStap2.swift in Sources */,
 				E575D0182567C7AF00BAC36E /* LineGraph.swift in Sources */,
@@ -514,6 +543,7 @@
 				E55E5BEB255D76600038DA41 /* GroeiberekeningIntro.swift in Sources */,
 				E5177AB3256C358C0006AC6D /* UserModel.swift in Sources */,
 				E5177AB8256C38400006AC6D /* RadioButtonFieldView.swift in Sources */,
+				E5DAC219257FF45300B527E8 /* IntroPagerView.swift in Sources */,
 				E566CCAF2562903200695A98 /* TabBarSporterOud.swift in Sources */,
 				E54B9724255EC9B900CE8EA9 /* VideoGroeiberekeningUitleg.swift in Sources */,
 				E5C7B49F2571422B0097AF84 /* GetUsersResponse.swift in Sources */,
@@ -526,6 +556,7 @@
 				E52938392562D3F900635E51 /* TabBarSporter.swift in Sources */,
 				E53E0EE5256FDD9500371C89 /* RegistrerResponse.swift in Sources */,
 				E556FCC8256D808000EACAF5 /* UserViewModel.swift in Sources */,
+				E5F173B425825BC00029E33E /* IntroViewModel.swift in Sources */,
 				E55BA692255EC11000028DC2 /* TopCurve.swift in Sources */,
 				E53E0EEE256FDF7500371C89 /* RegisterRequest.swift in Sources */,
 				E5C51DAD2565791800198EBD /* GroeiberekeningStap3.swift in Sources */,
@@ -534,6 +565,7 @@
 				E533B94B25669CC6000A186F /* GroeiberekeningResultaat.swift in Sources */,
 				E575D02B2567CF6300BAC36E /* Data.swift in Sources */,
 				E5557089255A99BF00BB269E /* aphv_iosApp.swift in Sources */,
+				E5CF07A52580D7DB007E6855 /* Intro2View.swift in Sources */,
 				E575D031256806B400BAC36E /* ResultaatItem.swift in Sources */,
 				E533B95025669E73000A186F /* HelpInstructiefilmpje.swift in Sources */,
 				E554E139256EA280008AC163 /* RegisterService.swift in Sources */,
@@ -850,6 +882,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E5CF07AA2580E00D007E6855 /* XCRemoteSwiftPackageReference "SwiftUIPager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/fermoya/SwiftUIPager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.14.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E5CF07AB2580E00D007E6855 /* SwiftUIPager */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E5CF07AA2580E00D007E6855 /* XCRemoteSwiftPackageReference "SwiftUIPager" */;
+			productName = SwiftUIPager;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E555707D255A99BF00BB269E /* Project object */;
 }

@@ -15,11 +15,15 @@ struct Intro1View: View {
         VStack(alignment: .center) {
             HStack {
                 Spacer()
-                Text("Overslaan")
-                    .padding(.trailing)
+                
+                Button(action: {self.introViewModel.pageIndex = 3}, label: {
+                    Text("Overslaan")
+                        .fontWeight(.bold)
+                        .foregroundColor(Color.black)
+                        .padding(.trailing)
+                })
             }
-            
-            
+                        
             Image("SportendMeisje1")
                 .padding(.top, 80.0)
             

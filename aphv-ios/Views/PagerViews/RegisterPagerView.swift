@@ -1,16 +1,18 @@
 //
-//  IntroPagerView.swift
+//  RegisterPagerView.swift
 //  aphv-ios
 //
-//  Created by Mark Kea on 08/12/2020.
+//  Created by Mark Kea on 11/12/2020.
 //
 
 import SwiftUI
 import SwiftUIPager
 import Combine
 
-struct IntroPagerView: View {
-      
+struct RegisterPagerView: View {
+    @ObservedObject var registerViewModel = RegisterViewModel()
+    
+    //to get no errors, temporary
     @ObservedObject var introViewModel = IntroViewModel()
     
     @State var pageIndex = 0
@@ -26,27 +28,30 @@ struct IntroPagerView: View {
             }
             .pagingPriority(.simultaneous)
             .itemSpacing(10)
-            .navigationBarTitle("SwiftUIPager", displayMode: .inline)
+//            .navigationBarTitle("SwiftUIPager", displayMode: .inline)
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }
     
     //Get pageIndex from the viewModel
     func pageView(_ page: Int) -> some View {
-        let introViews = introViewModel.pageIndex
+        let introViews = registerViewModel.pageIndex
         switch introViews {
         case 0:
-            return AnyView(Intro1View(introViewModel : self.introViewModel))
+            return AnyView(RegisterChooseRole(registerViewModel : self.registerViewModel))
         case 1:
-            return AnyView(Intro2View(introViewModel : self.introViewModel))
+            return AnyView(RegisterSporterView(registerViewModel : self.registerViewModel))
+        case 2:
+            return AnyView(Intro3View(introViewModel : self.introViewModel))
+        case 3:
+            return AnyView(GroeiberekeningWithoutAccountPagerView())
         default:
             return AnyView(Intro1View(introViewModel : self.introViewModel))
         }
     }
 }
-
-struct IntroPagerView_Previews: PreviewProvider {
+struct RegisterPagerView_Previews: PreviewProvider {
     static var previews: some View {
-        IntroPagerView()
+        RegisterPagerView()
     }
 }

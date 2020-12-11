@@ -24,19 +24,19 @@ struct GroeiberekeningIntro: View {
                         .multilineTextAlignment(.center)
                         .padding(.vertical, 15.0)
                         .frame(width: 340.0, height: 250)
-                        
+                    
                     NavigationLink(destination: GroeiberekeningStap1()) {
                         Text("Start Groeiberekening")
                             .font(.system(size: 20))
                             .fontWeight(.medium)
                             .foregroundColor(Color.white)
                             .multilineTextAlignment(.center)
-                            
+                        
                     }
-                        .frame(width: 335.0, height: 45.0)
-                        .background(Color("ASMgreen"))
-                        .cornerRadius(5)
-                        .zIndex(0)
+                    .frame(width: 335.0, height: 45.0)
+                    .background(Color("ASMgreen"))
+                    .cornerRadius(5)
+                    .zIndex(0)
                     
                     TabBarSporterOud()
                         .zIndex(/*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
@@ -49,9 +49,6 @@ struct GroeiberekeningIntro: View {
 
 struct GroeiberekeningIntro_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            GroeiberekeningIntro()
-                .previewDevice("iPhone 11 Pro")
-        }
+        GroeiberekeningIntro()
     }
 }

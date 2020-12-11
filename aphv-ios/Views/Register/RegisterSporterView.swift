@@ -11,6 +11,7 @@ struct RegisterSporterView: View {
     
     @ObservedObject var dropDownModel = DropDownModel()
     @ObservedObject var userViewModel = UserViewModel(userModel: UserModel())
+    @ObservedObject var registerViewModel = RegisterViewModel()
     
     @State var role: String = ""
     @State var firstName: String = ""
@@ -120,6 +121,7 @@ struct RegisterSporterView: View {
                                         self.showingErrorAlert.toggle()
                                 }, label: {
                                     Text("Aanmaken")
+                                        .fontWeight(.bold)
                                         .frame(maxWidth: .infinity, minHeight: 44)
                                         .foregroundColor(.white)
                                 })

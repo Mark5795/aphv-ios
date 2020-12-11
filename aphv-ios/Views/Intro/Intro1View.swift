@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct Intro1View: View {
-    @ObservedObject var introViewModel = IntroViewModel()
+    @ObservedObject var introViewModel : IntroViewModel
+    
     
     var body: some View {
         VStack(alignment: .center) {
@@ -52,7 +53,7 @@ struct Intro1View: View {
                 Spacer()
                     .frame(width: 90)
                 
-                Button(action: {self.introViewModel.pageIndex = 2}, label: {
+                Button(action: {self.introViewModel.pageIndex = 1}, label: {
                     Image("Arrow-ASMgreen")
                         .padding(.trailing, 50.0)
                 })
@@ -64,6 +65,6 @@ struct Intro1View: View {
 
 struct Intro1View_Previews: PreviewProvider {
     static var previews: some View {
-        Intro1View()
+        Intro1View(introViewModel: IntroViewModel())
     }
 }

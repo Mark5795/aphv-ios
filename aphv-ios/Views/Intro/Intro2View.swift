@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct Intro2View: View {
+    @ObservedObject var introViewModel : IntroViewModel
+    
     var body: some View {
         VStack(alignment: .center) {
          
@@ -27,9 +29,11 @@ struct Intro2View: View {
             Spacer()
             
             HStack {
-                Image("Arrow-ASMgreen")
-                    .padding(.trailing, 50.0)
-                    .rotationEffect(.degrees(-180))
+                Button(action: {self.introViewModel.pageIndex = 0}, label: {
+                    Image("Arrow-ASMgreen")
+                        .padding(.trailing, 50.0)
+                        .rotationEffect(.degrees(-180))
+                })
                 
                 Spacer()
                 
@@ -48,8 +52,10 @@ struct Intro2View: View {
                 Spacer()
                     .frame(width: 90)
                 
-                Image("Arrow-ASMgreen")
-                    .padding(.trailing, 50.0)
+                Button(action: {self.introViewModel.pageIndex = 2}, label: {
+                    Image("Arrow-ASMgreen")
+                        .padding(.trailing, 50.0)
+                })
             }
             .padding(.bottom, 30.0)
         }
@@ -58,7 +64,7 @@ struct Intro2View: View {
 
 struct Intro2View_Previews: PreviewProvider {
     static var previews: some View {
-        Intro2View()
+        Intro2View(introViewModel: IntroViewModel())
     }
 }
 

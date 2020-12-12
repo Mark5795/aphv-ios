@@ -40,7 +40,7 @@ struct RegisterChooseRole: View {
                         Circle()
                             .stroke(Color.BorderGrey)
                             .frame(width: 18, height: 18, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        Text("Sporter")
+                        Text("Coach")
                             .fontWeight(.regular)
                             .foregroundColor(Color.black)
                         

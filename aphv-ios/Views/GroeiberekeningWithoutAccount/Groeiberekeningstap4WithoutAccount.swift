@@ -88,6 +88,19 @@ struct Groeiberekeningstap4WithoutAccount: View {
                         .background(Color("ASMgreen"))
                         .cornerRadius(5)
                         .zIndex(0)
+//                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+//                        Text("Bereken")
+//                            .font(.system(size: 20))
+//                            .fontWeight(.medium)
+//                            .foregroundColor(Color.white)
+//                            .multilineTextAlignment(.center)
+//                            
+//                    }
+//                        .frame(width: 335.0, height: 45.0)
+//                        .background(Color("ASMgreen"))
+//                        .cornerRadius(5)
+//                        .zIndex(0)
+//                    })
                 }
             }
         }

@@ -1,19 +1,18 @@
 //
-//  RegistreerSporterView.swift
+//  RegisterCoachView.swift
 //  aphv-ios
 //
-//  Created by Mark Kea on 23/11/2020.
+//  Created by Mark Kea on 12/12/2020.
 //
 
 import SwiftUI
 
-struct RegisterSporterView: View {
-    
+struct RegisterCoachView: View {
     @ObservedObject var dropDownModel = DropDownModel()
     @ObservedObject var userViewModel = UserViewModel(userModel: UserModel())
     @ObservedObject var registerViewModel = RegisterViewModel()
     
-    @State var role: String = "Sporter"
+    @State var role: String = "Coach"
     @State var firstName: String = ""
     @State var lastName: String = ""
     @State var sport: String = ""
@@ -47,7 +46,7 @@ struct RegisterSporterView: View {
                                 Button(action: {self.registerViewModel.pageIndex = 1}, label: {
                                     HStack {
                                         Circle()
-                                            .fill(Color.ASMgreen)
+                                            .stroke(Color.BorderGrey)
                                             .frame(width: 18, height: 18, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                                         Text("Sporter")
                                             .fontWeight(.regular)
@@ -62,7 +61,7 @@ struct RegisterSporterView: View {
                                 Button(action: {self.registerViewModel.pageIndex = 2}, label: {
                                     HStack {
                                         Circle()
-                                            .stroke(Color.BorderGrey)
+                                            .fill(Color.ASMgreen)
                                             .frame(width: 18, height: 18, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                                         Text("Coach")
                                             .fontWeight(.regular)
@@ -84,11 +83,6 @@ struct RegisterSporterView: View {
                             InputTextFieldView(stateBinding: $lastName, title: "Achternaam", placeholder: "", secureTextField: false)
                             
                             InputTextFieldView(stateBinding: $sport, title: "Sport", placeholder: "", secureTextField: false)
-                        }
-                        
-                        Group {
-                            Text("Geslacht")
-                            DropDownView(gender: $gender)
                         }
                         
                         Group {
@@ -139,58 +133,34 @@ struct RegisterSporterView: View {
                                 }
                                 Text("Ik heb goedkeuring van een ouder, voogd of coach of ik ben 18 jaar of ouder.")
                             }
-                            //                            NavigationLink(destination: HomeSporter(), isActive: self.$showHomeSporter) {
-                            //                                Button(action: {
-                            //                                    userViewModel.updateUserModel(role: role, firstName: firstName, lastName: lastName, sport: sport, gender: gender, dateOfBirth: dateOfBirth, email: email, password: password, passwordCheck: passwordCheck, checkedConditions: checkedConditions, checkedApproval: checkedApproval)
-                            //                                        userViewModel.sendRegisterUserRequest()
-                            //
-                            //                                        self.showingErrorAlert.toggle()
-                            //                                }, label: {
-                            //                                    Text("Aanmaken")
-                            //                                        .fontWeight(.bold)
-                            //                                        .frame(maxWidth: .infinity, minHeight: 44)
-                            //                                        .foregroundColor(.white)
-                            //                                })
-                            //                                .background(Color.ASMgreen)
-                            //                                .cornerRadius(8.0)
-                            
-                            Button(action: {
-//                                userViewModel.updateUserModel(role: role, firstName: firstName, lastName: lastName, sport: sport, gender: gender, dateOfBirth: dateOfBirth, email: email, password: password, passwordCheck: passwordCheck, checkedConditions: checkedConditions, checkedApproval: checkedApproval)
-                                userViewModel.role = self.role
-                                userViewModel.firstName = self.firstName
-                                userViewModel.lastName = self.lastName
-                                userViewModel.sport = self.sport
-                                userViewModel.gender = self.gender
-                                userViewModel.dateOfBirth = self.dateOfBirth
-                                userViewModel.email = self.email
-                                userViewModel.password = self.password
-                                userViewModel.passwordCheck = self.passwordCheck
-                                
-                                userViewModel.sendRegisterUserRequest()
-                                
-                                self.showingErrorAlert.toggle()
-                            }, label: {
-                                Text("Aanmaken")
-                                    .fontWeight(.bold)
-                                    .frame(maxWidth: .infinity, minHeight: 44)
-                                    .foregroundColor(.white)
-                            })
-                            .background(Color.ASMgreen)
-                            .cornerRadius(8.0)
-                            
+                            NavigationLink(destination: HomeSporter(), isActive: self.$showHomeSporter) {
+                                Button(action: {
+//                                    userViewModel.updateUserModel(role: role, firstName: firstName, lastName: lastName, sport: sport, gender: gender, dateOfBirth: dateOfBirth, email: email, password: password, passwordCheck: passwordCheck, checkedConditions: checkedConditions, checkedApproval: checkedApproval)
+                                        userViewModel.sendRegisterUserRequest()
+                                    
+                                        self.showingErrorAlert.toggle()
+                                }, label: {
+                                    Text("Aanmaken")
+                                        .fontWeight(.bold)
+                                        .frame(maxWidth: .infinity, minHeight: 44)
+                                        .foregroundColor(.white)
+                                })
+                                .background(Color.ASMgreen)
+                                .cornerRadius(8.0)
+                            }
                         }
                     }
-                }
-            }.padding(.horizontal, 25.0)
+                }.padding(.horizontal, 25.0)
+            }
+        }
+        .alert(isPresented: $showingErrorAlert) {
+            Alert(title: Text(userViewModel.alertTitle), message: Text(userViewModel.alertMessage), dismissButton: .default(Text("Oke"), action: {self.showHomeSporter = true}))
         }
     }
-//    .alert(isPresented: $showingErrorAlert) {
-//    Alert(title: Text(userViewModel.alertTitle), message: Text(userViewModel.alertMessage), dismissButton: .default(Text("Oke"), action: {self.showHomeSporter = true}))
-//    }
 }
 
-struct RegistreerSporterView_Previews: PreviewProvider {
+struct RegisterCoachView_Previews: PreviewProvider {
     static var previews: some View {
-        RegisterSporterView()
+        RegisterCoachView()
     }
 }

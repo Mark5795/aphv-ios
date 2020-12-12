@@ -10,7 +10,7 @@ import Combine
 
 class UserViewModel: ObservableObject {
     
-    var passwordCheck : String = ""
+//    var passwordCheck : String = ""
     var checkedConditions : Bool = false
     var checkedApproval : Bool = false
     
@@ -20,25 +20,35 @@ class UserViewModel: ObservableObject {
     @Published var alertMessage : String = "Error"
     @Published var alertSucces : Bool = false
     
+    @Published var role: String = "Sporter"
+    @Published var firstName: String = ""
+    @Published var lastName: String = ""
+    @Published var sport: String = ""
+    @Published var gender : String = ""
+    @Published var dateOfBirth: String = ""
+    @Published var email: String = ""
+    @Published var password: String = ""
+    @Published var passwordCheck: String = ""
+    
     
     init(userModel : UserModel) {
         self.userModel = userModel
     }
     
-    func updateUserModel(role : String, firstName : String, lastName : String, sport : String, gender : String, dateOfBirth : String, email : String, password : String, passwordCheck : String, checkedConditions : Bool, checkedApproval: Bool) {
-        
-        userModel.role = role
-        userModel.firstName = firstName
-        userModel.lastName = lastName
-        userModel.sport = sport
-        userModel.gender = gender
-        userModel.dateOfBirth = dateOfBirth
-        userModel.email = email
-        userModel.password = password
-        self.passwordCheck = passwordCheck
-        self.checkedConditions = checkedConditions
-        self.checkedApproval = checkedApproval
-    }
+//    func updateUserModel(role : String, firstName : String, lastName : String, sport : String, gender : String, dateOfBirth : String, email : String, password : String, passwordCheck : String, checkedConditions : Bool, checkedApproval: Bool) {
+//
+//        userModel.role = role
+//        userModel.firstName = firstName
+//        userModel.lastName = lastName
+//        userModel.sport = sport
+//        userModel.gender = gender
+//        userModel.dateOfBirth = dateOfBirth
+//        userModel.email = email
+//        userModel.password = password
+//        self.passwordCheck = passwordCheck
+//        self.checkedConditions = checkedConditions
+//        self.checkedApproval = checkedApproval
+//    }
     
     func checkConditions() -> Bool {
         if (checkUserInput() == false) {

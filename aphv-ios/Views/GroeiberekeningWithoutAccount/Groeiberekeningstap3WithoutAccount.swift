@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct Groeiberekeningstap3WithoutAccount: View {
+    
+    @ObservedObject var groeiberekeningWithoutAccountViewModel : GroeiberekeningWithoutAccountViewModel
+    
     @State var zithoogte: String = ""
     
     var body: some View {
@@ -79,18 +82,17 @@ struct Groeiberekeningstap3WithoutAccount: View {
                             .cornerRadius(/*@START_MENU_TOKEN@*/5.0/*@END_MENU_TOKEN@*/)
                     }
                     
-                    NavigationLink(destination: GroeiberekeningStap3()) {
+                    Button(action: {self.groeiberekeningWithoutAccountViewModel.pageIndex = 6}, label: {
                         Text("Stap 2")
                             .font(.system(size: 20))
                             .fontWeight(.medium)
                             .foregroundColor(Color.white)
                             .multilineTextAlignment(.center)
                             
-                    }
+                    })
                         .frame(width: 335.0, height: 45.0)
                         .background(Color("ASMgreen"))
                         .cornerRadius(5)
-                        .zIndex(0)
                 }
             }
         }
@@ -99,6 +101,6 @@ struct Groeiberekeningstap3WithoutAccount: View {
 
 struct Groeiberekeningstap3WithoutAccount_Previews: PreviewProvider {
     static var previews: some View {
-        Groeiberekeningstap3WithoutAccount()
+        Groeiberekeningstap3WithoutAccount(groeiberekeningWithoutAccountViewModel : GroeiberekeningWithoutAccountViewModel())
     }
 }

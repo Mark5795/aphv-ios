@@ -28,7 +28,7 @@ struct RegisterPagerView: View {
             }
             .pagingPriority(.simultaneous)
             .itemSpacing(10)
-//            .navigationBarTitle("SwiftUIPager", displayMode: .inline)
+            .navigationBarTitle("SwiftUIPager", displayMode: .inline)
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }

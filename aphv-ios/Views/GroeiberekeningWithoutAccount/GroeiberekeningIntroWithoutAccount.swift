@@ -27,7 +27,7 @@ struct GroeiberekeningIntroWithoutAccount: View {
                     .padding(.vertical, 15.0)
                     .frame(width: 340.0, height: 250)
                 
-                Button(action: {self.groeiberekeningWithoutAccountViewModel.pageIndex = 1}, label: {
+                Button(action: {self.groeiberekeningWithoutAccountViewModel.pageIndex = 3}, label: {
                     Text("Start Groeiberekening")
                         .fontWeight(.bold)
                         .frame(width: 335.0, height: 45.0)

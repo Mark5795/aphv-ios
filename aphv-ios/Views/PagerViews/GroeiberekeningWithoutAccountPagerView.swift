@@ -15,7 +15,7 @@ struct GroeiberekeningWithoutAccountPagerView: View {
     
     @State var pageIndex = 0
     
-    var items = Array(0..<3)
+    var items = Array(0..<6)
     
     var body: some View {
         NavigationView {
@@ -26,6 +26,7 @@ struct GroeiberekeningWithoutAccountPagerView: View {
             }
             .pagingPriority(.simultaneous)
             .itemSpacing(10)
+            .navigationBarTitle("SwiftUIPager", displayMode: .inline)
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }
@@ -36,10 +37,20 @@ struct GroeiberekeningWithoutAccountPagerView: View {
         switch introViews {
         case 0:
             return AnyView(ConsWithoutAccount(groeiberekeningWithoutAccountViewModel : self.groeiberekeningWithoutAccountViewModel))
-//        case 1:
-//            return AnyView(GroeiberekeningIntroWithoutAccount(groeiberekeningWithoutAccountViewModel : self.introViewMgroeiberekeningWithoutAccountViewModelodel))
-//        case 2:
-//            return AnyView(Intro3View(introVgroeiberekeningWithoutAccountViewModeliewModel : self.groeiberekeningWithoutAccountViewModel))
+        case 1:
+            return AnyView(RegisterPagerView())
+        case 2:
+            return AnyView(GroeiberekeningIntroWithoutAccount(groeiberekeningWithoutAccountViewModel : self.groeiberekeningWithoutAccountViewModel))
+        case 3:
+            return AnyView(Groeiberekeningstap1WithoutAccount(groeiberekeningWithoutAccountViewModel : self.groeiberekeningWithoutAccountViewModel))
+        case 4:
+            return AnyView(Groeiberekeningstap2WithoutAccount(groeiberekeningWithoutAccountViewModel : self.groeiberekeningWithoutAccountViewModel))
+        case 5:
+            return AnyView(Groeiberekeningstap3WithoutAccount(groeiberekeningWithoutAccountViewModel : self.groeiberekeningWithoutAccountViewModel))
+        case 6:
+            return AnyView(Groeiberekeningstap4WithoutAccount(groeiberekeningWithoutAccountViewModel : self.groeiberekeningWithoutAccountViewModel))
+        case 7:
+            return AnyView(Groeiberekeningstap4WithoutAccount(groeiberekeningWithoutAccountViewModel : self.groeiberekeningWithoutAccountViewModel))
         default:
             return AnyView(ConsWithoutAccount(groeiberekeningWithoutAccountViewModel : self.groeiberekeningWithoutAccountViewModel))
         }

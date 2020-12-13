@@ -25,7 +25,7 @@ struct MainPagerView: View {
             }
             .pagingPriority(.simultaneous)
             .itemSpacing(10)
-//            .navigationBarTitle("MainPager", displayMode: .inline)
+            .navigationBarTitle("MainPager", displayMode: .inline)
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }

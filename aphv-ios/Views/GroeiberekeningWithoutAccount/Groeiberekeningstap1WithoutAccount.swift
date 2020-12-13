@@ -25,7 +25,7 @@ struct Groeiberekeningstap1WithoutAccount: View {
             
             InputTextFieldView(stateBinding: $dateOfBirth, title: "Geboortedatum", placeholder: "01-01-1980", secureTextField: false)
             
-            Button(action: {self.groeiberekeningWithoutAccountViewModel.pageIndex = 2}, label: {
+            Button(action: {self.groeiberekeningWithoutAccountViewModel.pageIndex = 4}, label: {
                 Text("Beginnen")
                     .fontWeight(.bold)
                     .frame(maxWidth: 250, minHeight: 44)

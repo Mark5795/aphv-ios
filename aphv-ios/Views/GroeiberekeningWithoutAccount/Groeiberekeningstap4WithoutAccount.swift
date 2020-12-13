@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct Groeiberekeningstap4WithoutAccount: View {
+    
+    @ObservedObject var groeiberekeningWithoutAccountViewModel : GroeiberekeningWithoutAccountViewModel
+    
     @State var gewicht: String = ""
     
     var body: some View {
@@ -76,31 +79,17 @@ struct Groeiberekeningstap4WithoutAccount: View {
                             .cornerRadius(/*@START_MENU_TOKEN@*/5.0/*@END_MENU_TOKEN@*/)
                     }
                     
-                    NavigationLink(destination: GroeiberekeningResultaat()) {
+                    Button(action: {self.groeiberekeningWithoutAccountViewModel.pageIndex = 7}, label: {
                         Text("Bereken")
                             .font(.system(size: 20))
                             .fontWeight(.medium)
                             .foregroundColor(Color.white)
                             .multilineTextAlignment(.center)
                             
-                    }
+                    })
                         .frame(width: 335.0, height: 45.0)
                         .background(Color("ASMgreen"))
                         .cornerRadius(5)
-                        .zIndex(0)
-//                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-//                        Text("Bereken")
-//                            .font(.system(size: 20))
-//                            .fontWeight(.medium)
-//                            .foregroundColor(Color.white)
-//                            .multilineTextAlignment(.center)
-//                            
-//                    }
-//                        .frame(width: 335.0, height: 45.0)
-//                        .background(Color("ASMgreen"))
-//                        .cornerRadius(5)
-//                        .zIndex(0)
-//                    })
                 }
             }
         }
@@ -109,6 +98,6 @@ struct Groeiberekeningstap4WithoutAccount: View {
 
 struct Groeiberekeningstap4WithoutAccount_Previews: PreviewProvider {
     static var previews: some View {
-        Groeiberekeningstap4WithoutAccount()
+        Groeiberekeningstap4WithoutAccount(groeiberekeningWithoutAccountViewModel : GroeiberekeningWithoutAccountViewModel())
     }
 }

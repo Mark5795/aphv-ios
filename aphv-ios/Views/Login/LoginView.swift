@@ -29,7 +29,7 @@ struct LoginView: View {
                     InputTextFieldView(stateBinding: $password, title: "Wachtwoord", placeholder: "", secureTextField: true)
                     
                     Button(action: {
-                        userViewModel.email = self.email
+                        userViewModel.email = self.email.lowercased()
                         userViewModel.password = self.password
                         
                         userViewModel.sendLoginUserRequest()

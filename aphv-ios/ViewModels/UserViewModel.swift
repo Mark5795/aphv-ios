@@ -10,7 +10,7 @@ import Combine
 
 class UserViewModel: ObservableObject {
     
-//    var passwordCheck : String = ""
+    //    var passwordCheck : String = ""
     var checkedConditions : Bool = false
     var checkedApproval : Bool = false
     
@@ -35,20 +35,43 @@ class UserViewModel: ObservableObject {
         self.userModel = userModel
     }
     
-//    func updateUserModel(role : String, firstName : String, lastName : String, sport : String, gender : String, dateOfBirth : String, email : String, password : String, passwordCheck : String, checkedConditions : Bool, checkedApproval: Bool) {
-//
-//        userModel.role = role
-//        userModel.firstName = firstName
-//        userModel.lastName = lastName
-//        userModel.sport = sport
-//        userModel.gender = gender
-//        userModel.dateOfBirth = dateOfBirth
-//        userModel.email = email
-//        userModel.password = password
-//        self.passwordCheck = passwordCheck
-//        self.checkedConditions = checkedConditions
-//        self.checkedApproval = checkedApproval
-//    }
+    func updateUserModel(role : String, firstName : String, lastName : String, sport : String, gender : String, dateOfBirth : String, email : String, password : String, passwordCheck : String, checkedConditions : Bool, checkedApproval: Bool) {
+        
+        userModel.role = role
+        userModel.firstName = firstName
+        userModel.lastName = lastName
+        userModel.sport = sport
+        userModel.gender = gender
+        userModel.dateOfBirth = dateOfBirth
+        userModel.email = email
+        userModel.password = password
+        self.passwordCheck = passwordCheck
+        self.checkedConditions = checkedConditions
+        self.checkedApproval = checkedApproval
+    }
+    
+    func updateLoginUserModel(email : String, password : String)
+    {
+        userModel.email = email
+        userModel.password = password
+    }
+    
+    func sendLoginUserRequest() {
+        //        if (checkConditions()) {
+        updateLoginUserModel(email: email, password: password)
+        LoginService.shared.Login(userModel: userModel) { (result) in
+            switch result {
+            case .success(_):
+                self.alertTitle = "Je account is aangemaakt!"
+                self.alertMessage = "Druk op de bevestigingslink in je email om je account te activeren."
+                self.alertSucces = true
+            case .failure(_):
+                self.alertTitle = "Registreren Mislukt"
+                self.alertMessage = "Het registreren is mislukt, heb je een goede wifi verbinding? Probeer het nog een keer."
+            }
+        }
+        //        }
+    }
     
     func checkConditions() -> Bool {
         if (checkUserInput() == false) {
@@ -82,21 +105,21 @@ class UserViewModel: ObservableObject {
     }
     
     func checkCheckedConditions() -> Bool {
-    if(checkedConditions) {
+        if(checkedConditions) {
             return true
         }
         return false
     }
     
     func checkCheckedApproval() -> Bool {
-    if(checkedApproval) {
+        if(checkedApproval) {
             return true
         }
         return false
     }
     
     func checkPasswordMatch() -> Bool {
-    if(passwordCheck == userModel.password) {
+        if(passwordCheck == userModel.password) {
             return true
         }
         return false

@@ -8,27 +8,42 @@
 import SwiftUI
 
 struct LoginView: View {
+    
+    @ObservedObject var userViewModel = UserViewModel(userModel: UserModel())
+    
+    @State var email: String = ""
+    @State var password: String = ""
+    
     var body: some View {
         NavigationView {
             VStack() {
                 ZStack() {
                     TopCurve(title: "Aanmelden")
-                    
                 }
                 .navigationTitle(Text(""))
                 .zIndex(0)
                 
                 VStack(alignment: .leading) {
+                    InputTextFieldView(stateBinding: $email, title: "Emailadres", placeholder: "", secureTextField: false)
                     
-                    Text("Voornaam")
-//                    SecureField()
-//                        .padding()
-//                        .background(Color.InputFieldLightGrey)
-//                        .border(Color.BorderGrey, width: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
-//                        .cornerRadius(/*@START_MENU_TOKEN@*/5.0/*@END_MENU_TOKEN@*/)
+                    InputTextFieldView(stateBinding: $password, title: "Wachtwoord", placeholder: "", secureTextField: true)
                     
-                }
-                .padding(.horizontal, 25.0)
+                    Button(action: {
+                        userViewModel.email = self.email
+                        userViewModel.password = self.password
+                        
+                        userViewModel.sendLoginUserRequest()
+//                        self.showingErrorAlert.toggle()
+                    }, label: {
+                        Text("Aanmaken")
+                            .fontWeight(.bold)
+                            .frame(maxWidth: .infinity, minHeight: 44)
+                            .foregroundColor(.white)
+                    })
+                    .background(Color.ASMgreen)
+                    .cornerRadius(8.0)
+                    
+                }.padding(.horizontal, 25.0)
             }
         }
     }

@@ -35,7 +35,8 @@ struct MainPagerView: View {
         let introViews = mainViewModel.pageIndex
         switch introViews {
         case 0:
-            return AnyView(LandingPage(mainViewModel : self.mainViewModel))
+//            return AnyView(LandingPage(mainViewModel : self.mainViewModel))
+            return AnyView(LandingPage())
         case 1:
             return AnyView(RegisterPagerView())
         case 2:

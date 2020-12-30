@@ -10,11 +10,11 @@ import Foundation
 import Combine
 //import KeychainAccess
 
-enum RequestError: Error {
-    case urlError(URLError)
-	case decodingError(DecodingError)
-    case genericError(Error)
-}
+//enum RequestError: Error {
+//    case urlError(URLError)
+//	case decodingError(DecodingError)
+//    case genericError(Error)
+//}
 
 final class RegisterService: ObservableObject {
     

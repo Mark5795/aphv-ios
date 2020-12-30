@@ -28,7 +28,7 @@ struct IntroPagerView: View {
             .itemSpacing(10)
             .navigationBarTitle("SwiftUIPager", displayMode: .inline)
         }
-        .navigationViewStyle(StackNavigationViewStyle())
+//        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     //Get pageIndex from the viewModel
@@ -42,7 +42,31 @@ struct IntroPagerView: View {
         case 2:
             return AnyView(Intro3View(introViewModel : self.introViewModel))
         case 3:
-            return AnyView(MainPagerView())
+//            return AnyView(MainPagerView())
+//            return AnyView(NavigationLink(
+//                destination: LandingPage(),
+//                label: {
+//                    Text("Navigate")
+//                }))
+            return AnyView(
+                NavigationView {
+                    VStack {
+                        Image("ASMLogo")
+                        Spacer()
+                        
+                        Text("Een account aanmaken is nodig om \ngoed je groei in meting te brengen en de \nresultaten te kunnen delen met je coach.")
+                            .multilineTextAlignment(.center)
+                            .frame(width: 310.0, height: 175.0)
+                        
+                        NavigationLink(
+                            "registeren",
+                            destination: RegisterPagerView()
+                        )
+                        .isDetailLink(false)
+                        
+                    }
+                }
+            )
         default:
             return AnyView(Intro1View(introViewModel : self.introViewModel))
         }

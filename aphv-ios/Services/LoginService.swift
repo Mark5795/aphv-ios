@@ -18,7 +18,7 @@ final class LoginService: ObservableObject {
     func Login(userModel : UserModel, completion: @escaping (Result<LoginResponse, RequestError>) -> Void) {
         
         let api = "https://aphv.azurewebsites.net"
-        let endpoint = "/api/login/?role=user"
+        let endpoint = "/api/login/?environment=user"
         let url = URL(string: api + endpoint)!
         
         var urlRequest = URLRequest(url: url)

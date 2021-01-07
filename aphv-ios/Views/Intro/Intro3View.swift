@@ -10,6 +10,7 @@ import SwiftUI
 struct Intro3View: View {
     @State var isFlowStarted: Bool = false
     @ObservedObject var introViewModel : IntroViewModel
+    @State var isMainPresented: Bool = false
     
     var body: some View {
         NavigationView {
@@ -31,16 +32,19 @@ struct Intro3View: View {
                 Spacer()
                 
                 HStack {
+//                    Button("Overslaan") {
+//                        self.isMainPresented = true
+//                    }
+//                    .background(Color.ASMgreen)
+//                    .cornerRadius(8.0)
+//                    .fontWeight(.bold)
+//                    .frame(maxWidth: 250, minHeight: 44)
+//                    .foregroundColor(.white)
+//                    .fullScreenCover(isPresented: $isMainPresented) {
+//                        LandingPage()
+//                    }
                     
-                    //                    NavigationLink(
-                    //                        "Start flow",
-                    //                        destination: LandingPage(),
-                    //                        isActive: $isFlowStarted
-                    //                    )
-                    //                    .isDetailLink(false)
-                    ////                    .navigationTitle("Flow Example")
-                    //                }
-                    Button(action: {self.introViewModel.pageIndex = 3}, label: {
+                    Button(action: {self.isMainPresented.toggle()}, label: {
                         Text("Beginnen")
                             .fontWeight(.bold)
                             .frame(maxWidth: 250, minHeight: 44)

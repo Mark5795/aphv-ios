@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
+    @State var isMainPresented: Bool = false
     
     var firstTime : Bool = false
     var introPagerView = IntroPagerView()
@@ -18,7 +19,8 @@ struct MainView: View {
     
     func checkFirstTime() {
         if (firstTime) {
-            AnyView(introPagerView)
+
+            
         }
     }
 

@@ -9,19 +9,20 @@ import SwiftUI
 
 struct Intro1View: View {
     @ObservedObject var introViewModel : IntroViewModel
-    
+    @State var isMainPresented: Bool = false
     
     var body: some View {
         VStack(alignment: .center) {
             HStack {
                 Spacer()
                 
-                Button(action: {self.introViewModel.pageIndex = 3}, label: {
-                    Text("Overslaan")
-                        .fontWeight(.bold)
-                        .foregroundColor(Color.black)
-                        .padding(.trailing)
-                })
+                Button("Overslaan") {
+                    self.isMainPresented = true
+                }
+                .padding(.trailing, 10)
+                .fullScreenCover(isPresented: $isMainPresented) {
+                    LandingPage()
+                }
             }
                         
             Image("SportendMeisje1")
@@ -70,5 +71,6 @@ struct Intro1View: View {
 struct Intro1View_Previews: PreviewProvider {
     static var previews: some View {
         Intro1View(introViewModel: IntroViewModel())
+//        Intro1View()
     }
 }

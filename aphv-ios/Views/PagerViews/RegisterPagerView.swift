@@ -43,10 +43,9 @@ struct RegisterPagerView: View {
             return AnyView(RegisterSporterView(registerViewModel : self.registerViewModel))
         case 2:
             return AnyView(RegisterCoachView(registerViewModel : self.registerViewModel))
-        case 3:
-            return AnyView(GroeiberekeningWithoutAccountPagerView())
         default:
             return AnyView(Intro1View(introViewModel : self.introViewModel))
+//            return AnyView(Intro1View())
         }
     }
 }

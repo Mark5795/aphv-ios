@@ -8,13 +8,21 @@
 import SwiftUI
 
 struct LandingPage: View {
+    @State var isMainPresented: Bool = false
+    @State var isIntroPresented: Bool = true
     
     @State var isFlowStarted: Bool = false
+    
+
     
     var body: some View {
         NavigationView {
             VStack {
                 Image("ASMLogo")
+                    .fullScreenCover(isPresented: $isIntroPresented) {
+                        IntroPagerView()
+                    }
+                
                 Spacer()
                 
                 Text("Een account aanmaken is nodig om \ngoed je groei in meting te brengen en de \nresultaten te kunnen delen met je coach.")
@@ -27,8 +35,13 @@ struct LandingPage: View {
                     isActive: $isFlowStarted
                 )
                 .isDetailLink(false)
-                .navigationTitle("Flow Example")
                 
+                Button("Verdergaan zonder account") {
+                    self.isMainPresented = true
+                }
+                .fullScreenCover(isPresented: $isMainPresented) {
+                    ConsWithoutAccount()
+                }
             }
         }
     }

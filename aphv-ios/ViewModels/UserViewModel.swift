@@ -9,8 +9,7 @@ import SwiftUI
 import Combine
 
 class UserViewModel: ObservableObject {
-    
-    //    var passwordCheck : String = ""
+
     var checkedConditions : Bool = false
     var checkedApproval : Bool = false
     
@@ -36,7 +35,7 @@ class UserViewModel: ObservableObject {
     }
     
     func updateUserModel(role : String, firstName : String, lastName : String, sport : String, gender : String, dateOfBirth : String, email : String, password : String, passwordCheck : String, checkedConditions : Bool, checkedApproval: Bool) {
-        
+
         userModel.role = role
         userModel.firstName = firstName
         userModel.lastName = lastName
@@ -49,7 +48,7 @@ class UserViewModel: ObservableObject {
         self.checkedConditions = checkedConditions
         self.checkedApproval = checkedApproval
     }
-    
+
     func updateLoginUserModel(email : String, password : String)
     {
         userModel.email = email

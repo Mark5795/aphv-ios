@@ -8,8 +8,18 @@
 import SwiftUI
 
 struct HomeSporter: View {
+    @State var isMainPresented: Bool = false
+//    let localStorage = LocalStorage()
+    
     var body: some View {
-        TabBarSporterOud()
+        NavigationView {
+            Button("start intro") {
+                self.isMainPresented = true
+            }
+            .fullScreenCover(isPresented: $isMainPresented) {
+                LandingPage()
+            }
+        }
     }
 }
 

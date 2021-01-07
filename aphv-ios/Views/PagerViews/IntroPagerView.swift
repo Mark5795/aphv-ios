@@ -37,36 +37,14 @@ struct IntroPagerView: View {
         switch introViews {
         case 0:
             return AnyView(Intro1View(introViewModel : self.introViewModel))
+//            return AnyView(Intro1View())
         case 1:
             return AnyView(Intro2View(introViewModel : self.introViewModel))
         case 2:
             return AnyView(Intro3View(introViewModel : self.introViewModel))
-        case 3:
-//            return AnyView(MainPagerView())
-//            return AnyView(NavigationLink(
-//                destination: LandingPage(),
-//                label: {
-//                    Text("Navigate")
-//                }))
-            return AnyView(
-                NavigationView {
-                    VStack {
-                        Image("ASMLogo")
-                        Spacer()
-                        
-                        Text("Een account aanmaken is nodig om \ngoed je groei in meting te brengen en de \nresultaten te kunnen delen met je coach.")
-                            .multilineTextAlignment(.center)
-                            .frame(width: 310.0, height: 175.0)
-                        
-                        NavigationLink(
-                            "registeren",
-                            destination: RegisterPagerView()
-                        )
-                        .isDetailLink(false)
-                        
-                    }
-                }
-            )
+//        case 3:
+            
+            
         default:
             return AnyView(Intro1View(introViewModel : self.introViewModel))
         }

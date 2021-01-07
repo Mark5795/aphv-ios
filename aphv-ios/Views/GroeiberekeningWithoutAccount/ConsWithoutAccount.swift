@@ -8,66 +8,69 @@
 import SwiftUI
 
 struct ConsWithoutAccount: View {
-    
-    @ObservedObject var groeiberekeningWithoutAccountViewModel : GroeiberekeningWithoutAccountViewModel
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-        VStack {
-            
-            Group {
-                Text("Nadelen geen account")
-                    .fontWeight(.bold)
-                    .padding(.top, 30.0)
-                
-                Text("Je moet bij elke berekening jouw geboortedatum en geslacht invullen.")
-                    .multilineTextAlignment(.leading)
-                    .padding(.trailing, 50.0)
-                    .padding(.top)
+        NavigationView{
+            VStack {
+                Group {
+                    Text("Nadelen geen account")
+                        .fontWeight(.bold)
+                        .padding(.top, 30.0)
                     
-                Text("Met een account wordt dit voor je bewaard.")
-                    .padding(.bottom)
+                    Text("Je moet bij elke berekening jouw geboortedatum en geslacht invullen.")
+                        .multilineTextAlignment(.leading)
+                        .padding(.trailing, 50.0)
+                        .padding(.top)
+                    
+                    Text("Met een account wordt dit voor je bewaard.")
+                        .padding(.bottom)
+                    
+                    Text("Je kan geen groeiberekeningen resultaten bewaren.")
+                        .padding(.bottom)
+                    
+                    Text("Je kan niet je resultaat uit de groeiberekening met bijvoorbeeld je coach of arts delen.")
+                        .padding(.bottom)
+                    
+                    Text("Je kan niet je groeiberekeningen resultaten vergelijken met die van de gemiddelde jongens of meisjes.")
+                }
+                .padding(.horizontal, 20.0)
                 
-                Text("Je kan geen groeiberekeningen resultaten bewaren.")
-                    .padding(.bottom)
+                Spacer()
                 
-                Text("Je kan niet je resultaat uit de groeiberekening met bijvoorbeeld je coach of arts delen.")
-                    .padding(.bottom)
+                Button(action: {presentationMode.wrappedValue.dismiss()}, label: {
+                    Text("Account Aanmaken")
+                        .fontWeight(.bold)
+                        .frame(maxWidth: 310, minHeight: 44)
+                        .foregroundColor(.white)
+                })
+                .background(Color.ASMgreen)
+                .cornerRadius(8.0)
                 
-                Text("Je kan niet je groeiberekeningen resultaten vergelijken met die van de gemiddelde jongens of meisjes.")
+                
+                //For spacing
+                Text("")
+                    .padding(.vertical, 1.0)
+                
+                NavigationLink(
+                    destination: GroeiberekeningWithoutAccountPagerView(),
+                    label: {
+                        Text("Verdergaan zonder account")
+                            .fontWeight(.bold)
+                            .frame(maxWidth: 310
+                                   , minHeight: 44)
+                            .foregroundColor(.white)
+                    })
+                    .background(Color.ASMgreen)
+                    .cornerRadius(8.0)
             }
-            .padding(.horizontal, 20.0)
-            
-            Spacer()
-            
-            Button(action: {self.groeiberekeningWithoutAccountViewModel.pageIndex = 1}, label: {
-                Text("Account Aanmaken")
-                    .fontWeight(.bold)
-                    .frame(maxWidth: 310, minHeight: 44)
-                    .foregroundColor(.white)
-            })
-            .background(Color.ASMgreen)
-            .cornerRadius(8.0)
-            
-            
-            //For spacing
-            Text("")
-                .padding(.vertical, 1.0)
-            
-            Button(action: {self.groeiberekeningWithoutAccountViewModel.pageIndex = 2}, label: {
-                Text("Verdergaan zonder account")
-                    .fontWeight(.bold)
-                    .frame(maxWidth: 310
-                           , minHeight: 44)
-                    .foregroundColor(.white)
-            })
-            .background(Color.ASMgreen)
-            .cornerRadius(8.0)
         }
     }
 }
 
 struct ConsWithoutAccount_Previews: PreviewProvider {
     static var previews: some View {
-        ConsWithoutAccount(groeiberekeningWithoutAccountViewModel : GroeiberekeningWithoutAccountViewModel())
+        //        ConsWithoutAccount(groeiberekeningWithoutAccountViewModel : GroeiberekeningWithoutAccountViewModel())
+        ConsWithoutAccount()
     }
 }

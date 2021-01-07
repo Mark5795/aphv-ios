@@ -91,7 +91,7 @@ struct Groeiberekeningstap2WithoutAccount: View {
                             .cornerRadius(/*@START_MENU_TOKEN@*/5.0/*@END_MENU_TOKEN@*/)
                     }
                     
-                    Button(action: { self.groeiberekeningWithoutAccountViewModel.pageIndex = 5
+                    Button(action: { self.groeiberekeningWithoutAccountViewModel.pageIndex = 3
                         self.groeiberekeningWithoutAccountViewModel.lengte = lengte }, label: {
                         Text("Stap 2")
                             .fontWeight(.bold)

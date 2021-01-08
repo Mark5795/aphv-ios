@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct Intro3View: View {
-    @State var isFlowStarted: Bool = false
     @ObservedObject var introViewModel : IntroViewModel
-    @State var isMainPresented: Bool = false
+    @State var isLandingPresented: Bool = false
+    let localStorage = LocalStorage()
     
     var body: some View {
         NavigationView {
             VStack(alignment: .center) {
                 
                 Image("SportendMeisje2")
-                    .padding(.top, 100.0)
+                    .padding(.top, 40.0)
                 
                 Text("Verminder blessures")
                     .font(.system(size: 26))
@@ -31,29 +31,19 @@ struct Intro3View: View {
                 
                 Spacer()
                 
-                HStack {
-//                    Button("Overslaan") {
-//                        self.isMainPresented = true
-//                    }
-//                    .background(Color.ASMgreen)
-//                    .cornerRadius(8.0)
-//                    .fontWeight(.bold)
-//                    .frame(maxWidth: 250, minHeight: 44)
-//                    .foregroundColor(.white)
-//                    .fullScreenCover(isPresented: $isMainPresented) {
-//                        LandingPage()
-//                    }
-                    
-                    Button(action: {self.isMainPresented.toggle()}, label: {
-                        Text("Beginnen")
-                            .fontWeight(.bold)
-                            .frame(maxWidth: 250, minHeight: 44)
-                            .foregroundColor(.white)
-                    })
-                    .background(Color.ASMgreen)
-                    .cornerRadius(8.0)
+                Button(action: {self.localStorage.hasSeenIntro = true; self.isLandingPresented = true}, label: {
+                    Text("Beginnen")
+                        .fontWeight(.bold)
+                        .frame(maxWidth: 250, minHeight: 44)
+                        .foregroundColor(.white)
+                })
+                .fullScreenCover(isPresented: $isLandingPresented) {
+                    LandingPage()
                 }
-                .padding(.bottom, 30.0)
+                .background(Color.ASMgreen)
+                .cornerRadius(8.0)
+                
+                Spacer()
             }
         }
     }

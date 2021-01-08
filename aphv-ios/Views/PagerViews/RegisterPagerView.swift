@@ -27,10 +27,10 @@ struct RegisterPagerView: View {
                 self.pageView($0)
             }
             .pagingPriority(.simultaneous)
-            .itemSpacing(10)
-            .navigationBarTitle("SwiftUIPager", displayMode: .inline)
+//            .itemSpacing(10)
+//            .navigationBarTitle("SwiftUIPager", displayMode: .inline)
         }
-        .navigationViewStyle(StackNavigationViewStyle())
+//        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     //Get pageIndex from the viewModel
@@ -44,8 +44,7 @@ struct RegisterPagerView: View {
         case 2:
             return AnyView(RegisterCoachView(registerViewModel : self.registerViewModel))
         default:
-            return AnyView(Intro1View(introViewModel : self.introViewModel))
-//            return AnyView(Intro1View())
+            return AnyView(RegisterChooseRole(registerViewModel : self.registerViewModel))
         }
     }
 }

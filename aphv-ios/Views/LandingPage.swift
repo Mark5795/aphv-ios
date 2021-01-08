@@ -8,20 +8,13 @@
 import SwiftUI
 
 struct LandingPage: View {
-    @State var isMainPresented: Bool = false
-    @State var isIntroPresented: Bool = true
-    
+    @State var isWithoutAccountPresented: Bool = false
     @State var isFlowStarted: Bool = false
-    
-
     
     var body: some View {
         NavigationView {
             VStack {
                 Image("ASMLogo")
-                    .fullScreenCover(isPresented: $isIntroPresented) {
-                        IntroPagerView()
-                    }
                 
                 Spacer()
                 
@@ -30,18 +23,33 @@ struct LandingPage: View {
                     .frame(width: 310.0, height: 175.0)
                 
                 NavigationLink(
-                    "registeren",
                     destination: RegisterPagerView(),
-                    isActive: $isFlowStarted
-                )
-                .isDetailLink(false)
+                    label: {
+                        Text("Registeren")
+                            .fontWeight(.bold)
+                            .frame(maxWidth: 250, minHeight: 44)
+                            .foregroundColor(.white)
+                    })
+                    .background(Color.ASMgreen)
+                    .cornerRadius(8.0)
                 
-                Button("Verdergaan zonder account") {
-                    self.isMainPresented = true
-                }
-                .fullScreenCover(isPresented: $isMainPresented) {
+                Spacer()
+                    .frame(height: 30)
+                
+                Button(action: { self.isWithoutAccountPresented = true}, label: {
+                    Text("Verdergaan zonder account")
+                        .fontWeight(.bold)
+                        .frame(maxWidth: 250, minHeight: 44)
+                        .foregroundColor(.white)
+                })
+                .fullScreenCover(isPresented: $isWithoutAccountPresented) {
                     ConsWithoutAccount()
                 }
+                .background(Color.ASMgreen)
+                .cornerRadius(8.0)
+                
+                Spacer()
+                    .frame(height: 30)
             }
         }
     }

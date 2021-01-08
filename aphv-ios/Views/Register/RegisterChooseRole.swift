@@ -54,6 +54,8 @@ struct RegisterChooseRole: View {
             .background(Color.InputFieldLightGrey)
             .border(Color.BorderGrey, width: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
             .cornerRadius(/*@START_MENU_TOKEN@*/5.0/*@END_MENU_TOKEN@*/)
+            
+            Spacer()
         }
     }
 }

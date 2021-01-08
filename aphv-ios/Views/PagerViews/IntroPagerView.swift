@@ -10,13 +10,13 @@ import SwiftUIPager
 import Combine
 
 struct IntroPagerView: View {
-      
+    
     @ObservedObject var introViewModel = IntroViewModel()
     
     @State var pageIndex = 0
     
     var items = Array(0..<3)
-        
+    
     var body: some View {
         NavigationView {
             Pager(page: $pageIndex,
@@ -25,10 +25,7 @@ struct IntroPagerView: View {
                 self.pageView($0)
             }
             .pagingPriority(.simultaneous)
-            .itemSpacing(10)
-            .navigationBarTitle("SwiftUIPager", displayMode: .inline)
         }
-//        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     //Get pageIndex from the viewModel
@@ -37,14 +34,11 @@ struct IntroPagerView: View {
         switch introViews {
         case 0:
             return AnyView(Intro1View(introViewModel : self.introViewModel))
-//            return AnyView(Intro1View())
+        //            return AnyView(Intro1View())
         case 1:
             return AnyView(Intro2View(introViewModel : self.introViewModel))
         case 2:
             return AnyView(Intro3View(introViewModel : self.introViewModel))
-//        case 3:
-            
-            
         default:
             return AnyView(Intro1View(introViewModel : self.introViewModel))
         }

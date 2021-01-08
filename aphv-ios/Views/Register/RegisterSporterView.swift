@@ -37,9 +37,7 @@ struct RegisterSporterView: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                VStack() {
-                    
-                    
+//                VStack() {
                     VStack(alignment: .leading) {
                         Group {
                             Text("Kies je rol")
@@ -187,7 +185,7 @@ struct RegisterSporterView: View {
 //    .alert(isPresented: $showingErrorAlert) {
 //    Alert(title: Text(userViewModel.alertTitle), message: Text(userViewModel.alertMessage), dismissButton: .default(Text("Oke"), action: {self.showHomeSporter = true}))
 //    }
-}
+//}
 
 struct RegistreerSporterView_Previews: PreviewProvider {
     static var previews: some View {

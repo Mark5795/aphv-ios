@@ -10,35 +10,38 @@ import SwiftUI
 class LocalStorage {
     let userDefaults = UserDefaults.standard
     
-    var hasSeenOnboarding: Bool {
+    var hasSeenIntro: Bool {
         get {
-            return userDefaults.bool(forKey: "onboarding")
+            return userDefaults.bool(forKey: "seenIntro")
         }
         set {
-            userDefaults.set(newValue, forKey: "onboarding")
+            userDefaults.set(newValue, forKey: "seenIntro")
+        }
+    }
+    
+    var createdAccount: Bool {
+        get {
+            return userDefaults.bool(forKey: "createdAccount")
+        }
+        set {
+            userDefaults.set(newValue, forKey: "createdAccount")
         }
     }
 }
 
 @main
 struct aphv_iosApp: App {
-        
-    var firstTime : Bool = true
-    var loggedIn : Bool = false
-    var introPagerView = IntroPagerView()
-    
-
+    let localStorage = LocalStorage()
     
     var body: some Scene {
         WindowGroup {
-            if(loggedIn) {
+            if(localStorage.createdAccount) {
                 HomeSporter()
             }
-            if (firstTime) {
-//                AnyView(introPagerView)
+            if (localStorage.hasSeenIntro) {
                 LandingPage()
             } else {
-                LandingPage()
+                IntroPagerView()
             }
         }
     }

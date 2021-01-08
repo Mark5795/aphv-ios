@@ -9,7 +9,8 @@ import SwiftUI
 
 struct Intro1View: View {
     @ObservedObject var introViewModel : IntroViewModel
-    @State var isMainPresented: Bool = false
+    @State var isIntroPresented: Bool = false
+    let localStorage = LocalStorage()
     
     var body: some View {
         VStack(alignment: .center) {
@@ -17,10 +18,12 @@ struct Intro1View: View {
                 Spacer()
                 
                 Button("Overslaan") {
-                    self.isMainPresented = true
+                    self.isIntroPresented = true
+                    self.localStorage.hasSeenIntro = true
                 }
-                .padding(.trailing, 10)
-                .fullScreenCover(isPresented: $isMainPresented) {
+                .foregroundColor(.black)
+                .padding(.trailing, 20)
+                .fullScreenCover(isPresented: $isIntroPresented) {
                     LandingPage()
                 }
             }

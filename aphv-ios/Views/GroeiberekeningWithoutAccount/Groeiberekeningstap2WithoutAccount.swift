@@ -14,7 +14,6 @@ struct Groeiberekeningstap2WithoutAccount: View {
     @State var lengte: String = ""
     
     var body: some View {
-        NavigationView {
             ZStack {
                 TopCurve(title: "Groeiberekening")
                 VStack {
@@ -54,31 +53,35 @@ struct Groeiberekeningstap2WithoutAccount: View {
                                 .foregroundColor(.ASMgreen)
                         }
                     }
+                    
+                    Spacer()
+                    
                     HStack {
                         Image("TotaleLengteMannetje")
-//                            .position(x: 72.24, y: 300)
                         
                         VStack(alignment: .leading){
                             Text("Hoofd, schouders, billen en hakken tegen de muur aan")
+                                .frame(height: 75)
                             
                             Text("Kijk recht vooruit")
-                                .padding(.top, 15.0)
+                                .frame(height: 25)
                             
                             Text("Ontspan je schouders")
-                                .padding(.top, 15.0)
+                                .frame(height: 50)
                             
                             Text("Hang je armen ontspannen langs je lichaam")
-                                .padding(.top, 15.0)
+                                .frame(height: 50)
                             
                             Text("Houd je benen recht met je knieen tegen elkaar aan")
-                                .padding(.top, 15.0)
+                                .frame(height: 75)
                             
                             Text("Schoenen uit en enkels bijna tegen elkaar aan")
-                                .padding(.top, 15.0)
+                                .frame(height: 50)
                         }
                         .frame(width: 210.0)
-//                        .position(x: 40, y: 300)
                     }
+                    
+                    Spacer()
                     
                     VStack(alignment: .leading) {
                         Text("Lengte in cm")
@@ -117,7 +120,6 @@ struct Groeiberekeningstap2WithoutAccount: View {
             }
         }
     }
-}
 
 struct Groeiberekeningstap2WithoutAccount_Previews: PreviewProvider {
     static var previews: some View {

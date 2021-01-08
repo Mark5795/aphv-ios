@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LandingPage: View {
+    
     @State var isWithoutAccountPresented: Bool = false
     @State var isFlowStarted: Bool = false
     
@@ -23,13 +24,15 @@ struct LandingPage: View {
                     .frame(width: 310.0, height: 175.0)
                 
                 NavigationLink(
-                    destination: RegisterPagerView(),
+                    destination: RegisterChooseRole(isFlowStarted: $isFlowStarted),
+                    isActive: $isFlowStarted,
                     label: {
                         Text("Registeren")
                             .fontWeight(.bold)
-                            .frame(maxWidth: 250, minHeight: 44)
+                            .frame(maxWidth: 325, minHeight: 44)
                             .foregroundColor(.white)
                     })
+                    .isDetailLink(false)
                     .background(Color.ASMgreen)
                     .cornerRadius(8.0)
                 
@@ -39,7 +42,7 @@ struct LandingPage: View {
                 Button(action: { self.isWithoutAccountPresented = true}, label: {
                     Text("Verdergaan zonder account")
                         .fontWeight(.bold)
-                        .frame(maxWidth: 250, minHeight: 44)
+                        .frame(maxWidth: 325, minHeight: 44)
                         .foregroundColor(.white)
                 })
                 .fullScreenCover(isPresented: $isWithoutAccountPresented) {

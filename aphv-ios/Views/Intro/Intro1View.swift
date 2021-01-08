@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Intro1View: View {
     @ObservedObject var introViewModel : IntroViewModel
+    
     @State var isIntroPresented: Bool = false
     let localStorage = LocalStorage()
     
@@ -71,9 +72,8 @@ struct Intro1View: View {
     }
 }
 
-struct Intro1View_Previews: PreviewProvider {
-    static var previews: some View {
-        Intro1View(introViewModel: IntroViewModel())
+//struct Intro1View_Previews: PreviewProvider {
+//    static var previews: some View {
 //        Intro1View()
-    }
-}
+//    }
+//}

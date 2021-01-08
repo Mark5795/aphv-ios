@@ -10,6 +10,8 @@ import SwiftUI
 struct ConsWithoutAccount: View {
     @Environment(\.presentationMode) var presentationMode
     
+    @State var pageIndex = 0
+    
     var body: some View {
         NavigationView{
             VStack {
@@ -53,7 +55,7 @@ struct ConsWithoutAccount: View {
                     .padding(.vertical, 1.0)
                 
                 NavigationLink(
-                    destination: GroeiberekeningWithoutAccountPagerView(),
+                    destination: GroeiberekeningWithoutAccountPagerView(pageIndex: $pageIndex),
                     label: {
                         Text("Verdergaan zonder account")
                             .fontWeight(.bold)

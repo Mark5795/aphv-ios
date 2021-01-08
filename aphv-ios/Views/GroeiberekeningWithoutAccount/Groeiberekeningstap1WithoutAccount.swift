@@ -15,8 +15,9 @@ struct Groeiberekeningstap1WithoutAccount: View {
     @State var dateOfBirth: String = ""
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             Text("Zonder account onthoud de app jouw geboortedatum en geslacht niet. Vul de volgende velden in.")
+                .multilineTextAlignment(.center)
             
             Group {
                 Text("Geslacht")
@@ -25,16 +26,19 @@ struct Groeiberekeningstap1WithoutAccount: View {
             
             InputTextFieldView(stateBinding: $dateOfBirth, title: "Geboortedatum", placeholder: "01-01-1980", secureTextField: false)
             
+
+            Spacer()
+            
             Button(action: {self.groeiberekeningWithoutAccountViewModel.pageIndex = 2}, label: {
-                Text("Beginnen")
+                Text("Volgende")
                     .fontWeight(.bold)
-                    .frame(maxWidth: 250, minHeight: 44)
+                    .frame(maxWidth: 325, minHeight: 44)
                     .foregroundColor(.white)
             })
             .background(Color.ASMgreen)
             .cornerRadius(8.0)
             
-        }
+        }.padding(.horizontal, 25.0)
     }
 }
 

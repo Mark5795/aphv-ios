@@ -62,9 +62,9 @@ struct Intro2View: View {
     }
 }
 
-struct Intro2View_Previews: PreviewProvider {
-    static var previews: some View {
-        Intro2View(introViewModel: IntroViewModel())
-    }
-}
+//struct Intro2View_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Intro2View()
+//    }
+//}
 

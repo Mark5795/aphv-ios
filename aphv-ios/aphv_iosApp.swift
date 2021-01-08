@@ -9,6 +9,7 @@ import SwiftUI
 
 class LocalStorage {
     let userDefaults = UserDefaults.standard
+
     
     var hasSeenIntro: Bool {
         get {

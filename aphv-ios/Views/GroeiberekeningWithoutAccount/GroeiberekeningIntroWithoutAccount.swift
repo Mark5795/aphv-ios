@@ -12,8 +12,8 @@ struct GroeiberekeningIntroWithoutAccount: View {
     @ObservedObject var groeiberekeningWithoutAccountViewModel : GroeiberekeningWithoutAccountViewModel
     
     var body: some View {
-        ZStack() {
-            TopCurve(title: "Groeiberekening")
+        ZStack {
+            TopCurve(title: "Uitleg Groeiberekening")
             
             VStack {
                 NavigationLink(destination: VideoGroeiberekeningUitleg()) {
@@ -35,18 +35,14 @@ struct GroeiberekeningIntroWithoutAccount: View {
                 })
                 .background(Color.ASMgreen)
                 .cornerRadius(8.0)
-                
-                TabBarSporterOud()
-                    .zIndex(/*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
             }
+            .navigationTitle(Text(""))
         }
-        .navigationTitle(Text(""))
     }
 }
 
 struct GroeiberekeningIntroWithoutAccount_Previews: PreviewProvider {
     static var previews: some View {
         GroeiberekeningIntroWithoutAccount(groeiberekeningWithoutAccountViewModel : GroeiberekeningWithoutAccountViewModel())
-            .previewDevice("iPhone 11 Pro")
     }
 }

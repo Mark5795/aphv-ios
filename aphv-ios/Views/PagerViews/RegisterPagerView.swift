@@ -12,9 +12,6 @@ import Combine
 struct RegisterPagerView: View {
     @ObservedObject var registerViewModel = RegisterViewModel()
     
-    //to get no errors, temporary
-    @ObservedObject var introViewModel = IntroViewModel()
-    
     @State var pageIndex = 0
     
     var items = Array(0..<3)
@@ -26,11 +23,11 @@ struct RegisterPagerView: View {
                   id: \.self) {
                 self.pageView($0)
             }
-            .pagingPriority(.simultaneous)
+//            .pagingPriority(.simultaneous)
 //            .itemSpacing(10)
 //            .navigationBarTitle("SwiftUIPager", displayMode: .inline)
         }
-//        .navigationViewStyle(StackNavigationViewStyle())
+        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     //Get pageIndex from the viewModel

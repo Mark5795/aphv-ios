@@ -5,6 +5,7 @@
 //  Created by Mark Kea on 08/12/2020.
 //
 
+
 import SwiftUI
 import SwiftUIPager
 import Combine
@@ -33,14 +34,13 @@ struct IntroPagerView: View {
         let introViews = introViewModel.pageIndex
         switch introViews {
         case 0:
-            return AnyView(Intro1View(introViewModel : self.introViewModel))
-        //            return AnyView(Intro1View())
+            return AnyView(ZStack {Intro1View(introViewModel : self.introViewModel)})
         case 1:
-            return AnyView(Intro2View(introViewModel : self.introViewModel))
+            return AnyView(ZStack {Intro2View(introViewModel : self.introViewModel)})
         case 2:
-            return AnyView(Intro3View(introViewModel : self.introViewModel))
+            return AnyView(ZStack {Intro3View()})
         default:
-            return AnyView(Intro1View(introViewModel : self.introViewModel))
+            return AnyView(ZStack {Intro1View(introViewModel : self.introViewModel)})
         }
     }
 }

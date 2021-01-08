@@ -10,7 +10,6 @@ import AVKit
 
 struct VideoGroeiberekeningUitleg: View {
     var body: some View {
-        
         ZStack {
             TopCurve(title: "Uitleg Groeiberekening")
             

@@ -13,22 +13,19 @@ struct GroeiberekeningWithoutAccountPagerView: View {
     
     @ObservedObject var groeiberekeningWithoutAccountViewModel = GroeiberekeningWithoutAccountViewModel()
     
-    @State var pageIndex = 0
+    @Binding var pageIndex: Int
     
     var items = Array(0..<6)
     
     var body: some View {
-        NavigationView {
-            Pager(page: $pageIndex,
-                  data: self.items,
-                  id: \.self) {
-                self.pageView($0)
-            }
-            .pagingPriority(.simultaneous)
-//            .itemSpacing(10)
-//            .navigationBarTitle("SwiftUIPager", displayMode: .inline)
+        Pager(page: $pageIndex,
+              data: self.items,
+              id: \.self) {
+            self.pageView($0)
         }
-        .navigationViewStyle(StackNavigationViewStyle())
+        .pagingPriority(.simultaneous)
+        //            .itemSpacing(10)
+        //            .navigationBarTitle("SwiftUIPager", displayMode: .inline)
     }
     
     //Get pageIndex from the viewModel
@@ -48,14 +45,7 @@ struct GroeiberekeningWithoutAccountPagerView: View {
         case 5:
             return AnyView(Groeiberekeningstap4WithoutAccount(groeiberekeningWithoutAccountViewModel : self.groeiberekeningWithoutAccountViewModel))
         default:
-//            return AnyView(ConsWithoutAccount(groeiberekeningWithoutAccountViewModel : self.groeiberekeningWithoutAccountViewModel))
-            return AnyView(ConsWithoutAccount())
+            return AnyView(GroeiberekeningIntroWithoutAccount(groeiberekeningWithoutAccountViewModel : self.groeiberekeningWithoutAccountViewModel))
         }
-    }
-}
-
-struct GroeiberekeningWithoutAccountPagerView_Previews: PreviewProvider {
-    static var previews: some View {
-        GroeiberekeningWithoutAccountPagerView(groeiberekeningWithoutAccountViewModel: GroeiberekeningWithoutAccountViewModel())
     }
 }

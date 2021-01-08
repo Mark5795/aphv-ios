@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RegisterChooseRole: View {
     
-    @ObservedObject var registerViewModel : RegisterViewModel
+    @Binding var isFlowStarted: Bool
     
     var body: some View {
         VStack {
@@ -20,35 +20,41 @@ struct RegisterChooseRole: View {
             }
             
             HStack {
-                Button(action: {self.registerViewModel.pageIndex = 1}, label: {
-                    HStack {
-                        Circle()
-                            .stroke(Color.BorderGrey)
-                            .frame(width: 18, height: 18, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        Text("Sporter")
-                            .fontWeight(.regular)
-                            .foregroundColor(Color.black)
-                        
-                    }
-                    .padding(.leading)
-                    Spacer()
-                })
-                .frame(width: 140.0)
+                NavigationLink(
+                    destination: RegisterSporterView(isFlowStarted: $isFlowStarted),
+                    label: {
+                        HStack {
+                            Circle()
+                                .stroke(Color.BorderGrey)
+                                .frame(width: 18, height: 18, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            Text("Sporter")
+                                .fontWeight(.regular)
+                                .foregroundColor(Color.black)
+                            
+                        }
+                        .padding(.leading)
+                        Spacer()
+                    })
+                    .isDetailLink(false)
+                    .frame(width: 140.0)
                 
-                Button(action: {self.registerViewModel.pageIndex = 2}, label: {
-                    HStack {
-                        Circle()
-                            .stroke(Color.BorderGrey)
-                            .frame(width: 18, height: 18, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        Text("Coach")
-                            .fontWeight(.regular)
-                            .foregroundColor(Color.black)
-                        
-                    }
-                    .padding(.leading)
-                    Spacer()
-                })
-                .frame(width: 140.0)
+                NavigationLink(
+                    destination: RegisterCoachView(isFlowStarted: $isFlowStarted),
+                    label: {
+                        HStack {
+                            Circle()
+                                .stroke(Color.BorderGrey)
+                                .frame(width: 18, height: 18, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            Text("Coach")
+                                .fontWeight(.regular)
+                                .foregroundColor(Color.black)
+                            
+                        }
+                        .padding(.leading)
+                        Spacer()
+                    })
+                    .isDetailLink(false)
+                    .frame(width: 140.0)
             }
             .padding()
             .background(Color.InputFieldLightGrey)
@@ -57,11 +63,12 @@ struct RegisterChooseRole: View {
             
             Spacer()
         }
+        
     }
 }
 
-struct RegisterChooseRole_Previews: PreviewProvider {
-    static var previews: some View {
-        RegisterChooseRole(registerViewModel : RegisterViewModel())
-    }
-}
+//struct RegisterChooseRole_Previews: PreviewProvider {
+//    static var previews: some View {
+//        RegisterChooseRole()
+//    }
+//}

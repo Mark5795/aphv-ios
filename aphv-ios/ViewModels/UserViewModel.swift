@@ -10,8 +10,8 @@ import Combine
 
 class UserViewModel: ObservableObject {
 
-    var checkedConditions : Bool = false
-    var checkedApproval : Bool = false
+//    var checkedConditions : Bool = false
+//    var checkedApproval : Bool = false
     
     @Published var userModel : UserModel
     
@@ -29,12 +29,15 @@ class UserViewModel: ObservableObject {
     @Published var password: String = ""
     @Published var passwordCheck: String = ""
     
+    @Published var checkedConditions: Bool = false
+    @Published var checkedApproval: Bool = false
+    
     
     init(userModel : UserModel) {
         self.userModel = userModel
     }
     
-    func updateUserModel(role : String, firstName : String, lastName : String, sport : String, gender : String, dateOfBirth : String, email : String, password : String, passwordCheck : String, checkedConditions : Bool, checkedApproval: Bool) {
+    func updateRegisterUserModel(role : String, firstName : String, lastName : String, sport : String, gender : String, dateOfBirth : String, email : String, password : String) {
 
         userModel.role = role
         userModel.firstName = firstName
@@ -44,9 +47,6 @@ class UserViewModel: ObservableObject {
         userModel.dateOfBirth = dateOfBirth
         userModel.email = email
         userModel.password = password
-        self.passwordCheck = passwordCheck
-        self.checkedConditions = checkedConditions
-        self.checkedApproval = checkedApproval
     }
 
     func updateLoginUserModel(email : String, password : String)
@@ -125,6 +125,7 @@ class UserViewModel: ObservableObject {
     }
     
     func sendRegisterUserRequest() {
+        updateRegisterUserModel(role: role, firstName: firstName, lastName: lastName, sport: sport, gender: gender, dateOfBirth: dateOfBirth, email: email, password: password)
         if (checkConditions()) {
             RegisterService.shared.Register(userModel: userModel) { (result) in
                 switch result {

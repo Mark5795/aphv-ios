@@ -9,8 +9,6 @@ import SwiftUI
 
 struct SuccesPopup: View {
     
-    @ObservedObject var registerViewModel = RegisterViewModel()
-    
     var body: some View {
         VStack {
             Text("Je account is aangemaakt!")
@@ -24,17 +22,17 @@ struct SuccesPopup: View {
                 .foregroundColor(Color.white)
                 .multilineTextAlignment(.center)
                 .padding(.bottom)
-            
-            Button(action: {self.registerViewModel.pageIndex = 1}, label: {
-                Text("Verder")
-                    .font(.system(size: 21))
-                    .fontWeight(.bold)
-                    .foregroundColor(Color.ASMdarkGreen)
-                
-            })
-            .frame(width: 140,height: 60)
-            .background(Color.white)
-            .cornerRadius(20)
+//            
+//            Button(action: {self.registerViewModel.pageIndex = 1}, label: {
+//                Text("Verder")
+//                    .font(.system(size: 21))
+//                    .fontWeight(.bold)
+//                    .foregroundColor(Color.ASMdarkGreen)
+//                
+//            })
+//            .frame(width: 140,height: 60)
+//            .background(Color.white)
+//            .cornerRadius(20)
         }
         .frame(width: 375,height: 200.0)
         .background(Color.ASMgreen)

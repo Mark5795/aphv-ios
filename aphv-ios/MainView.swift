@@ -11,7 +11,6 @@ struct MainView: View {
     @State var isMainPresented: Bool = false
     
     var firstTime : Bool = false
-    var introPagerView = IntroPagerView()
 
     init() {
         checkFirstTime()

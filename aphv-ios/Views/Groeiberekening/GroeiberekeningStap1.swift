@@ -107,11 +107,10 @@ struct GroeiberekeningStap1: View {
     }
 }
 
-struct GroeiberekeningStap1_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            GroeiberekeningStap1()
-                .previewDevice("iPhone 11 Pro")
-        }
-    }
-}
+//struct GroeiberekeningStap1_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Group {
+//            GroeiberekeningStap1()
+//        }
+//    }
+//}

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ConsWithoutAccount: View {
     @Environment(\.presentationMode) var presentationMode
+    @State var isFlowStarted: Bool = false
     
     @State var pageIndex = 0
     
@@ -50,12 +51,15 @@ struct ConsWithoutAccount: View {
                 .cornerRadius(8.0)
                 
                 
-                //For spacing
-                Text("")
-                    .padding(.vertical, 1.0)
+                Spacer()
+                    .frame(height: 30)
+//                //For spacing
+//                Text("")
+//                    .padding(.vertical, 1.0)
                 
                 NavigationLink(
-                    destination: GroeiberekeningWithoutAccountPagerView(pageIndex: $pageIndex),
+                    destination: GroeiberekeningIntroWithoutAccount(isFlowStarted: $isFlowStarted),
+                    isActive: $isFlowStarted,
                     label: {
                         Text("Verdergaan zonder account")
                             .fontWeight(.bold)
@@ -63,6 +67,7 @@ struct ConsWithoutAccount: View {
                                    , minHeight: 44)
                             .foregroundColor(.white)
                     })
+                    .isDetailLink(false)
                     .background(Color.ASMgreen)
                     .cornerRadius(8.0)
             }
@@ -72,7 +77,6 @@ struct ConsWithoutAccount: View {
 
 struct ConsWithoutAccount_Previews: PreviewProvider {
     static var previews: some View {
-        //        ConsWithoutAccount(groeiberekeningWithoutAccountViewModel : GroeiberekeningWithoutAccountViewModel())
         ConsWithoutAccount()
     }
 }

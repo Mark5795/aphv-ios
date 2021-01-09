@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct GroeiberekeningIntro: View {
+    
     var body: some View {
         NavigationView {
             ZStack() {
@@ -47,8 +48,8 @@ struct GroeiberekeningIntro: View {
     }
 }
 
-struct GroeiberekeningIntro_Previews: PreviewProvider {
-    static var previews: some View {
-        GroeiberekeningIntro()
-    }
-}
+//struct GroeiberekeningIntro_Previews: PreviewProvider {
+//    static var previews: some View {
+//        GroeiberekeningIntro()
+//    }
+//}

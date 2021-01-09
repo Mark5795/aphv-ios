@@ -74,26 +74,27 @@ struct GroeiberekeningStap3: View {
                             .cornerRadius(/*@START_MENU_TOKEN@*/5.0/*@END_MENU_TOKEN@*/)
                     }
                     
-                    NavigationLink(destination: GroeiberekeningResultaat()) {
-                        Text("Bereken")
-                            .font(.system(size: 20))
-                            .fontWeight(.medium)
-                            .foregroundColor(Color.white)
-                            .multilineTextAlignment(.center)
-                            
-                    }
-                        .frame(width: 335.0, height: 45.0)
-                        .background(Color("ASMgreen"))
-                        .cornerRadius(5)
-                        .zIndex(0)
+//                  Temporary comment
+//                    NavigationLink(destination: GroeiberekeningResultaat(groeiberekeningViewModel: groeiberekeningViewModel)) {
+//                        Text("Bereken")
+//                            .font(.system(size: 20))
+//                            .fontWeight(.medium)
+//                            .foregroundColor(Color.white)
+//                            .multilineTextAlignment(.center)
+//
+//                    }
+//                        .frame(width: 335.0, height: 45.0)
+//                        .background(Color("ASMgreen"))
+//                        .cornerRadius(5)
+//                        .zIndex(0)
                 }
             }
         }
     }
 }
 
-struct GroeiberekeningStap3_Previews: PreviewProvider {
-    static var previews: some View {
-        GroeiberekeningStap3()
-    }
-}
+//struct GroeiberekeningStap3_Previews: PreviewProvider {
+//    static var previews: some View {
+//        GroeiberekeningStap3()
+//    }
+//}

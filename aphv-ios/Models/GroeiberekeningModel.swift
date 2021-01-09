@@ -10,6 +10,7 @@ import Combine
 
 struct GroeiberekeningModel: Identifiable, Codable {
     let id = UUID()
-    var dateOfBirth, gender, dateOfMeasurement : String?
-    var weight, sittingHeight, standingHeight : Double?
+    var dateOfBirth, gender, dateOfMeasurement, email, date, createdBy, growthPhase : String?
+    var weight, sittingHeight, standingHeight, age, phv, aphv  : Double?
+    
 }

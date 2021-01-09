@@ -9,12 +9,11 @@ import SwiftUI
 
 struct GroeiberekeningIntroWithoutAccount: View {
     
-    @ObservedObject var groeiberekeningWithoutAccountViewModel : GroeiberekeningWithoutAccountViewModel
+    @Binding var isFlowStarted: Bool
     
     var body: some View {
         ZStack {
-            TopCurve(title: "Uitleg Groeiberekening")
-            
+            TopCurve(title: "Uitleg Groeiberekening")            
             VStack {
                 NavigationLink(destination: VideoGroeiberekeningUitleg()) {
                     Image("VideoThumbnail")
@@ -27,22 +26,26 @@ struct GroeiberekeningIntroWithoutAccount: View {
                     .padding(.vertical, 15.0)
                     .frame(width: 340.0, height: 250)
                 
-                Button(action: {self.groeiberekeningWithoutAccountViewModel.pageIndex = 1}, label: {
+                NavigationLink(destination: GroeiberekeningExtraStapWithoutAccount(isFlowStarted: $isFlowStarted)) {
                     Text("Start Groeiberekening")
-                        .fontWeight(.bold)
-                        .frame(width: 335.0, height: 45.0)
-                        .foregroundColor(.white)
-                })
-                .background(Color.ASMgreen)
-                .cornerRadius(8.0)
+                        .font(.system(size: 20))
+                        .fontWeight(.medium)
+                        .foregroundColor(Color.white)
+                        .multilineTextAlignment(.center)
+                    
+                }
+                .frame(width: 335.0, height: 45.0)
+                .background(Color("ASMgreen"))
+                .cornerRadius(5)
+                .zIndex(0)
             }
             .navigationTitle(Text(""))
         }
     }
 }
 
-struct GroeiberekeningIntroWithoutAccount_Previews: PreviewProvider {
-    static var previews: some View {
-        GroeiberekeningIntroWithoutAccount(groeiberekeningWithoutAccountViewModel : GroeiberekeningWithoutAccountViewModel())
-    }
-}
+//struct GroeiberekeningIntroWithoutAccount_Previews: PreviewProvider {
+//    static var previews: some View {
+//        GroeiberekeningIntroWithoutAccount()
+//    }
+//}

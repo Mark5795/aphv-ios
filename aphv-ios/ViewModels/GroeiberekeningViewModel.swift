@@ -10,7 +10,12 @@ import Combine
 
 class GroeiberekeningViewModel: ObservableObject {
     
-    @Published var groeiberekeningModel = GroeiberekeningModel()
+    var groeiberekeningModel : GroeiberekeningModel
+    
+    
+    @Published var alertTitle : String = "Error"
+    @Published var alertMessage : String = "Error"
+    @Published var alertSucces : Bool = false
     
     @Published var dateOfBirth: String = ""
     @Published var gender: String = ""
@@ -19,11 +24,30 @@ class GroeiberekeningViewModel: ObservableObject {
     @Published var sittingHeight : Double = 0
     @Published var standingHeight : Double = 0
     
+    @Published var email : String = ""
+    @Published var date : String = ""
+    @Published var createdBy : String = ""
+    @Published var age : Double = 0
+    @Published var phv : Double = 0
+    @Published var aphv : Double = 0
+    @Published var growthPhase : String = ""
+    
+    
     init(groeiberekeningModel : GroeiberekeningModel) {
         self.groeiberekeningModel = groeiberekeningModel
     }
     
-    func updateWithouAccountGroeiberekeningModel(dateOfBirth : String, gender : String, dateOfMeasurement : String, weight : Double, sittingHeight : Double, standingHeight : Double) {
+//    func getGroeiBerekeningResults(email : String, date : String, createdBy : String, age : Double, phv : Double, aphv : Double, growthPhase: String) {
+//        self.email = groeiberekeningModel.email ?? ""
+//        self.date = groeiberekeningModel.date ?? ""
+//        self.createdBy = groeiberekeningModel.createdBy ?? ""
+//        self.age = groeiberekeningModel.age ?? 0
+//        self.phv = groeiberekeningModel.phv ?? 0
+//        self.aphv = groeiberekeningModel.aphv ?? 0
+//        self.growthPhase = groeiberekeningModel.growthPhase ?? ""
+//    }
+    
+    func updateWithoutAccountGroeiberekeningModel(dateOfBirth : String, gender : String, dateOfMeasurement : String, weight : Double, sittingHeight : Double, standingHeight : Double) {
 
         groeiberekeningModel.dateOfBirth = dateOfBirth
         groeiberekeningModel.gender = gender
@@ -31,6 +55,40 @@ class GroeiberekeningViewModel: ObservableObject {
         groeiberekeningModel.weight = weight
         groeiberekeningModel.sittingHeight = sittingHeight
         groeiberekeningModel.standingHeight = standingHeight
+    }
+    
+    func sendGroeiberekeningRequest() {
+        updateWithoutAccountGroeiberekeningModel(dateOfBirth: dateOfBirth, gender: gender, dateOfMeasurement: getDate(), weight: weight, sittingHeight: sittingHeight, standingHeight: standingHeight)
+            if (checkConditions()) {
+                GroeiberekeningService.shared.GroeiberekeningWithoutAccount(groeiberekeningModel: groeiberekeningModel) { (result) in
+                    switch result {
+                    case .success(_):
+                        self.alertTitle = "Je groei word berekend!"
+                        self.alertMessage = ""
+                        self.alertSucces = true
+                    case .failure(_):
+                        self.alertTitle = "Berekening Mislukt"
+                        self.alertMessage = "Het berekenen is mislukt, heb je een goede wifi verbinding? Probeer het nog een keer."
+                    }
+//                    self.getGroeiBerekeningResults(email: self.email, date: self.date, createdBy: self.createdBy, age: self.age, phv: self.phv, aphv: self.aphv, growthPhase: self.growthPhase)
+                }
+            }
+        }
+    
+    func checkConditions() -> Bool {
+        if (checkUserInput() == false) {
+            alertTitle = "Verplichte velden"
+            alertMessage = "Er mogen geen velden leeg gelaten worden."
+            return false
+        }
+        return true
+    }
+    
+    func checkUserInput() -> Bool {
+        if (groeiberekeningModel.dateOfBirth == "" || groeiberekeningModel.gender == "" || groeiberekeningModel.dateOfMeasurement == "" || groeiberekeningModel.weight == 0 || groeiberekeningModel.sittingHeight == 0 || groeiberekeningModel.standingHeight == 0) {
+            return false
+        }
+        return true
     }
     
     func getDate() -> String {

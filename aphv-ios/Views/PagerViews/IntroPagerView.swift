@@ -20,12 +20,15 @@ struct IntroPagerView: View {
     
     var body: some View {
         NavigationView {
-            Pager(page: $pageIndex,
-                  data: self.items,
-                  id: \.self) {
-                self.pageView($0)
+            ZStack {
+                TopCurve(title: "")
+                Pager(page: $pageIndex,
+                      data: self.items,
+                      id: \.self) {
+                    self.pageView($0)
+                }
+                .pagingPriority(.simultaneous)
             }
-            .pagingPriority(.simultaneous)
         }
     }
     

@@ -1,5 +1,5 @@
 //
-//  Groeiberekeningstap3WithoutAccount.swift
+//  Groeiberekeningstap4WithoutAccount.swift
 //  aphv-ios
 //
 //  Created by Mark Kea on 11/12/2020.
@@ -9,9 +9,16 @@ import SwiftUI
 
 struct Groeiberekeningstap3WithoutAccount: View {
     
-    @ObservedObject var groeiberekeningWithoutAccountViewModel : GroeiberekeningWithoutAccountViewModel
+    @ObservedObject var groeiberekeningViewModel : GroeiberekeningViewModel
     
-    @State var zithoogte: String = ""
+    @Binding var isFlowStarted: Bool
+    
+    @State var isGroeiberekeningResultaatPresented: Bool = false
+    
+    @State var weightText: String = ""
+    @State var weight: Double = 0
+    
+    @State var showingErrorAlert: Bool = false
     
     var body: some View {
         ZStack {
@@ -33,11 +40,11 @@ struct Groeiberekeningstap3WithoutAccount: View {
                     
                     ZStack{
                         Circle()
-                            .fill(Color.ASMgreen)
+                            .stroke(Color.ASMgreen, lineWidth: 3)
                             .frame(width: 40, height: /*@START_MENU_TOKEN@*/40/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         
                         Text("2")
-                            .foregroundColor(.white)
+                            .foregroundColor(.ASMgreen)
                     }
                     
                     Rectangle()
@@ -46,41 +53,31 @@ struct Groeiberekeningstap3WithoutAccount: View {
                     
                     ZStack{
                         Circle()
-                            .stroke(Color.ASMgreen, lineWidth: 3)
+                            .fill(Color.ASMgreen)
                             .frame(width: 40, height: /*@START_MENU_TOKEN@*/40/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         
                         Text("3")
-                            .foregroundColor(.ASMgreen)
+                            .foregroundColor(.white)
                     }
                 }
                 
                 Spacer()
                 
                 HStack {
-                    Image("ZithoogteMannetje")
-                        .padding(.leading, 100.0)
+                    Image("Weegschaal")
+                        .padding(.leading)
                     
                     VStack(alignment: .leading){
-                        Text("Kijk recht vooruit")
-                            .frame(height: 50)
-                        
-                        Text("Ontspan je schouders")
-                        
-                        Text("Ga met je rug recht tegen de muur aan zitten")
-                            .frame(width: 175, height: 100)
-                            .padding(.leading, -10)
+                        Text("Schoenen uit, lichte sportkleding aan")
                     }
-                    .padding(.leading, -175)
-                    .padding(.top, -125)
-                    .frame(width: 210.0)
                 }
                 
                 Spacer()
                 
                 VStack(alignment: .leading) {
-                    Text("Zithoogte in cm")
+                    Text("Gewicht in kg")
                         .padding(.bottom, -7.0)
-                    TextField("", text: $zithoogte)
+                    TextField("", text: $weightText)
                         .keyboardType(.numberPad)
                         .frame(width: 330.0, height: 50.0)
                         .background(Color("InputFieldLightGrey"))
@@ -88,24 +85,35 @@ struct Groeiberekeningstap3WithoutAccount: View {
                         .cornerRadius(/*@START_MENU_TOKEN@*/5.0/*@END_MENU_TOKEN@*/)
                 }
                 
-                Button(action: {self.groeiberekeningWithoutAccountViewModel.pageIndex = 4}, label: {
-                    Text("Stap 3")
-                        .font(.system(size: 20))
-                        .fontWeight(.medium)
-                        .foregroundColor(Color.white)
-                        .multilineTextAlignment(.center)
+                Button(action: {
+                    weight = (weightText as NSString).doubleValue
+                    groeiberekeningViewModel.weight = weight
                     
+                    groeiberekeningViewModel.sendGroeiberekeningRequest()
+                    
+                    self.showingErrorAlert.toggle()
+                }, label: {
+                    Text("Bereken")
+                        .fontWeight(.bold)
+                        .frame(maxWidth: .infinity, minHeight: 44)
+                        .foregroundColor(.white)
                 })
                 .frame(width: 335.0, height: 45.0)
-                .background(Color("ASMgreen"))
-                .cornerRadius(5)
+                .background(Color.ASMgreen)
+                .cornerRadius(8.0)
+                .alert(isPresented: $showingErrorAlert) {
+                    Alert(title: Text(groeiberekeningViewModel.alertTitle), message: Text(groeiberekeningViewModel.alertMessage), dismissButton: .default(Text("Verder"), action: { self.isGroeiberekeningResultaatPresented = true}))
+                }
+                .fullScreenCover(isPresented: $isGroeiberekeningResultaatPresented) {
+                    GroeiberekeningResultaat(groeiberekeningViewModel: groeiberekeningViewModel)
+                }
             }
         }
     }
 }
 
-struct Groeiberekeningstap3WithoutAccount_Previews: PreviewProvider {
-    static var previews: some View {
-        Groeiberekeningstap3WithoutAccount(groeiberekeningWithoutAccountViewModel : GroeiberekeningWithoutAccountViewModel())
-    }
-}
+//struct Groeiberekeningstap3WithoutAccount_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Groeiberekeningstap3WithoutAccount()
+//    }
+//}

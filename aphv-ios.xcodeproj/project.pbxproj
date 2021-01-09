@@ -22,10 +22,10 @@
 		E53E0EF62570015C00371C89 /* InputTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53E0EF52570015C00371C89 /* InputTextFieldView.swift */; };
 		E53E0EFB2570293400371C89 /* CheckboxFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53E0EFA2570293400371C89 /* CheckboxFieldView.swift */; };
 		E54B9724255EC9B900CE8EA9 /* VideoGroeiberekeningUitleg.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54B9723255EC9B900CE8EA9 /* VideoGroeiberekeningUitleg.swift */; };
-		E552F70E2583C8050063DCB3 /* Groeiberekeningstap2WithoutAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = E552F70D2583C8050063DCB3 /* Groeiberekeningstap2WithoutAccount.swift */; };
-		E552F7132583C9960063DCB3 /* Groeiberekeningstap1WithoutAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = E552F7122583C9960063DCB3 /* Groeiberekeningstap1WithoutAccount.swift */; };
-		E552F71B2583DD040063DCB3 /* Groeiberekeningstap3WithoutAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = E552F71A2583DD040063DCB3 /* Groeiberekeningstap3WithoutAccount.swift */; };
-		E552F7202583DE8A0063DCB3 /* Groeiberekeningstap4WithoutAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = E552F71F2583DE8A0063DCB3 /* Groeiberekeningstap4WithoutAccount.swift */; };
+		E552F70E2583C8050063DCB3 /* Groeiberekeningstap1WithoutAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = E552F70D2583C8050063DCB3 /* Groeiberekeningstap1WithoutAccount.swift */; };
+		E552F7132583C9960063DCB3 /* GroeiberekeningExtraStapWithoutAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = E552F7122583C9960063DCB3 /* GroeiberekeningExtraStapWithoutAccount.swift */; };
+		E552F71B2583DD040063DCB3 /* Groeiberekeningstap2WithoutAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = E552F71A2583DD040063DCB3 /* Groeiberekeningstap2WithoutAccount.swift */; };
+		E552F7202583DE8A0063DCB3 /* Groeiberekeningstap3WithoutAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = E552F71F2583DE8A0063DCB3 /* Groeiberekeningstap3WithoutAccount.swift */; };
 		E552F7382583ECEE0063DCB3 /* RegisterChooseRole.swift in Sources */ = {isa = PBXBuildFile; fileRef = E552F7372583ECEE0063DCB3 /* RegisterChooseRole.swift */; };
 		E554E130256EA016008AC163 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E554E12F256EA016008AC163 /* LoginView.swift */; };
 		E554E139256EA280008AC163 /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E554E138256EA280008AC163 /* RegisterService.swift */; };
@@ -37,9 +37,11 @@
 		E55570A6255A99C000BB269E /* aphv_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55570A5255A99C000BB269E /* aphv_iosUITests.swift */; };
 		E555D2C925A99BB90086144A /* GroeiberekeningModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E555D2C825A99BB90086144A /* GroeiberekeningModel.swift */; };
 		E555D2CE25A99C820086144A /* GroeiberekeningViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E555D2CD25A99C820086144A /* GroeiberekeningViewModel.swift */; };
+		E555D2E925A9C4580086144A /* GroeiberekeningService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E555D2E825A9C4580086144A /* GroeiberekeningService.swift */; };
+		E555D2EE25A9C6750086144A /* GroeiberekeningResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E555D2ED25A9C6750086144A /* GroeiberekeningResponse.swift */; };
+		E555D2F325A9C8C70086144A /* GroeiberekeningRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E555D2F225A9C8C70086144A /* GroeiberekeningRequest.swift */; };
 		E556FCC8256D808000EACAF5 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E556FCC7256D808000EACAF5 /* UserViewModel.swift */; };
 		E5571AFD25A78E4D00EF78C4 /* GroeiberekeningWithoutAccountPagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5571AFC25A78E4D00EF78C4 /* GroeiberekeningWithoutAccountPagerView.swift */; };
-		E5571B0225A78E7100EF78C4 /* GroeiberekeningWithoutAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5571B0125A78E7100EF78C4 /* GroeiberekeningWithoutAccountViewModel.swift */; };
 		E5572F0D255E83C000D25FA4 /* UitlegGroeiberekeningResultaten.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E5572F06255E81BF00D25FA4 /* UitlegGroeiberekeningResultaten.mp4 */; };
 		E557CE1E2583B88A00F9EAFA /* ConsWithoutAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = E557CE1D2583B88A00F9EAFA /* ConsWithoutAccount.swift */; };
 		E55BA692255EC11000028DC2 /* TopCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55BA691255EC11000028DC2 /* TopCurve.swift */; };
@@ -109,10 +111,10 @@
 		E53E0EF52570015C00371C89 /* InputTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextFieldView.swift; sourceTree = "<group>"; };
 		E53E0EFA2570293400371C89 /* CheckboxFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxFieldView.swift; sourceTree = "<group>"; };
 		E54B9723255EC9B900CE8EA9 /* VideoGroeiberekeningUitleg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoGroeiberekeningUitleg.swift; sourceTree = "<group>"; };
-		E552F70D2583C8050063DCB3 /* Groeiberekeningstap2WithoutAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groeiberekeningstap2WithoutAccount.swift; sourceTree = "<group>"; };
-		E552F7122583C9960063DCB3 /* Groeiberekeningstap1WithoutAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groeiberekeningstap1WithoutAccount.swift; sourceTree = "<group>"; };
-		E552F71A2583DD040063DCB3 /* Groeiberekeningstap3WithoutAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groeiberekeningstap3WithoutAccount.swift; sourceTree = "<group>"; };
-		E552F71F2583DE8A0063DCB3 /* Groeiberekeningstap4WithoutAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groeiberekeningstap4WithoutAccount.swift; sourceTree = "<group>"; };
+		E552F70D2583C8050063DCB3 /* Groeiberekeningstap1WithoutAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groeiberekeningstap1WithoutAccount.swift; sourceTree = "<group>"; };
+		E552F7122583C9960063DCB3 /* GroeiberekeningExtraStapWithoutAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroeiberekeningExtraStapWithoutAccount.swift; sourceTree = "<group>"; };
+		E552F71A2583DD040063DCB3 /* Groeiberekeningstap2WithoutAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groeiberekeningstap2WithoutAccount.swift; sourceTree = "<group>"; };
+		E552F71F2583DE8A0063DCB3 /* Groeiberekeningstap3WithoutAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groeiberekeningstap3WithoutAccount.swift; sourceTree = "<group>"; };
 		E552F7372583ECEE0063DCB3 /* RegisterChooseRole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterChooseRole.swift; sourceTree = "<group>"; };
 		E554E12F256EA016008AC163 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E554E138256EA280008AC163 /* RegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterService.swift; sourceTree = "<group>"; };
@@ -130,9 +132,11 @@
 		E55570A7255A99C000BB269E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E555D2C825A99BB90086144A /* GroeiberekeningModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroeiberekeningModel.swift; sourceTree = "<group>"; };
 		E555D2CD25A99C820086144A /* GroeiberekeningViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroeiberekeningViewModel.swift; sourceTree = "<group>"; };
+		E555D2E825A9C4580086144A /* GroeiberekeningService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroeiberekeningService.swift; sourceTree = "<group>"; };
+		E555D2ED25A9C6750086144A /* GroeiberekeningResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroeiberekeningResponse.swift; sourceTree = "<group>"; };
+		E555D2F225A9C8C70086144A /* GroeiberekeningRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroeiberekeningRequest.swift; sourceTree = "<group>"; };
 		E556FCC7256D808000EACAF5 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		E5571AFC25A78E4D00EF78C4 /* GroeiberekeningWithoutAccountPagerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroeiberekeningWithoutAccountPagerView.swift; sourceTree = "<group>"; };
-		E5571B0125A78E7100EF78C4 /* GroeiberekeningWithoutAccountViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroeiberekeningWithoutAccountViewModel.swift; sourceTree = "<group>"; };
 		E5572F06255E81BF00D25FA4 /* UitlegGroeiberekeningResultaten.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = UitlegGroeiberekeningResultaten.mp4; sourceTree = "<group>"; };
 		E557CE1D2583B88A00F9EAFA /* ConsWithoutAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsWithoutAccount.swift; sourceTree = "<group>"; };
 		E55BA691255EC11000028DC2 /* TopCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCurve.swift; sourceTree = "<group>"; };
@@ -198,7 +202,6 @@
 			isa = PBXGroup;
 			children = (
 				E5C6B40D25A8BF4D0092D548 /* IntroViewModel.swift */,
-				E5571B0125A78E7100EF78C4 /* GroeiberekeningWithoutAccountViewModel.swift */,
 				E5177A94256BC1FE0006AC6D /* GrafiekManager.swift */,
 				E556FCC7256D808000EACAF5 /* UserViewModel.swift */,
 				E5E30567258B733C0021E7B6 /* FlowViewModel.swift */,
@@ -226,6 +229,7 @@
 				E53E0EE4256FDD9500371C89 /* RegisterResponse.swift */,
 				E5C7B49E2571422B0097AF84 /* GetUsersResponse.swift */,
 				E5DBFBFB259B50F400C52F9A /* LoginResponse.swift */,
+				E555D2ED25A9C6750086144A /* GroeiberekeningResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -235,6 +239,7 @@
 			children = (
 				E53E0EED256FDF7500371C89 /* RegisterRequest.swift */,
 				E5DBFC03259B543500C52F9A /* LoginRequest.swift */,
+				E555D2F225A9C8C70086144A /* GroeiberekeningRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -271,6 +276,7 @@
 				E554E138256EA280008AC163 /* RegisterService.swift */,
 				E5DBFBF1259B4D0200C52F9A /* LoginService.swift */,
 				E5DBFBF6259B4D5200C52F9A /* RequestError.swift */,
+				E555D2E825A9C4580086144A /* GroeiberekeningService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -388,10 +394,10 @@
 			children = (
 				E557CE1D2583B88A00F9EAFA /* ConsWithoutAccount.swift */,
 				E52512BC2583BC4A0009601E /* GroeiberekeningIntroWithoutAccount.swift */,
-				E552F70D2583C8050063DCB3 /* Groeiberekeningstap2WithoutAccount.swift */,
-				E552F7122583C9960063DCB3 /* Groeiberekeningstap1WithoutAccount.swift */,
-				E552F71A2583DD040063DCB3 /* Groeiberekeningstap3WithoutAccount.swift */,
-				E552F71F2583DE8A0063DCB3 /* Groeiberekeningstap4WithoutAccount.swift */,
+				E552F7122583C9960063DCB3 /* GroeiberekeningExtraStapWithoutAccount.swift */,
+				E552F70D2583C8050063DCB3 /* Groeiberekeningstap1WithoutAccount.swift */,
+				E552F71A2583DD040063DCB3 /* Groeiberekeningstap2WithoutAccount.swift */,
+				E552F71F2583DE8A0063DCB3 /* Groeiberekeningstap3WithoutAccount.swift */,
 			);
 			path = GroeiberekeningWithoutAccount;
 			sourceTree = "<group>";
@@ -601,6 +607,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5177AA2256BC56F0006AC6D /* GroeiberekeningResultaatData.swift in Sources */,
+				E555D2EE25A9C6750086144A /* GroeiberekeningResponse.swift in Sources */,
 				E557CE1E2583B88A00F9EAFA /* ConsWithoutAccount.swift in Sources */,
 				E555708B255A99BF00BB269E /* ContentView.swift in Sources */,
 				E5D3ADA92584F66A00A2F775 /* SuccesPopup.swift in Sources */,
@@ -609,8 +616,7 @@
 				E555D2C925A99BB90086144A /* GroeiberekeningModel.swift in Sources */,
 				E5A676012584E3C500A5B0E7 /* RegisterCoachView.swift in Sources */,
 				E5E92AED2583958700A511DE /* Intro3View.swift in Sources */,
-				E552F70E2583C8050063DCB3 /* Groeiberekeningstap2WithoutAccount.swift in Sources */,
-				E5571B0225A78E7100EF78C4 /* GroeiberekeningWithoutAccountViewModel.swift in Sources */,
+				E552F70E2583C8050063DCB3 /* Groeiberekeningstap1WithoutAccount.swift in Sources */,
 				E5DBFBF7259B4D5200C52F9A /* RequestError.swift in Sources */,
 				E5C51DA325655D5200198EBD /* Color.swift in Sources */,
 				E555D2CE25A99C820086144A /* GroeiberekeningViewModel.swift in Sources */,
@@ -622,7 +628,7 @@
 				E575D0182567C7AF00BAC36E /* LineGraph.swift in Sources */,
 				E53E0EF62570015C00371C89 /* InputTextFieldView.swift in Sources */,
 				E55E5BEB255D76600038DA41 /* GroeiberekeningIntro.swift in Sources */,
-				E552F7202583DE8A0063DCB3 /* Groeiberekeningstap4WithoutAccount.swift in Sources */,
+				E552F7202583DE8A0063DCB3 /* Groeiberekeningstap3WithoutAccount.swift in Sources */,
 				E5DBFBFC259B50F400C52F9A /* LoginResponse.swift in Sources */,
 				E5571AFD25A78E4D00EF78C4 /* GroeiberekeningWithoutAccountPagerView.swift in Sources */,
 				E5177AB3256C358C0006AC6D /* UserModel.swift in Sources */,
@@ -645,6 +651,7 @@
 				E53E0EE5256FDD9500371C89 /* RegisterResponse.swift in Sources */,
 				E52512BD2583BC4A0009601E /* GroeiberekeningIntroWithoutAccount.swift in Sources */,
 				E556FCC8256D808000EACAF5 /* UserViewModel.swift in Sources */,
+				E555D2F325A9C8C70086144A /* GroeiberekeningRequest.swift in Sources */,
 				E55BA692255EC11000028DC2 /* TopCurve.swift in Sources */,
 				E5E3056D258B7DAA0021E7B6 /* MainView.swift in Sources */,
 				E53E0EEE256FDF7500371C89 /* RegisterRequest.swift in Sources */,
@@ -653,11 +660,12 @@
 				E554E130256EA016008AC163 /* LoginView.swift in Sources */,
 				E533B94B25669CC6000A186F /* GroeiberekeningResultaat.swift in Sources */,
 				E575D02B2567CF6300BAC36E /* Data.swift in Sources */,
+				E555D2E925A9C4580086144A /* GroeiberekeningService.swift in Sources */,
 				E5557089255A99BF00BB269E /* aphv_iosApp.swift in Sources */,
 				E5CF07A52580D7DB007E6855 /* Intro2View.swift in Sources */,
-				E552F7132583C9960063DCB3 /* Groeiberekeningstap1WithoutAccount.swift in Sources */,
+				E552F7132583C9960063DCB3 /* GroeiberekeningExtraStapWithoutAccount.swift in Sources */,
 				E5C6B40E25A8BF4D0092D548 /* IntroViewModel.swift in Sources */,
-				E552F71B2583DD040063DCB3 /* Groeiberekeningstap3WithoutAccount.swift in Sources */,
+				E552F71B2583DD040063DCB3 /* Groeiberekeningstap2WithoutAccount.swift in Sources */,
 				E575D031256806B400BAC36E /* ResultaatItem.swift in Sources */,
 				E533B95025669E73000A186F /* HelpInstructiefilmpje.swift in Sources */,
 				E554E139256EA280008AC163 /* RegisterService.swift in Sources */,

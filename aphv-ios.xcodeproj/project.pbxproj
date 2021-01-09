@@ -40,6 +40,7 @@
 		E555D2E925A9C4580086144A /* GroeiberekeningService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E555D2E825A9C4580086144A /* GroeiberekeningService.swift */; };
 		E555D2EE25A9C6750086144A /* GroeiberekeningResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E555D2ED25A9C6750086144A /* GroeiberekeningResponse.swift */; };
 		E555D2F325A9C8C70086144A /* GroeiberekeningRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E555D2F225A9C8C70086144A /* GroeiberekeningRequest.swift */; };
+		E555D2FB25AA3D470086144A /* HomeCoach.swift in Sources */ = {isa = PBXBuildFile; fileRef = E555D2FA25AA3D470086144A /* HomeCoach.swift */; };
 		E556FCC8256D808000EACAF5 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E556FCC7256D808000EACAF5 /* UserViewModel.swift */; };
 		E5571AFD25A78E4D00EF78C4 /* GroeiberekeningWithoutAccountPagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5571AFC25A78E4D00EF78C4 /* GroeiberekeningWithoutAccountPagerView.swift */; };
 		E5572F0D255E83C000D25FA4 /* UitlegGroeiberekeningResultaten.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E5572F06255E81BF00D25FA4 /* UitlegGroeiberekeningResultaten.mp4 */; };
@@ -135,6 +136,7 @@
 		E555D2E825A9C4580086144A /* GroeiberekeningService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroeiberekeningService.swift; sourceTree = "<group>"; };
 		E555D2ED25A9C6750086144A /* GroeiberekeningResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroeiberekeningResponse.swift; sourceTree = "<group>"; };
 		E555D2F225A9C8C70086144A /* GroeiberekeningRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroeiberekeningRequest.swift; sourceTree = "<group>"; };
+		E555D2FA25AA3D470086144A /* HomeCoach.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoach.swift; sourceTree = "<group>"; };
 		E556FCC7256D808000EACAF5 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		E5571AFC25A78E4D00EF78C4 /* GroeiberekeningWithoutAccountPagerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroeiberekeningWithoutAccountPagerView.swift; sourceTree = "<group>"; };
 		E5572F06255E81BF00D25FA4 /* UitlegGroeiberekeningResultaten.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = UitlegGroeiberekeningResultaten.mp4; sourceTree = "<group>"; };
@@ -435,6 +437,7 @@
 			isa = PBXGroup;
 			children = (
 				E566CCB32562936000695A98 /* HomeSporter.swift */,
+				E555D2FA25AA3D470086144A /* HomeCoach.swift */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -623,6 +626,7 @@
 				E5634899257550770090E490 /* DropDownView.swift in Sources */,
 				E5DAC211257FD60900B527E8 /* Intro1View.swift in Sources */,
 				E5177AAB256C31500006AC6D /* RegisterSporterView.swift in Sources */,
+				E555D2FB25AA3D470086144A /* HomeCoach.swift in Sources */,
 				E5DBFC04259B543500C52F9A /* LoginRequest.swift in Sources */,
 				E5C51DA8256565C600198EBD /* GroeiberekeningStap2.swift in Sources */,
 				E575D0182567C7AF00BAC36E /* LineGraph.swift in Sources */,

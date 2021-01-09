@@ -10,5 +10,5 @@ import Combine
 
 struct UserModel: Identifiable, Codable {
     let id = UUID()
-    var role, firstName, lastName, sport, gender, dateOfBirth, email, password: String?
+    var role, firstName, lastName, sport, gender,  dateOfBirth, email, password, roleOrCreatedBy: String?
 }

@@ -28,6 +28,7 @@ class UserViewModel: ObservableObject {
     @Published var email: String = ""
     @Published var password: String = ""
     @Published var passwordCheck: String = ""
+    @Published var roleOrCreatedBy : String = ""
     
     @Published var checkedConditions: Bool = false
     @Published var checkedApproval: Bool = false
@@ -37,7 +38,7 @@ class UserViewModel: ObservableObject {
         self.userModel = userModel
     }
     
-    func updateRegisterUserModel(role : String, firstName : String, lastName : String, sport : String, gender : String, dateOfBirth : String, email : String, password : String) {
+    func updateRegisterUserModel(role : String, firstName : String, lastName : String, sport : String, gender : String, dateOfBirth : String, email : String, password : String, roleOrCreatedBy : String) {
 
         userModel.role = role
         userModel.firstName = firstName
@@ -47,6 +48,7 @@ class UserViewModel: ObservableObject {
         userModel.dateOfBirth = dateOfBirth
         userModel.email = email
         userModel.password = password
+        userModel.roleOrCreatedBy = roleOrCreatedBy
     }
 
     func updateLoginUserModel(email : String, password : String)
@@ -56,20 +58,18 @@ class UserViewModel: ObservableObject {
     }
     
     func sendLoginUserRequest() {
-        //        if (checkConditions()) {
         updateLoginUserModel(email: email, password: password)
         LoginService.shared.Login(userModel: userModel) { (result) in
             switch result {
             case .success(_):
-                self.alertTitle = "Je account is aangemaakt!"
-                self.alertMessage = "Druk op de bevestigingslink in je email om je account te activeren."
+                self.alertTitle = "Inloggen gelukt!"
+                self.alertMessage = ""
                 self.alertSucces = true
             case .failure(_):
-                self.alertTitle = "Registreren Mislukt"
-                self.alertMessage = "Het registreren is mislukt, heb je een goede wifi verbinding? Probeer het nog een keer."
+                self.alertTitle = "Inloggen mislukt"
+                self.alertMessage = "Het inloggen is mislukt, heb je een goede wifi verbinding? Probeer het nog een keer."
             }
         }
-        //        }
     }
     
     func checkConditions() -> Bool {
@@ -125,7 +125,7 @@ class UserViewModel: ObservableObject {
     }
     
     func sendRegisterUserRequest() {
-        updateRegisterUserModel(role: role, firstName: firstName, lastName: lastName, sport: sport, gender: gender, dateOfBirth: dateOfBirth, email: email, password: password)
+        updateRegisterUserModel(role: role, firstName: firstName, lastName: lastName, sport: sport, gender: gender, dateOfBirth: dateOfBirth, email: email, password: password, roleOrCreatedBy: roleOrCreatedBy)
         if (checkConditions()) {
             RegisterService.shared.Register(userModel: userModel) { (result) in
                 switch result {

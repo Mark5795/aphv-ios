@@ -14,7 +14,7 @@ struct RegisterSporterView: View {
     
     @Binding var isFlowStarted: Bool
     
-    @State var isWithoutAccountPresented: Bool = false
+//    @State var isWithoutAccountPresented: Bool = false
     
     @State var role: String = "Sporter"
     @State var firstName: String = ""
@@ -40,7 +40,6 @@ struct RegisterSporterView: View {
     var body: some View {
         ZStack {
             TopCurve(title: "Account aanmaken")
-            zIndex(1.0)
             ScrollView {
                 VStack(alignment: .leading) {
                     Group {
@@ -181,8 +180,7 @@ struct RegisterSporterView: View {
                     }
                 }
             }.padding(.horizontal, 25.0)
-            .zIndex(0)
-        }.zIndex(1)
+        }
     }
 }
 

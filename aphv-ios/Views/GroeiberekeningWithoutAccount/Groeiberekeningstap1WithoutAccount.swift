@@ -10,6 +10,7 @@ import SwiftUI
 struct Groeiberekeningstap1WithoutAccount: View {
     
     @ObservedObject var groeiberekeningWithoutAccountViewModel : GroeiberekeningWithoutAccountViewModel
+    @ObservedObject var groeiberekeningViewModel = GroeiberekeningViewModel(groeiberekeningModel: GroeiberekeningModel())
     
     @State var gender : String = ""
     @State var dateOfBirth: String = ""
@@ -29,7 +30,11 @@ struct Groeiberekeningstap1WithoutAccount: View {
 
             Spacer()
             
-            Button(action: {self.groeiberekeningWithoutAccountViewModel.pageIndex = 2}, label: {
+            Button(action: {
+                    groeiberekeningViewModel.gender = self.gender
+                groeiberekeningViewModel.dateOfBirth = self.dateOfBirth
+                self.groeiberekeningWithoutAccountViewModel.pageIndex = 2                
+            }, label: {
                 Text("Volgende")
                     .fontWeight(.bold)
                     .frame(maxWidth: 325, minHeight: 44)

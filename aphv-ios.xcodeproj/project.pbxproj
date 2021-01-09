@@ -35,6 +35,8 @@
 		E5557090255A99BF00BB269E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E555708F255A99BF00BB269E /* Preview Assets.xcassets */; };
 		E555709B255A99C000BB269E /* aphv_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E555709A255A99C000BB269E /* aphv_iosTests.swift */; };
 		E55570A6255A99C000BB269E /* aphv_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55570A5255A99C000BB269E /* aphv_iosUITests.swift */; };
+		E555D2C925A99BB90086144A /* GroeiberekeningModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E555D2C825A99BB90086144A /* GroeiberekeningModel.swift */; };
+		E555D2CE25A99C820086144A /* GroeiberekeningViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E555D2CD25A99C820086144A /* GroeiberekeningViewModel.swift */; };
 		E556FCC8256D808000EACAF5 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E556FCC7256D808000EACAF5 /* UserViewModel.swift */; };
 		E5571AFD25A78E4D00EF78C4 /* GroeiberekeningWithoutAccountPagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5571AFC25A78E4D00EF78C4 /* GroeiberekeningWithoutAccountPagerView.swift */; };
 		E5571B0225A78E7100EF78C4 /* GroeiberekeningWithoutAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5571B0125A78E7100EF78C4 /* GroeiberekeningWithoutAccountViewModel.swift */; };
@@ -126,6 +128,8 @@
 		E55570A1255A99C000BB269E /* aphv-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "aphv-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E55570A5255A99C000BB269E /* aphv_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aphv_iosUITests.swift; sourceTree = "<group>"; };
 		E55570A7255A99C000BB269E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E555D2C825A99BB90086144A /* GroeiberekeningModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroeiberekeningModel.swift; sourceTree = "<group>"; };
+		E555D2CD25A99C820086144A /* GroeiberekeningViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroeiberekeningViewModel.swift; sourceTree = "<group>"; };
 		E556FCC7256D808000EACAF5 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		E5571AFC25A78E4D00EF78C4 /* GroeiberekeningWithoutAccountPagerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroeiberekeningWithoutAccountPagerView.swift; sourceTree = "<group>"; };
 		E5571B0125A78E7100EF78C4 /* GroeiberekeningWithoutAccountViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroeiberekeningWithoutAccountViewModel.swift; sourceTree = "<group>"; };
@@ -198,6 +202,7 @@
 				E5177A94256BC1FE0006AC6D /* GrafiekManager.swift */,
 				E556FCC7256D808000EACAF5 /* UserViewModel.swift */,
 				E5E30567258B733C0021E7B6 /* FlowViewModel.swift */,
+				E555D2CD25A99C820086144A /* GroeiberekeningViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -444,6 +449,7 @@
 				E556FCD6256D83A000EACAF5 /* Grafiek */,
 				E5177AB2256C358C0006AC6D /* UserModel.swift */,
 				E56885F92576819B00B37DA0 /* DropDownModel.swift */,
+				E555D2C825A99BB90086144A /* GroeiberekeningModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -600,12 +606,14 @@
 				E5D3ADA92584F66A00A2F775 /* SuccesPopup.swift in Sources */,
 				E566CCB9256293C200695A98 /* CoachesPagina.swift in Sources */,
 				E53E0EFB2570293400371C89 /* CheckboxFieldView.swift in Sources */,
+				E555D2C925A99BB90086144A /* GroeiberekeningModel.swift in Sources */,
 				E5A676012584E3C500A5B0E7 /* RegisterCoachView.swift in Sources */,
 				E5E92AED2583958700A511DE /* Intro3View.swift in Sources */,
 				E552F70E2583C8050063DCB3 /* Groeiberekeningstap2WithoutAccount.swift in Sources */,
 				E5571B0225A78E7100EF78C4 /* GroeiberekeningWithoutAccountViewModel.swift in Sources */,
 				E5DBFBF7259B4D5200C52F9A /* RequestError.swift in Sources */,
 				E5C51DA325655D5200198EBD /* Color.swift in Sources */,
+				E555D2CE25A99C820086144A /* GroeiberekeningViewModel.swift in Sources */,
 				E5634899257550770090E490 /* DropDownView.swift in Sources */,
 				E5DAC211257FD60900B527E8 /* Intro1View.swift in Sources */,
 				E5177AAB256C31500006AC6D /* RegisterSporterView.swift in Sources */,

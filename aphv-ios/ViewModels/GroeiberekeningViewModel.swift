@@ -12,6 +12,7 @@ class GroeiberekeningViewModel: ObservableObject {
     
     var groeiberekeningModel : GroeiberekeningModel
     let localStorage = LocalStorage()
+    let userViewModel = UserViewModel(userModel: UserModel())
     
     @Published var alertTitle : String = "Error"
     @Published var alertMessage : String = "Error"
@@ -60,7 +61,7 @@ class GroeiberekeningViewModel: ObservableObject {
         if(localStorage.isLoggedIn) {
             updateGroeiberekeningModel(dateOfMeasurement: getDate(), weight: weight, sittingHeight: sittingHeight, standingHeight: standingHeight)
             if (checkConditions()) {
-                GroeiberekeningService.shared.GroeiberekeningWithAccount(groeiberekeningModel: groeiberekeningModel) { (result) in
+                GroeiberekeningService.shared.GroeiberekeningWithAccount(groeiberekeningModel: groeiberekeningModel, accessToken: userViewModel.accessToken) { (result) in
                     switch result {
                     case .success(let response):
                         self.phv = response.phv

@@ -60,16 +60,19 @@ final class GroeiberekeningService : ObservableObject {
             }
     }
     
-    func GroeiberekeningWithAccount(groeiberekeningModel : GroeiberekeningModel, completion: @escaping (Result<GroeiberekeningResponse, RequestError>) -> Void) {
+    func GroeiberekeningWithAccount(groeiberekeningModel : GroeiberekeningModel, accessToken : String?, completion: @escaping (Result<GroeiberekeningResponse, RequestError>) -> Void) {
         
         let api = "https://aphv.azurewebsites.net"
         let endpoint = "/api/anonymous/growthcalculation"
         let url = URL(string: api + endpoint)!
         
+        let accessToken = "Bearer \(accessToken ?? "")"
+        print(accessToken)
+        
         var urlRequest = URLRequest(url: url)
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         urlRequest.httpMethod = "POST"
-        urlRequest.addValue("Bearer \(userViewModel.accessToken ?? "")", forHTTPHeaderField: "authorization")
+        urlRequest.addValue(accessToken, forHTTPHeaderField: "authorization")
         
         let parameters = GroeiberekeningWithAccountRequest(
             dateOfMeasurement: groeiberekeningModel.dateOfMeasurement ?? "",
@@ -94,7 +97,6 @@ final class GroeiberekeningService : ObservableObject {
                         completion(.failure(.urlError(urlError)))
                     case let decodingError as DecodingError:
                         completion(.failure(.decodingError(decodingError)))
-                        print(decodingError)
                     default:
                         completion(.failure(.genericError(error)))
                     }

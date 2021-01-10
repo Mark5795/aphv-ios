@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TabBarSporter: View {
     @State private var selectedTab = 0
+    @State var isFlowStarted: Bool = false
     
     var body: some View {
         TabView(selection: $selectedTab) {
@@ -23,18 +24,18 @@ struct TabBarSporter: View {
                 }
                 .tag(0)
             
-//            GroeiberekeningIntro()
-//                .onTapGesture {
-//                    self.selectedTab = 1
-//                }
-//                .tabItem {
-//                    Image("IconGroeiberekening")
-//                    Text("Groeiberekenen")
-//                        .font(.system(size: 19))
-//                        .fontWeight(.bold)
-//                        .foregroundColor(Color("ASMgreen"))
-//                }
-//                .tag(1)
+            GroeiberekeningIntroWithoutAccount(isFlowStarted: $isFlowStarted)
+                .onTapGesture {
+                    self.selectedTab = 1
+                }
+                .tabItem {
+                    Image("IconGroeiberekening")
+                    Text("Groeiberekenen")
+                        .font(.system(size: 19))
+                        .fontWeight(.bold)
+                        .foregroundColor(Color("ASMgreen"))
+                }
+                .tag(1)
             
             CoachesPagina()
                 .onTapGesture {

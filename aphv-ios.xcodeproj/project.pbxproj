@@ -46,8 +46,6 @@
 		E5572F0D255E83C000D25FA4 /* UitlegGroeiberekeningResultaten.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E5572F06255E81BF00D25FA4 /* UitlegGroeiberekeningResultaten.mp4 */; };
 		E557CE1E2583B88A00F9EAFA /* ConsWithoutAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = E557CE1D2583B88A00F9EAFA /* ConsWithoutAccount.swift */; };
 		E55BA692255EC11000028DC2 /* TopCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55BA691255EC11000028DC2 /* TopCurve.swift */; };
-		E55E5BEB255D76600038DA41 /* GroeiberekeningIntro.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E5BEA255D76600038DA41 /* GroeiberekeningIntro.swift */; };
-		E55E5BF3255D7C370038DA41 /* GroeiberekeningStap1.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E5BF2255D7C370038DA41 /* GroeiberekeningStap1.swift */; };
 		E5634899257550770090E490 /* DropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5634898257550770090E490 /* DropDownView.swift */; };
 		E566CCAF2562903200695A98 /* TabBarSporterOud.swift in Sources */ = {isa = PBXBuildFile; fileRef = E566CCAE2562903200695A98 /* TabBarSporterOud.swift */; };
 		E566CCB42562936000695A98 /* HomeSporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E566CCB32562936000695A98 /* HomeSporter.swift */; };
@@ -66,10 +64,11 @@
 		E591F14025AB32D80004FD6D /* GetCoachesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E591F13F25AB32D80004FD6D /* GetCoachesRequest.swift */; };
 		E591F14525AB33210004FD6D /* GetCoachesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E591F14425AB33210004FD6D /* GetCoachesResponse.swift */; };
 		E591F15025AB40970004FD6D /* getUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E591F14F25AB40970004FD6D /* getUserService.swift */; };
+		E591F16B25ABA6EA0004FD6D /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = E591F16A25ABA6EA0004FD6D /* CodeScanner */; };
+		E591F17125ABAD6C0004FD6D /* CarBode in Frameworks */ = {isa = PBXBuildFile; productRef = E591F17025ABAD6C0004FD6D /* CarBode */; };
+		E591F17725ABAEFE0004FD6D /* QRcodeScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E591F17625ABAEFE0004FD6D /* QRcodeScanner.swift */; };
 		E5A676012584E3C500A5B0E7 /* RegisterCoachView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A676002584E3C500A5B0E7 /* RegisterCoachView.swift */; };
 		E5C51DA325655D5200198EBD /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C51DA225655D5200198EBD /* Color.swift */; };
-		E5C51DA8256565C600198EBD /* GroeiberekeningStap2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C51DA7256565C600198EBD /* GroeiberekeningStap2.swift */; };
-		E5C51DAD2565791800198EBD /* GroeiberekeningStap3.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C51DAC2565791800198EBD /* GroeiberekeningStap3.swift */; };
 		E5C6B40E25A8BF4D0092D548 /* IntroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C6B40D25A8BF4D0092D548 /* IntroViewModel.swift */; };
 		E5C7B49F2571422B0097AF84 /* GetUsersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C7B49E2571422B0097AF84 /* GetUsersResponse.swift */; };
 		E5CF07A52580D7DB007E6855 /* Intro2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CF07A42580D7DB007E6855 /* Intro2View.swift */; };
@@ -150,8 +149,6 @@
 		E5572F06255E81BF00D25FA4 /* UitlegGroeiberekeningResultaten.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = UitlegGroeiberekeningResultaten.mp4; sourceTree = "<group>"; };
 		E557CE1D2583B88A00F9EAFA /* ConsWithoutAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsWithoutAccount.swift; sourceTree = "<group>"; };
 		E55BA691255EC11000028DC2 /* TopCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCurve.swift; sourceTree = "<group>"; };
-		E55E5BEA255D76600038DA41 /* GroeiberekeningIntro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroeiberekeningIntro.swift; sourceTree = "<group>"; };
-		E55E5BF2255D7C370038DA41 /* GroeiberekeningStap1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroeiberekeningStap1.swift; sourceTree = "<group>"; };
 		E5634898257550770090E490 /* DropDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownView.swift; sourceTree = "<group>"; };
 		E566CCAE2562903200695A98 /* TabBarSporterOud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarSporterOud.swift; sourceTree = "<group>"; };
 		E566CCB32562936000695A98 /* HomeSporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSporter.swift; sourceTree = "<group>"; };
@@ -169,10 +166,9 @@
 		E591F13F25AB32D80004FD6D /* GetCoachesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCoachesRequest.swift; sourceTree = "<group>"; };
 		E591F14425AB33210004FD6D /* GetCoachesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCoachesResponse.swift; sourceTree = "<group>"; };
 		E591F14F25AB40970004FD6D /* getUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getUserService.swift; sourceTree = "<group>"; };
+		E591F17625ABAEFE0004FD6D /* QRcodeScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRcodeScanner.swift; sourceTree = "<group>"; };
 		E5A676002584E3C500A5B0E7 /* RegisterCoachView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCoachView.swift; sourceTree = "<group>"; };
 		E5C51DA225655D5200198EBD /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		E5C51DA7256565C600198EBD /* GroeiberekeningStap2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroeiberekeningStap2.swift; sourceTree = "<group>"; };
-		E5C51DAC2565791800198EBD /* GroeiberekeningStap3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroeiberekeningStap3.swift; sourceTree = "<group>"; };
 		E5C6B40D25A8BF4D0092D548 /* IntroViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewModel.swift; sourceTree = "<group>"; };
 		E5C7B49E2571422B0097AF84 /* GetUsersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUsersResponse.swift; sourceTree = "<group>"; };
 		E5CF07A42580D7DB007E6855 /* Intro2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intro2View.swift; sourceTree = "<group>"; };
@@ -196,6 +192,8 @@
 			files = (
 				E56BE95A25AB2CFE00BD421F /* KeychainAccess in Frameworks */,
 				E5CF07AC2580E00D007E6855 /* SwiftUIPager in Frameworks */,
+				E591F16B25ABA6EA0004FD6D /* CodeScanner in Frameworks */,
+				E591F17125ABAD6C0004FD6D /* CarBode in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,11 +375,7 @@
 			children = (
 				E575D01C2567C8A700BAC36E /* Grafiek */,
 				E533B94A25669CC6000A186F /* GroeiberekeningResultaat.swift */,
-				E55E5BEA255D76600038DA41 /* GroeiberekeningIntro.swift */,
 				E54B9723255EC9B900CE8EA9 /* VideoGroeiberekeningUitleg.swift */,
-				E55E5BF2255D7C370038DA41 /* GroeiberekeningStap1.swift */,
-				E5C51DA7256565C600198EBD /* GroeiberekeningStap2.swift */,
-				E5C51DAC2565791800198EBD /* GroeiberekeningStap3.swift */,
 				E533B94F25669E73000A186F /* HelpInstructiefilmpje.swift */,
 			);
 			path = Groeiberekening;
@@ -430,6 +424,7 @@
 		E55E5BE9255D75D40038DA41 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E591F17525ABAEE20004FD6D /* Coaches */,
 				E568367825795F5400F1BBD8 /* Homepage */,
 				E552F7292583EA0A0063DCB3 /* PagerViews */,
 				E557CE1C2583B7CC00F9EAFA /* GroeiberekeningWithoutAccount */,
@@ -438,9 +433,8 @@
 				E5177AA9256C31180006AC6D /* Register */,
 				E55588AC25669978001EA75B /* Groeiberekening */,
 				E55BA691255EC11000028DC2 /* TopCurve.swift */,
-				E566CCAE2562903200695A98 /* TabBarSporterOud.swift */,
-				E566CCB8256293C200695A98 /* CoachesPagina.swift */,
 				E52938382562D3F900635E51 /* TabBarSporter.swift */,
+				E566CCAE2562903200695A98 /* TabBarSporterOud.swift */,
 				E53E0EF52570015C00371C89 /* InputTextFieldView.swift */,
 				E53E0EFA2570293400371C89 /* CheckboxFieldView.swift */,
 				E5E30579258BA5910021E7B6 /* LandingPage.swift */,
@@ -486,6 +480,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		E591F17525ABAEE20004FD6D /* Coaches */ = {
+			isa = PBXGroup;
+			children = (
+				E566CCB8256293C200695A98 /* CoachesPagina.swift */,
+				E591F17625ABAEFE0004FD6D /* QRcodeScanner.swift */,
+			);
+			path = Coaches;
+			sourceTree = "<group>";
+		};
 		E5DAC20F257FD58200B527E8 /* Intro */ = {
 			isa = PBXGroup;
 			children = (
@@ -515,6 +518,8 @@
 			packageProductDependencies = (
 				E5CF07AB2580E00D007E6855 /* SwiftUIPager */,
 				E56BE95925AB2CFE00BD421F /* KeychainAccess */,
+				E591F16A25ABA6EA0004FD6D /* CodeScanner */,
+				E591F17025ABAD6C0004FD6D /* CarBode */,
 			);
 			productName = "aphv-ios";
 			productReference = E5557085255A99BF00BB269E /* aphv-ios.app */;
@@ -590,6 +595,8 @@
 			packageReferences = (
 				E5CF07AA2580E00D007E6855 /* XCRemoteSwiftPackageReference "SwiftUIPager" */,
 				E56BE95825AB2CFE00BD421F /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				E591F16925ABA6EA0004FD6D /* XCRemoteSwiftPackageReference "CodeScanner" */,
+				E591F16F25ABAD6C0004FD6D /* XCRemoteSwiftPackageReference "CarBode-Barcode-Scanner-For-SwiftUI" */,
 			);
 			productRefGroup = E5557086255A99BF00BB269E /* Products */;
 			projectDirPath = "";
@@ -656,12 +663,11 @@
 				E555D2FB25AA3D470086144A /* HomeCoach.swift in Sources */,
 				E56BE94C25AB013700BD421F /* RegisterCoachRequest.swift in Sources */,
 				E5DBFC04259B543500C52F9A /* LoginRequest.swift in Sources */,
-				E5C51DA8256565C600198EBD /* GroeiberekeningStap2.swift in Sources */,
 				E575D0182567C7AF00BAC36E /* LineGraph.swift in Sources */,
 				E53E0EF62570015C00371C89 /* InputTextFieldView.swift in Sources */,
-				E55E5BEB255D76600038DA41 /* GroeiberekeningIntro.swift in Sources */,
 				E591F13B25AB32360004FD6D /* SporterToCoachesService.swift in Sources */,
 				E552F7202583DE8A0063DCB3 /* Groeiberekeningstap3WithoutAccount.swift in Sources */,
+				E591F17725ABAEFE0004FD6D /* QRcodeScanner.swift in Sources */,
 				E5DBFBFC259B50F400C52F9A /* LoginResponse.swift in Sources */,
 				E5571AFD25A78E4D00EF78C4 /* GroeiberekeningWithoutAccountPagerView.swift in Sources */,
 				E5177AB3256C358C0006AC6D /* UserModel.swift in Sources */,
@@ -678,7 +684,6 @@
 				E5DBFBF2259B4D0200C52F9A /* LoginService.swift in Sources */,
 				E566CCB42562936000695A98 /* HomeSporter.swift in Sources */,
 				E5177A95256BC1FE0006AC6D /* GrafiekManager.swift in Sources */,
-				E55E5BF3255D7C370038DA41 /* GroeiberekeningStap1.swift in Sources */,
 				E5E30568258B733C0021E7B6 /* FlowViewModel.swift in Sources */,
 				E52938392562D3F900635E51 /* TabBarSporter.swift in Sources */,
 				E5E3057A258BA5910021E7B6 /* LandingPage.swift in Sources */,
@@ -689,7 +694,6 @@
 				E55BA692255EC11000028DC2 /* TopCurve.swift in Sources */,
 				E5E3056D258B7DAA0021E7B6 /* MainView.swift in Sources */,
 				E53E0EEE256FDF7500371C89 /* RegisterRequest.swift in Sources */,
-				E5C51DAD2565791800198EBD /* GroeiberekeningStap3.swift in Sources */,
 				E575D01E2567C8BA00BAC36E /* GraphView.swift in Sources */,
 				E554E130256EA016008AC163 /* LoginView.swift in Sources */,
 				E533B94B25669CC6000A186F /* GroeiberekeningResultaat.swift in Sources */,
@@ -1028,6 +1032,22 @@
 				minimumVersion = 4.2.1;
 			};
 		};
+		E591F16925ABA6EA0004FD6D /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.7;
+			};
+		};
+		E591F16F25ABAD6C0004FD6D /* XCRemoteSwiftPackageReference "CarBode-Barcode-Scanner-For-SwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/heart/CarBode-Barcode-Scanner-For-SwiftUI";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		E5CF07AA2580E00D007E6855 /* XCRemoteSwiftPackageReference "SwiftUIPager" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/fermoya/SwiftUIPager.git";
@@ -1043,6 +1063,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E56BE95825AB2CFE00BD421F /* XCRemoteSwiftPackageReference "KeychainAccess" */;
 			productName = KeychainAccess;
+		};
+		E591F16A25ABA6EA0004FD6D /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E591F16925ABA6EA0004FD6D /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
+		};
+		E591F17025ABAD6C0004FD6D /* CarBode */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E591F16F25ABAD6C0004FD6D /* XCRemoteSwiftPackageReference "CarBode-Barcode-Scanner-For-SwiftUI" */;
+			productName = CarBode;
 		};
 		E5CF07AB2580E00D007E6855 /* SwiftUIPager */ = {
 			isa = XCSwiftPackageProductDependency;

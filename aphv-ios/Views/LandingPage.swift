@@ -62,7 +62,7 @@ struct LandingPage: View {
                             .frame(maxWidth: 325, minHeight: 44)
                             .foregroundColor(.white)
                     })
-                    .fullScreenCover(isPresented: $isWithoutAccountPresented) {
+                    .sheet(isPresented: $isWithoutAccountPresented) {
                         ConsWithoutAccount()
                     }
                     .background(Color.ASMgreen)

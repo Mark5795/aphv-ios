@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct TabBarSporterOud: View {
+    
+    @State var isFlowStarted: Bool = false
+    
     var body: some View {
-        NavigationView{            
+//        NavigationView{
             HStack {
                 NavigationLink(destination: HomeSporter()){
                     VStack {
@@ -24,19 +27,19 @@ struct TabBarSporterOud: View {
                 }
                 .padding(.top, 10.0)
                 .padding(.trailing, 15.0)
-//                
-//                NavigationLink(GroeiberekeningIntroWithoutAccount(isFlowStarted: $isFlowStarted, withAccount: $withAccount)){
-//                    VStack {
-//                        Image("IconGroeiberekening")
-//                            .resizable()
-//                            .frame(width: 24.5, height: 28.0)
-//                        Text("Groeiberekenen")
-//                            .font(.system(size: 19))
-//                            .fontWeight(.bold)
-//                            .foregroundColor(Color("ASMgreen"))
-//                        }
-//                    }
-//                .padding([.top, .leading, .trailing], 10.0)
+
+                NavigationLink(destination: GroeiberekeningIntroWithoutAccount(isFlowStarted: $isFlowStarted)){
+                    VStack {
+                        Image("IconGroeiberekening")
+                            .resizable()
+                            .frame(width: 24.5, height: 28.0)
+                        Text("Groeiberekenen")
+                            .font(.system(size: 19))
+                            .fontWeight(.bold)
+                            .foregroundColor(Color("ASMgreen"))
+                        }
+                    }
+                .padding([.top, .leading, .trailing], 10.0)
                 NavigationLink(destination: CoachesPagina()){
                     VStack {
                         Image("IconSportersEnCoaches")
@@ -57,7 +60,7 @@ struct TabBarSporterOud: View {
             
         }
     }
-}
+//}
 
 struct TabBarSporterOud_Previews: PreviewProvider {
     static var previews: some View {

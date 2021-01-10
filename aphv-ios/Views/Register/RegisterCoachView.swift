@@ -160,7 +160,7 @@ struct RegisterCoachView: View {
                         .background(Color.ASMgreen)
                         .cornerRadius(8.0)
                         .alert(isPresented: $showingErrorAlert) {
-                            Alert(title: Text(userViewModel.alertTitle), message: Text(userViewModel.alertMessage), dismissButton: .default(Text("Verder"), action: {if(userViewModel.alertTitle == "Je account is aangemaakt!") {userViewModel.sendLoginUserRequest(); self.localStorage.createdAccount = true; self.isHomeCoachPresented = true}}))
+                            Alert(title: Text(userViewModel.alertTitle), message: Text(userViewModel.alertMessage), dismissButton: .default(Text("Verder"), action: {if(userViewModel.alertTitle == "Je account is aangemaakt!") {userViewModel.sendLoginUserRequest(); self.localStorage.isLoggedIn = true; self.isHomeCoachPresented = true}}))
                         }
                         .fullScreenCover(isPresented: $isHomeCoachPresented) {
                             HomeCoach()

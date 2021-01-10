@@ -174,7 +174,7 @@ struct RegisterSporterView: View {
                         .background(Color.ASMgreen)
                         .cornerRadius(8.0)
                         .alert(isPresented: $showingErrorAlert) {
-                            Alert(title: Text(userViewModel.alertTitle), message: Text(userViewModel.alertMessage), dismissButton: .default(Text("Verder"), action: {if(userViewModel.alertTitle == "Je account is aangemaakt!") {self.localStorage.createdAccount = true; self.isHomeSportPresented = true}}))
+                            Alert(title: Text(userViewModel.alertTitle), message: Text(userViewModel.alertMessage), dismissButton: .default(Text("Verder"), action: {if(userViewModel.alertTitle == "Je account is aangemaakt!") {self.localStorage.isLoggedIn = true; self.isHomeSportPresented = true; userViewModel.sendLoginUserRequest()}}))
                         }
                         .fullScreenCover(isPresented: $isHomeSportPresented) {
                             HomeSporter()

@@ -18,13 +18,16 @@ struct GroeiberekeningResultaat: View {
     var body: some View {
         ZStack {
             TopCurve(title: "Groeiberekening")
-            if(localStorage.isLoggedIn) {
-                Button(action: { }, label: {Text("Back")})
-            }
             VStack(alignment: .leading) {
                 HStack() {
                     
-                    Spacer()
+                    if(localStorage.isLoggedIn) {
+                        Button(action: { }, label: {Text("Back")})
+                            .fullScreenCover(isPresented: $isCreateAccountPresented) {
+                                RegisterChooseRole(isFlowStarted: $isFlowStarted)
+                            }
+                    }
+                    
                     
                     Text("Resultaat")
                         .padding(.trailing, -50.0)
@@ -59,7 +62,7 @@ struct GroeiberekeningResultaat: View {
                             .foregroundColor(.white)
                     })
                     .fullScreenCover(isPresented: $isCreateAccountPresented) {
-                        RegisterChooseRole(isFlowStarted: $isFlowStarted)
+                        LandingPage()
                     }
                     .background(Color.ASMgreen)
                     .cornerRadius(8.0)

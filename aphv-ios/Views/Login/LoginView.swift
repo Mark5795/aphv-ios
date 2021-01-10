@@ -36,7 +36,7 @@ struct LoginView: View {
                 Image("ASMLogo")
                 
                 Spacer()
-                    .frame(height: 100)
+                    .frame(height: 80)
                 
                 VStack(alignment: .leading) {
                     InputTextFieldView(stateBinding: $email, title: "Emailadres", placeholder: "", secureTextField: false)
@@ -70,6 +70,8 @@ struct LoginView: View {
                     }
                     
                 }.padding(.horizontal, 25.0)
+                Spacer()
+                    .frame(height: 20)
             }
         }
     }

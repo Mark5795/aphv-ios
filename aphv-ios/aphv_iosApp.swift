@@ -25,15 +25,6 @@ class LocalStorage {
         }
     }
     
-    var createdAccount: Bool {
-        get {
-            return userDefaults.bool(forKey: "createdAccount")
-        }
-        set {
-            userDefaults.set(newValue, forKey: "createdAccount")
-        }
-    }
-    
     var isLoggedIn: Bool {
         get {
             return userDefaults.bool(forKey: "loggedIn")

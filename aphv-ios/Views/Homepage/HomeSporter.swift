@@ -17,29 +17,31 @@
 import SwiftUI
 
 struct HomeSporter: View {
-//    let localStorage = LocalStorage()
+    //    let localStorage = LocalStorage()
     
     @ObservedObject var groeiberekeningViewModel = GroeiberekeningViewModel(groeiberekeningModel: GroeiberekeningModel())
     
-//    @Binding var isFlowStarted: Bool
+    //    @Binding var isFlowStarted: Bool
     @State var isFlowStarted: Bool = false
-    @State var withAccount: Bool = true
     
     var body: some View {
-        NavigationView {
-            NavigationLink(
-                destination: GroeiberekeningIntroWithoutAccount(isFlowStarted: $isFlowStarted, withAccount: $withAccount),
-                isActive: $isFlowStarted,
-                label: {
-                    Text("Verdergaan zonder account")
-                        .fontWeight(.bold)
-                        .frame(maxWidth: 310
-                               , minHeight: 44)
-                        .foregroundColor(.white)
-                })
-                .isDetailLink(false)
-                .background(Color.ASMgreen)
-                .cornerRadius(8.0)
+        ZStack {
+            TopCurve(title: "Uitleg Groeiberekening")
+            NavigationView {
+                NavigationLink(
+                    destination: GroeiberekeningIntroWithoutAccount(isFlowStarted: $isFlowStarted),
+                    isActive: $isFlowStarted,
+                    label: {
+                        Text("Start groeiberekening")
+                            .fontWeight(.bold)
+                            .frame(maxWidth: 310
+                                   , minHeight: 44)
+                            .foregroundColor(.white)
+                    })
+                    .isDetailLink(false)
+                    .background(Color.ASMgreen)
+                    .cornerRadius(8.0)
+            }
         }
     }
 }

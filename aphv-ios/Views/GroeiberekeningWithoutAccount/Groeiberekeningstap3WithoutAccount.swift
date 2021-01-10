@@ -91,13 +91,9 @@ struct Groeiberekeningstap3WithoutAccount: View {
                     weight = (weightText as NSString).doubleValue
                     groeiberekeningViewModel.weight = weight
                     
-                    // get user information as date of birth and gender to make the calculation
-//                    if(localStorage.isLoggedIn) {
-//                        
-//                    }
-                    groeiberekeningViewModel.sendGroeiberekeningRequest()
-                    
-                    self.showingErrorAlert.toggle()
+                    if(groeiberekeningViewModel.sendGroeiberekeningRequest()) {
+                        self.showingErrorAlert.toggle()
+                    }
                 }, label: {
                     Text("Bereken")
                         .fontWeight(.bold)

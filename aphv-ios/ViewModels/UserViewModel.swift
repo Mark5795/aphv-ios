@@ -79,7 +79,7 @@ class UserViewModel: ObservableObject {
         userModel.password = password
     }
     
-    func sendLoginUserRequest() {
+    func sendLoginUserRequest() -> Bool{
         updateLoginUserModel(email: email, password: password)
         LoginService.shared.Login(userModel: userModel) { (result) in
             switch result {
@@ -94,6 +94,7 @@ class UserViewModel: ObservableObject {
                 self.alertMessage = "Het inloggen is mislukt, heb je een goede wifi verbinding? Probeer het nog een keer."
             }
         }
+        return true
     }
     
     func checkConditions() -> Bool {

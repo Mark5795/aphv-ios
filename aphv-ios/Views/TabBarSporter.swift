@@ -23,18 +23,18 @@ struct TabBarSporter: View {
                 }
                 .tag(0)
             
-            GroeiberekeningIntro()
-                .onTapGesture {
-                    self.selectedTab = 1
-                }
-                .tabItem {
-                    Image("IconGroeiberekening")
-                    Text("Groeiberekenen")
-                        .font(.system(size: 19))
-                        .fontWeight(.bold)
-                        .foregroundColor(Color("ASMgreen"))
-                }
-                .tag(1)
+//            GroeiberekeningIntro()
+//                .onTapGesture {
+//                    self.selectedTab = 1
+//                }
+//                .tabItem {
+//                    Image("IconGroeiberekening")
+//                    Text("Groeiberekenen")
+//                        .font(.system(size: 19))
+//                        .fontWeight(.bold)
+//                        .foregroundColor(Color("ASMgreen"))
+//                }
+//                .tag(1)
             
             CoachesPagina()
                 .onTapGesture {

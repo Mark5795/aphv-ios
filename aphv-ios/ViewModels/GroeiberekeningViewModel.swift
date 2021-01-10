@@ -11,7 +11,7 @@ import Combine
 class GroeiberekeningViewModel: ObservableObject {
     
     var groeiberekeningModel : GroeiberekeningModel
-    
+    let localStorage = LocalStorage()
     
     @Published var alertTitle : String = "Error"
     @Published var alertMessage : String = "Error"
@@ -35,10 +35,11 @@ class GroeiberekeningViewModel: ObservableObject {
     
     init(groeiberekeningModel : GroeiberekeningModel) {
         self.groeiberekeningModel = groeiberekeningModel
+        
     }
     
     func updateWithoutAccountGroeiberekeningModel(dateOfBirth : String, gender : String, dateOfMeasurement : String, weight : Double, sittingHeight : Double, standingHeight : Double) {
-
+        
         groeiberekeningModel.dateOfBirth = dateOfBirth
         groeiberekeningModel.gender = gender
         groeiberekeningModel.dateOfMeasurement = dateOfMeasurement
@@ -47,8 +48,35 @@ class GroeiberekeningViewModel: ObservableObject {
         groeiberekeningModel.standingHeight = standingHeight
     }
     
-    func sendGroeiberekeningRequest() {
-        updateWithoutAccountGroeiberekeningModel(dateOfBirth: dateOfBirth, gender: gender, dateOfMeasurement: getDate(), weight: weight, sittingHeight: sittingHeight, standingHeight: standingHeight)
+    func updateGroeiberekeningModel(dateOfMeasurement : String, weight : Double, sittingHeight : Double, standingHeight : Double) {
+        
+        groeiberekeningModel.dateOfMeasurement = dateOfMeasurement
+        groeiberekeningModel.weight = weight
+        groeiberekeningModel.sittingHeight = sittingHeight
+        groeiberekeningModel.standingHeight = standingHeight
+    }
+    
+    func sendGroeiberekeningRequest() -> Bool{
+        if(localStorage.isLoggedIn) {
+            updateGroeiberekeningModel(dateOfMeasurement: getDate(), weight: weight, sittingHeight: sittingHeight, standingHeight: standingHeight)
+            if (checkConditions()) {
+                GroeiberekeningService.shared.GroeiberekeningWithAccount(groeiberekeningModel: groeiberekeningModel) { (result) in
+                    switch result {
+                    case .success(let response):
+                        self.phv = response.phv
+                        self.growthPhase = response.growthPhase
+                        self.alertTitle = "Je groei word berekend!"
+                        self.alertMessage = ""
+                        self.alertSucces = true
+                    case .failure(_):
+                        self.alertTitle = "Berekening Mislukt"
+                        self.alertMessage = "Het berekenen is mislukt, heb je een goede wifi verbinding? Probeer het nog een keer."
+                    }
+                }
+            }
+            return true
+        } else {
+            updateWithoutAccountGroeiberekeningModel(dateOfBirth: dateOfBirth, gender: gender, dateOfMeasurement: getDate(), weight: weight, sittingHeight: sittingHeight, standingHeight: standingHeight)
             if (checkConditions()) {
                 GroeiberekeningService.shared.GroeiberekeningWithoutAccount(groeiberekeningModel: groeiberekeningModel) { (result) in
                     switch result {
@@ -64,7 +92,10 @@ class GroeiberekeningViewModel: ObservableObject {
                     }
                 }
             }
+            return true
         }
+        
+    }
     
     func checkConditions() -> Bool {
         if (checkUserInput() == false) {
@@ -76,8 +107,14 @@ class GroeiberekeningViewModel: ObservableObject {
     }
     
     func checkUserInput() -> Bool {
-        if (groeiberekeningModel.dateOfBirth == "" || groeiberekeningModel.gender == "" || groeiberekeningModel.dateOfMeasurement == "" || groeiberekeningModel.weight == 0 || groeiberekeningModel.sittingHeight == 0 || groeiberekeningModel.standingHeight == 0) {
-            return false
+        if(localStorage.isLoggedIn) {
+            if (groeiberekeningModel.dateOfMeasurement == "" || groeiberekeningModel.weight == 0 || groeiberekeningModel.sittingHeight == 0 || groeiberekeningModel.standingHeight == 0) {
+                return false
+            }
+        }else {
+            if (groeiberekeningModel.dateOfBirth == "" || groeiberekeningModel.gender == "" || groeiberekeningModel.dateOfMeasurement == "" || groeiberekeningModel.weight == 0 || groeiberekeningModel.sittingHeight == 0 || groeiberekeningModel.standingHeight == 0) {
+                return false
+            }
         }
         return true
     }
@@ -88,7 +125,7 @@ class GroeiberekeningViewModel: ObservableObject {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "nl_NL")
         formatter.setLocalizedDateFormatFromTemplate("dd-MM-yyyy")
-
+        
         let datetime = formatter.string(from: now)
         print(datetime)
         return datetime

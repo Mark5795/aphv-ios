@@ -24,19 +24,19 @@ struct TabBarSporterOud: View {
                 }
                 .padding(.top, 10.0)
                 .padding(.trailing, 15.0)
-                
-                NavigationLink(destination: GroeiberekeningIntro()){
-                    VStack {
-                        Image("IconGroeiberekening")
-                            .resizable()
-                            .frame(width: 24.5, height: 28.0)
-                        Text("Groeiberekenen")
-                            .font(.system(size: 19))
-                            .fontWeight(.bold)
-                            .foregroundColor(Color("ASMgreen"))
-                        }
-                    }
-                .padding([.top, .leading, .trailing], 10.0)
+//                
+//                NavigationLink(GroeiberekeningIntroWithoutAccount(isFlowStarted: $isFlowStarted, withAccount: $withAccount)){
+//                    VStack {
+//                        Image("IconGroeiberekening")
+//                            .resizable()
+//                            .frame(width: 24.5, height: 28.0)
+//                        Text("Groeiberekenen")
+//                            .font(.system(size: 19))
+//                            .fontWeight(.bold)
+//                            .foregroundColor(Color("ASMgreen"))
+//                        }
+//                    }
+//                .padding([.top, .leading, .trailing], 10.0)
                 NavigationLink(destination: CoachesPagina()){
                     VStack {
                         Image("IconSportersEnCoaches")

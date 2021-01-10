@@ -14,7 +14,7 @@ import SwiftUI
 
 class LocalStorage {
     let userDefaults = UserDefaults.standard
-
+    
     
     var hasSeenIntro: Bool {
         get {
@@ -50,13 +50,14 @@ struct aphv_iosApp: App {
     
     var body: some Scene {
         WindowGroup {
-            if(localStorage.createdAccount) {
+            if(localStorage.isLoggedIn) {
                 LoginView()
-            }
-            if (localStorage.hasSeenIntro) {
-                LandingPage()
-            } else {
-                IntroPagerView()
+            } else{
+                if (localStorage.hasSeenIntro) {
+                    LandingPage()
+                } else {
+                    IntroPagerView()
+                }
             }
         }
     }

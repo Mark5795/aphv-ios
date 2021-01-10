@@ -11,3 +11,8 @@ struct GroeiberekeningRequest: Encodable {
     let dateOfBirth, gender, dateOfMeasurement: String
     let weight, sittingHeight, standingHeight : Double
 }
+
+struct GroeiberekeningWithAccountRequest: Encodable {
+    let dateOfMeasurement: String?
+    let weight, sittingHeight, standingHeight : Double?
+}

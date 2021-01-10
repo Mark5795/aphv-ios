@@ -33,17 +33,27 @@ struct LoginView: View {
                 .navigationTitle(Text(""))
                 .zIndex(0)
                 
+                Image("ASMLogo")
+                
+                Spacer()
+                    .frame(height: 100)
+                
                 VStack(alignment: .leading) {
                     InputTextFieldView(stateBinding: $email, title: "Emailadres", placeholder: "", secureTextField: false)
                     
                     InputTextFieldView(stateBinding: $password, title: "Wachtwoord", placeholder: "", secureTextField: true)
                     
+                    Spacer()
+                        .frame(height: 20)
+                    
                     Button(action: {
                         userViewModel.email = self.email.lowercased()
                         userViewModel.password = self.password
                         
-                        userViewModel.sendLoginUserRequest()
-                        self.showingErrorAlert.toggle()
+                        if(userViewModel.sendLoginUserRequest()) {
+                            self.showingErrorAlert.toggle()
+                        }
+
                     }, label: {
                         Text("Aanmaken")
                             .fontWeight(.bold)

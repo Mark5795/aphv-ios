@@ -375,8 +375,8 @@
 		E55588AC25669978001EA75B /* Groeiberekening */ = {
 			isa = PBXGroup;
 			children = (
-				E533B94A25669CC6000A186F /* GroeiberekeningResultaat.swift */,
 				E575D01C2567C8A700BAC36E /* Grafiek */,
+				E533B94A25669CC6000A186F /* GroeiberekeningResultaat.swift */,
 				E55E5BEA255D76600038DA41 /* GroeiberekeningIntro.swift */,
 				E54B9723255EC9B900CE8EA9 /* VideoGroeiberekeningUitleg.swift */,
 				E55E5BF2255D7C370038DA41 /* GroeiberekeningStap1.swift */,

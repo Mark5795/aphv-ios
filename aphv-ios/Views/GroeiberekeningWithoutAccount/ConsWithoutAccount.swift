@@ -13,8 +13,6 @@ struct ConsWithoutAccount: View {
     
     @State var pageIndex = 0
     
-    @State var withAccount: Bool = false
-    
     var body: some View {
             NavigationView{
                 ZStack {
@@ -62,7 +60,7 @@ struct ConsWithoutAccount: View {
                     //                    .padding(.vertical, 1.0)
                     
                     NavigationLink(
-                        destination: GroeiberekeningIntroWithoutAccount(isFlowStarted: $isFlowStarted, withAccount: $withAccount),
+                        destination: GroeiberekeningIntroWithoutAccount(isFlowStarted: $isFlowStarted),
                         isActive: $isFlowStarted,
                         label: {
                             Text("Verdergaan zonder account")

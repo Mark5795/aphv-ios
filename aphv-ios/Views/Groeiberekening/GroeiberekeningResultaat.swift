@@ -13,6 +13,8 @@ struct GroeiberekeningResultaat: View {
     @State var isCreateAccountPresented: Bool = false
     @State var isFlowStarted: Bool = false
     
+    let localStorage = LocalStorage()
+    
     var body: some View {
         ZStack {
             TopCurve(title: "Groeiberekening")
@@ -46,17 +48,19 @@ struct GroeiberekeningResultaat: View {
                 //                GraphView()
                 Spacer()
                 
-                Button(action: { self.isCreateAccountPresented = true}, label: {
-                    Text("Verdergaan zonder account")
-                        .fontWeight(.bold)
-                        .frame(maxWidth: 325, minHeight: 44)
-                        .foregroundColor(.white)
-                })
-                .fullScreenCover(isPresented: $isCreateAccountPresented) {
-                    RegisterChooseRole(isFlowStarted: $isFlowStarted)
+                if(localStorage.isLoggedIn) {
+                    Button(action: { self.isCreateAccountPresented = true}, label: {
+                        Text("Maak account aan en sla berekening op")
+                            .fontWeight(.bold)
+                            .frame(maxWidth: 325, minHeight: 44)
+                            .foregroundColor(.white)
+                    })
+                    .fullScreenCover(isPresented: $isCreateAccountPresented) {
+                        RegisterChooseRole(isFlowStarted: $isFlowStarted)
+                    }
+                    .background(Color.ASMgreen)
+                    .cornerRadius(8.0)
                 }
-                .background(Color.ASMgreen)
-                .cornerRadius(8.0)
             }
             .padding(.horizontal, 25.0)
             .padding(.top, 60.0)

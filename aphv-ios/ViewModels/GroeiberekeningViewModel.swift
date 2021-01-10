@@ -61,7 +61,7 @@ class GroeiberekeningViewModel: ObservableObject {
         if(localStorage.isLoggedIn) {
             updateGroeiberekeningModel(dateOfMeasurement: getDate(), weight: weight, sittingHeight: sittingHeight, standingHeight: standingHeight)
             if (checkConditions()) {
-                GroeiberekeningService.shared.GroeiberekeningWithAccount(groeiberekeningModel: groeiberekeningModel, accessToken: userViewModel.accessToken) { (result) in
+                GroeiberekeningService.shared.GroeiberekeningWithAccount(groeiberekeningModel: groeiberekeningModel, accessToken: userViewModel.accessToken, emailUser: userViewModel.email) { (result) in
                     switch result {
                     case .success(let response):
                         self.phv = response.phv

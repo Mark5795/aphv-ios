@@ -60,19 +60,24 @@ final class GroeiberekeningService : ObservableObject {
             }
     }
     
-    func GroeiberekeningWithAccount(groeiberekeningModel : GroeiberekeningModel, accessToken : String?, completion: @escaping (Result<GroeiberekeningResponse, RequestError>) -> Void) {
+    func GroeiberekeningWithAccount(groeiberekeningModel : GroeiberekeningModel, accessToken : String?, emailUser : String, completion: @escaping (Result<GroeiberekeningResponse, RequestError>) -> Void) {
+        
+        // This works
+//        let email = "markmark@gmail.com"
+        
+        // This does not
+        let email = emailUser
         
         let api = "https://aphv.azurewebsites.net"
-        let endpoint = "/api/anonymous/growthcalculation"
+        let endpoint = "/api/users/\(email)/growthcalculation"
         let url = URL(string: api + endpoint)!
         
         let accessToken = "Bearer \(accessToken ?? "")"
-        print(accessToken)
         
         var urlRequest = URLRequest(url: url)
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         urlRequest.httpMethod = "POST"
-        urlRequest.addValue(accessToken, forHTTPHeaderField: "authorization")
+        urlRequest.setValue(accessToken, forHTTPHeaderField: "authorization")
         
         let parameters = GroeiberekeningWithAccountRequest(
             dateOfMeasurement: groeiberekeningModel.dateOfMeasurement ?? "",

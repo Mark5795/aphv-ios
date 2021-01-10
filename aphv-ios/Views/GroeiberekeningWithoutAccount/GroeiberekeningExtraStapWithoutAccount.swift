@@ -9,7 +9,7 @@ import SwiftUI
 
 struct GroeiberekeningExtraStapWithoutAccount: View {
     
-    @ObservedObject var groeiberekeningViewModel = GroeiberekeningViewModel(groeiberekeningModel: GroeiberekeningModel())
+    @ObservedObject var groeiberekeningViewModel : GroeiberekeningViewModel
     
     @Binding var isFlowStarted: Bool
     

@@ -7,11 +7,9 @@
 
 import SwiftUI
 import Combine
+import KeychainAccess
 
 class UserViewModel: ObservableObject {
-    
-    //    var checkedConditions : Bool = false
-    //    var checkedApproval : Bool = false
     
     @Published var userModel : UserModel
     
@@ -30,7 +28,7 @@ class UserViewModel: ObservableObject {
     @Published var passwordCheck: String = ""
     
 //    @Published var accessToken: String = ""
-//    @Published var refreshToken: String = ""
+    @Published var refreshToken: String = ""
     
     @Published var checkedConditions: Bool = false
     @Published var checkedApproval: Bool = false
@@ -55,14 +53,13 @@ class UserViewModel: ObservableObject {
         }
     }
     
-    private init() {
-        isAuthenticated = accessToken != nil
-    }
-    
-    
     init(userModel : UserModel) {
         self.userModel = userModel
     }
+    
+//    private init() {
+//        isAuthenticated = accessToken != nil
+//    }
     
     func updateRegisterUserModel(role : String, firstName : String, lastName : String, sport : String, gender : String, dateOfBirth : String, email : String, password : String) {
         

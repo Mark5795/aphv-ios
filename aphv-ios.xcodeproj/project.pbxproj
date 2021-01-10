@@ -61,6 +61,11 @@
 		E575D0262567CEEF00BAC36E /* MeerdereGrafiekenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E575D0252567CEEF00BAC36E /* MeerdereGrafiekenView.swift */; };
 		E575D02B2567CF6300BAC36E /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = E575D02A2567CF6300BAC36E /* Data.swift */; };
 		E575D031256806B400BAC36E /* ResultaatItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E575D030256806B400BAC36E /* ResultaatItem.swift */; };
+		E591F13625AB311C0004FD6D /* SporterToCoachesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E591F13525AB311C0004FD6D /* SporterToCoachesViewModel.swift */; };
+		E591F13B25AB32360004FD6D /* SporterToCoachesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E591F13A25AB32360004FD6D /* SporterToCoachesService.swift */; };
+		E591F14025AB32D80004FD6D /* GetCoachesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E591F13F25AB32D80004FD6D /* GetCoachesRequest.swift */; };
+		E591F14525AB33210004FD6D /* GetCoachesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E591F14425AB33210004FD6D /* GetCoachesResponse.swift */; };
+		E591F15025AB40970004FD6D /* getUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E591F14F25AB40970004FD6D /* getUserService.swift */; };
 		E5A676012584E3C500A5B0E7 /* RegisterCoachView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A676002584E3C500A5B0E7 /* RegisterCoachView.swift */; };
 		E5C51DA325655D5200198EBD /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C51DA225655D5200198EBD /* Color.swift */; };
 		E5C51DA8256565C600198EBD /* GroeiberekeningStap2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C51DA7256565C600198EBD /* GroeiberekeningStap2.swift */; };
@@ -159,6 +164,11 @@
 		E575D0252567CEEF00BAC36E /* MeerdereGrafiekenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeerdereGrafiekenView.swift; sourceTree = "<group>"; };
 		E575D02A2567CF6300BAC36E /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		E575D030256806B400BAC36E /* ResultaatItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultaatItem.swift; sourceTree = "<group>"; };
+		E591F13525AB311C0004FD6D /* SporterToCoachesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SporterToCoachesViewModel.swift; sourceTree = "<group>"; };
+		E591F13A25AB32360004FD6D /* SporterToCoachesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SporterToCoachesService.swift; sourceTree = "<group>"; };
+		E591F13F25AB32D80004FD6D /* GetCoachesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCoachesRequest.swift; sourceTree = "<group>"; };
+		E591F14425AB33210004FD6D /* GetCoachesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCoachesResponse.swift; sourceTree = "<group>"; };
+		E591F14F25AB40970004FD6D /* getUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getUserService.swift; sourceTree = "<group>"; };
 		E5A676002584E3C500A5B0E7 /* RegisterCoachView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCoachView.swift; sourceTree = "<group>"; };
 		E5C51DA225655D5200198EBD /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		E5C51DA7256565C600198EBD /* GroeiberekeningStap2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroeiberekeningStap2.swift; sourceTree = "<group>"; };
@@ -210,10 +220,11 @@
 			isa = PBXGroup;
 			children = (
 				E5C6B40D25A8BF4D0092D548 /* IntroViewModel.swift */,
-				E5177A94256BC1FE0006AC6D /* GrafiekManager.swift */,
 				E556FCC7256D808000EACAF5 /* UserViewModel.swift */,
-				E5E30567258B733C0021E7B6 /* FlowViewModel.swift */,
 				E555D2CD25A99C820086144A /* GroeiberekeningViewModel.swift */,
+				E5177A94256BC1FE0006AC6D /* GrafiekManager.swift */,
+				E5E30567258B733C0021E7B6 /* FlowViewModel.swift */,
+				E591F13525AB311C0004FD6D /* SporterToCoachesViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -239,6 +250,7 @@
 				E5DBFBFB259B50F400C52F9A /* LoginResponse.swift */,
 				E555D2ED25A9C6750086144A /* GroeiberekeningResponse.swift */,
 				E56BE95025AB01C600BD421F /* RegisterCoachResponse.swift */,
+				E591F14425AB33210004FD6D /* GetCoachesResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -250,6 +262,7 @@
 				E5DBFC03259B543500C52F9A /* LoginRequest.swift */,
 				E555D2F225A9C8C70086144A /* GroeiberekeningRequest.swift */,
 				E56BE94B25AB013700BD421F /* RegisterCoachRequest.swift */,
+				E591F13F25AB32D80004FD6D /* GetCoachesRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -287,6 +300,8 @@
 				E5DBFBF1259B4D0200C52F9A /* LoginService.swift */,
 				E5DBFBF6259B4D5200C52F9A /* RequestError.swift */,
 				E555D2E825A9C4580086144A /* GroeiberekeningService.swift */,
+				E591F13A25AB32360004FD6D /* SporterToCoachesService.swift */,
+				E591F14F25AB40970004FD6D /* getUserService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -360,13 +375,13 @@
 		E55588AC25669978001EA75B /* Groeiberekening */ = {
 			isa = PBXGroup;
 			children = (
+				E533B94A25669CC6000A186F /* GroeiberekeningResultaat.swift */,
 				E575D01C2567C8A700BAC36E /* Grafiek */,
 				E55E5BEA255D76600038DA41 /* GroeiberekeningIntro.swift */,
 				E54B9723255EC9B900CE8EA9 /* VideoGroeiberekeningUitleg.swift */,
 				E55E5BF2255D7C370038DA41 /* GroeiberekeningStap1.swift */,
 				E5C51DA7256565C600198EBD /* GroeiberekeningStap2.swift */,
 				E5C51DAC2565791800198EBD /* GroeiberekeningStap3.swift */,
-				E533B94A25669CC6000A186F /* GroeiberekeningResultaat.swift */,
 				E533B94F25669E73000A186F /* HelpInstructiefilmpje.swift */,
 			);
 			path = Groeiberekening;
@@ -632,6 +647,7 @@
 				E5E92AED2583958700A511DE /* Intro3View.swift in Sources */,
 				E552F70E2583C8050063DCB3 /* Groeiberekeningstap1WithoutAccount.swift in Sources */,
 				E5DBFBF7259B4D5200C52F9A /* RequestError.swift in Sources */,
+				E591F15025AB40970004FD6D /* getUserService.swift in Sources */,
 				E5C51DA325655D5200198EBD /* Color.swift in Sources */,
 				E555D2CE25A99C820086144A /* GroeiberekeningViewModel.swift in Sources */,
 				E5634899257550770090E490 /* DropDownView.swift in Sources */,
@@ -644,6 +660,7 @@
 				E575D0182567C7AF00BAC36E /* LineGraph.swift in Sources */,
 				E53E0EF62570015C00371C89 /* InputTextFieldView.swift in Sources */,
 				E55E5BEB255D76600038DA41 /* GroeiberekeningIntro.swift in Sources */,
+				E591F13B25AB32360004FD6D /* SporterToCoachesService.swift in Sources */,
 				E552F7202583DE8A0063DCB3 /* Groeiberekeningstap3WithoutAccount.swift in Sources */,
 				E5DBFBFC259B50F400C52F9A /* LoginResponse.swift in Sources */,
 				E5571AFD25A78E4D00EF78C4 /* GroeiberekeningWithoutAccountPagerView.swift in Sources */,
@@ -652,6 +669,7 @@
 				E5177AB8256C38400006AC6D /* RadioButtonFieldView.swift in Sources */,
 				E5DAC219257FF45300B527E8 /* IntroPagerView.swift in Sources */,
 				E566CCAF2562903200695A98 /* TabBarSporterOud.swift in Sources */,
+				E591F13625AB311C0004FD6D /* SporterToCoachesViewModel.swift in Sources */,
 				E54B9724255EC9B900CE8EA9 /* VideoGroeiberekeningUitleg.swift in Sources */,
 				E5C7B49F2571422B0097AF84 /* GetUsersResponse.swift in Sources */,
 				E56885FA2576819B00B37DA0 /* DropDownModel.swift in Sources */,
@@ -681,9 +699,11 @@
 				E5CF07A52580D7DB007E6855 /* Intro2View.swift in Sources */,
 				E552F7132583C9960063DCB3 /* GroeiberekeningExtraStapWithoutAccount.swift in Sources */,
 				E5C6B40E25A8BF4D0092D548 /* IntroViewModel.swift in Sources */,
+				E591F14525AB33210004FD6D /* GetCoachesResponse.swift in Sources */,
 				E552F71B2583DD040063DCB3 /* Groeiberekeningstap2WithoutAccount.swift in Sources */,
 				E575D031256806B400BAC36E /* ResultaatItem.swift in Sources */,
 				E533B95025669E73000A186F /* HelpInstructiefilmpje.swift in Sources */,
+				E591F14025AB32D80004FD6D /* GetCoachesRequest.swift in Sources */,
 				E554E139256EA280008AC163 /* RegisterService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,7 +9,11 @@ import SwiftUI
 
 struct GroeiberekeningIntroWithoutAccount: View {
     
+    @ObservedObject var groeiberekeningViewModel = GroeiberekeningViewModel(groeiberekeningModel: GroeiberekeningModel())
+    
     @Binding var isFlowStarted: Bool
+    
+    let localStorage = LocalStorage()
     
     var body: some View {
         ZStack {
@@ -26,18 +30,35 @@ struct GroeiberekeningIntroWithoutAccount: View {
                     .padding(.vertical, 15.0)
                     .frame(width: 340.0, height: 250)
                 
-                NavigationLink(destination: GroeiberekeningExtraStapWithoutAccount(isFlowStarted: $isFlowStarted)) {
-                    Text("Start Groeiberekening")
-                        .font(.system(size: 20))
-                        .fontWeight(.medium)
-                        .foregroundColor(Color.white)
-                        .multilineTextAlignment(.center)
-                    
+                if(localStorage.isLoggedIn) {
+                    NavigationLink(destination: Groeiberekeningstap1WithoutAccount(groeiberekeningViewModel: groeiberekeningViewModel, isFlowStarted: $isFlowStarted)) {
+                        Text("Start Groeiberekening")
+                            .font(.system(size: 20))
+                            .fontWeight(.medium)
+                            .foregroundColor(Color.white)
+                            .multilineTextAlignment(.center)
+                        
+                    }
+                    .frame(width: 335.0, height: 45.0)
+                    .background(Color("ASMgreen"))
+                    .cornerRadius(5)
+                    .zIndex(0)
+                } else {
+                    NavigationLink(destination: GroeiberekeningExtraStapWithoutAccount(groeiberekeningViewModel: groeiberekeningViewModel, isFlowStarted: $isFlowStarted)) {
+                        Text("Start Groeiberekening")
+                            .font(.system(size: 20))
+                            .fontWeight(.medium)
+                            .foregroundColor(Color.white)
+                            .multilineTextAlignment(.center)
+                        
+                    }
+                    .frame(width: 335.0, height: 45.0)
+                    .background(Color("ASMgreen"))
+                    .cornerRadius(5)
+                    .zIndex(0)
                 }
-                .frame(width: 335.0, height: 45.0)
-                .background(Color("ASMgreen"))
-                .cornerRadius(5)
-                .zIndex(0)
+                
+
             }
             .navigationTitle(Text(""))
         }

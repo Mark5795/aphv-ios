@@ -20,6 +20,8 @@ struct Groeiberekeningstap3WithoutAccount: View {
     
     @State var showingErrorAlert: Bool = false
     
+    let localStorage = LocalStorage()
+    
     var body: some View {
         ZStack {
             TopCurve(title: "Groeiberekening")
@@ -89,6 +91,10 @@ struct Groeiberekeningstap3WithoutAccount: View {
                     weight = (weightText as NSString).doubleValue
                     groeiberekeningViewModel.weight = weight
                     
+                    // get user information as date of birth and gender to make the calculation
+//                    if(localStorage.isLoggedIn) {
+//                        
+//                    }
                     groeiberekeningViewModel.sendGroeiberekeningRequest()
                     
                     self.showingErrorAlert.toggle()

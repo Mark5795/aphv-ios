@@ -17,17 +17,29 @@
 import SwiftUI
 
 struct HomeSporter: View {
-    @State var isMainPresented: Bool = false
 //    let localStorage = LocalStorage()
+    
+    @ObservedObject var groeiberekeningViewModel = GroeiberekeningViewModel(groeiberekeningModel: GroeiberekeningModel())
+    
+//    @Binding var isFlowStarted: Bool
+    @State var isFlowStarted: Bool = false
+    @State var withAccount: Bool = true
     
     var body: some View {
         NavigationView {
-            Button("start intro") {
-                self.isMainPresented = true
-            }
-            .fullScreenCover(isPresented: $isMainPresented) {
-                LandingPage()
-            }
+            NavigationLink(
+                destination: GroeiberekeningIntroWithoutAccount(isFlowStarted: $isFlowStarted, withAccount: $withAccount),
+                isActive: $isFlowStarted,
+                label: {
+                    Text("Verdergaan zonder account")
+                        .fontWeight(.bold)
+                        .frame(maxWidth: 310
+                               , minHeight: 44)
+                        .foregroundColor(.white)
+                })
+                .isDetailLink(false)
+                .background(Color.ASMgreen)
+                .cornerRadius(8.0)
         }
     }
 }

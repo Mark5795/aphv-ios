@@ -53,7 +53,7 @@ struct LoginView: View {
                     .background(Color.ASMgreen)
                     .cornerRadius(8.0)
                     .alert(isPresented: $showingErrorAlert) {
-                        Alert(title: Text(userViewModel.alertTitle), message: Text(userViewModel.alertMessage), dismissButton: .default(Text("Verder"), action: {if(userViewModel.alertTitle == "Inloggen gelukt!") { self.isHomeSportPresented = true}}))
+                        Alert(title: Text(userViewModel.alertTitle), message: Text(userViewModel.alertMessage), dismissButton: .default(Text("Verder"), action: {if(userViewModel.alertTitle == "Inloggen gelukt!") {self.localStorage.isLoggedIn = true; self.isHomeSportPresented = true}}))
                     }
                     .fullScreenCover(isPresented: $isHomeSportPresented) {
                         HomeSporter()

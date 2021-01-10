@@ -11,6 +11,8 @@ import Combine
 class SporterToCoachesViewModel: ObservableObject {
     
     @Published var userModel : UserModel
+    let localStorage = LocalStorage()
+    let userViewModel = UserViewModel(userModel: UserModel())
     
     @Published var alertTitle : String = "Error"
     @Published var alertMessage : String = "Error"
@@ -22,17 +24,31 @@ class SporterToCoachesViewModel: ObservableObject {
         self.userModel = userModel
     }
     
-    func GetListOfCoaches() {
-//        updateLoginUserModel(email: email, accessToken, accessToken)
-        LoginService.shared.Login(userModel: userModel) { (result) in
+    func AddCoach(emailCoach: String) {
+        SporterToCoachesService.shared.AddCoach(emailCoach: emailCoach, emailUser: localStorage.emailUser, accessToken: userViewModel.accessToken ?? "") { (result) in
             switch result {
             case .success(let response):
                 self.alertTitle = "Ophalen gelukt!"
-//                self.alertMessage = ""
+                //                self.alertMessage = ""
                 self.alertSucces = true
             case .failure(_):
                 self.alertTitle = "Ophalen mislukt"
-//                self.alertMessage = "Het inloggen is mislukt, heb je een goede wifi verbinding? Probeer het nog een keer."
+            //                self.alertMessage = "Het inloggen is mislukt, heb je een goede wifi verbinding? Probeer het nog een keer."
+            }
+        }
+        
+        func GetListOfCoaches() {
+            //        updateLoginUserModel(email: email, accessToken, accessToken)
+            LoginService.shared.Login(userModel: userModel) { (result) in
+                switch result {
+                case .success(let response):
+                    self.alertTitle = "Ophalen gelukt!"
+                    //                self.alertMessage = ""
+                    self.alertSucces = true
+                case .failure(_):
+                    self.alertTitle = "Ophalen mislukt"
+                //                self.alertMessage = "Het inloggen is mislukt, heb je een goede wifi verbinding? Probeer het nog een keer."
+                }
             }
         }
     }

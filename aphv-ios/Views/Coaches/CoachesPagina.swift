@@ -7,25 +7,38 @@
 
 import SwiftUI
 
+// With the QR code scanner button a QR code can be scanned
+// This QR code is the email of a coach
+// Add this coach by this email
+// Show the coaches in a list.
 
 struct CoachesPagina: View {
     
     @State private var isShowingScanner = false
     
     var body: some View {
-        
-//        ZStack {
-//            TopCurve(title: "Coaches")
-//            VStack {
-//                Text("Coaches")
-//                    .padding(.bottom, 40.0)
-//
-//                Text("Je hebt nog geen coaches toegevoegd")
-//                    .padding(.bottom, 40.0)
-//
-//                Text("Voeg een nieuwe coach toe")
-//
-//                Navigationlink()
+        ZStack {
+            TopCurve(title: "Coaches")
+            VStack {
+                Text("Coaches")
+                    .padding(.bottom, 40.0)
+
+                Text("Je hebt nog geen coaches toegevoegd")
+                    .padding(.bottom, 40.0)
+
+                Text("Voeg een nieuwe coach toe")
+
+                NavigationLink(
+                    destination: QRcodeScanner(),
+                    label: {
+                        Text("Open QR code scanner")
+                            .fontWeight(.bold)
+                            .frame(maxWidth: 325, minHeight: 44)
+                            .foregroundColor(.white)
+                    })
+                    .isDetailLink(false)
+                    .background(Color.ASMgreen)
+                    .cornerRadius(8.0)
                 
 //                Button(action: {self.isShowingScanner = true}, label: {
 //                    Text("Open QR code scanner")
@@ -38,10 +51,9 @@ struct CoachesPagina: View {
 //                }
 //                .border(/*@START_MENU_TOKEN@*/Color("ASMgreen")/*@END_MENU_TOKEN@*/, width: 2)
 //                .cornerRadius(8)
-//            }
-//        }
-//    }
-    
+            }
+        }
+    }
 }
 
 struct CoachesPagina_Previews: PreviewProvider {

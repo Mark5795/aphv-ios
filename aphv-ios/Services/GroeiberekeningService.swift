@@ -62,10 +62,6 @@ final class GroeiberekeningService : ObservableObject {
     
     func GroeiberekeningWithAccount(groeiberekeningModel : GroeiberekeningModel, accessToken : String?, emailUser : String, completion: @escaping (Result<GroeiberekeningResponse, RequestError>) -> Void) {
         
-        // This works
-//        let email = "markmark@gmail.com"
-        
-        // This does not
         let email = emailUser
         
         let api = "https://aphv.azurewebsites.net"

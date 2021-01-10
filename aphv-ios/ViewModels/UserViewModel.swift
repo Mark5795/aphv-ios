@@ -13,6 +13,8 @@ class UserViewModel: ObservableObject {
     
     @Published var userModel : UserModel
     
+    let localStorage = LocalStorage()
+    
     @Published var alertTitle : String = "Error"
     @Published var alertMessage : String = "Error"
     @Published var alertSucces : Bool = false
@@ -76,6 +78,7 @@ class UserViewModel: ObservableObject {
     func updateLoginUserModel(email : String, password : String)
     {
         userModel.email = email
+        localStorage.emailUser = email
         userModel.password = password
     }
     

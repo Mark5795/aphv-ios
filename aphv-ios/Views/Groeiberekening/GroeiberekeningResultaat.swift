@@ -18,6 +18,9 @@ struct GroeiberekeningResultaat: View {
     var body: some View {
         ZStack {
             TopCurve(title: "Groeiberekening")
+            if(localStorage.isLoggedIn) {
+                Button(action: { }, label: {Text("Back")})
+            }
             VStack(alignment: .leading) {
                 HStack() {
                     
@@ -48,7 +51,7 @@ struct GroeiberekeningResultaat: View {
                 //                GraphView()
                 Spacer()
                 
-                if(localStorage.isLoggedIn) {
+                if(!localStorage.isLoggedIn) {
                     Button(action: { self.isCreateAccountPresented = true}, label: {
                         Text("Maak account aan en sla berekening op")
                             .fontWeight(.bold)

@@ -42,6 +42,15 @@ class LocalStorage {
             userDefaults.set(newValue, forKey: "loggedIn")
         }
     }
+    
+    var emailUser: String {
+        get {
+            return userDefaults.string(forKey: "emailU") ?? ""
+        }
+        set {
+            userDefaults.set(newValue, forKey: "emailU")
+        }
+    }
 }
 
 @main

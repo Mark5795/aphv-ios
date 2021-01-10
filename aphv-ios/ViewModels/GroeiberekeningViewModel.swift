@@ -14,6 +14,7 @@ class GroeiberekeningViewModel: ObservableObject {
     let localStorage = LocalStorage()
     let userViewModel = UserViewModel(userModel: UserModel())
     
+    
     @Published var alertTitle : String = "Error"
     @Published var alertMessage : String = "Error"
     @Published var alertSucces : Bool = false
@@ -60,8 +61,9 @@ class GroeiberekeningViewModel: ObservableObject {
     func sendGroeiberekeningRequest() -> Bool{
         if(localStorage.isLoggedIn) {
             updateGroeiberekeningModel(dateOfMeasurement: getDate(), weight: weight, sittingHeight: sittingHeight, standingHeight: standingHeight)
+            print(userViewModel.email)
             if (checkConditions()) {
-                GroeiberekeningService.shared.GroeiberekeningWithAccount(groeiberekeningModel: groeiberekeningModel, accessToken: userViewModel.accessToken, emailUser: userViewModel.email) { (result) in
+                GroeiberekeningService.shared.GroeiberekeningWithAccount(groeiberekeningModel: groeiberekeningModel, accessToken: userViewModel.accessToken, emailUser: localStorage.emailUser) { (result) in
                     switch result {
                     case .success(let response):
                         self.phv = response.phv

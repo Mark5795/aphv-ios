@@ -53,6 +53,9 @@
 		E566CCB42562936000695A98 /* HomeSporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E566CCB32562936000695A98 /* HomeSporter.swift */; };
 		E566CCB9256293C200695A98 /* CoachesPagina.swift in Sources */ = {isa = PBXBuildFile; fileRef = E566CCB8256293C200695A98 /* CoachesPagina.swift */; };
 		E56885FA2576819B00B37DA0 /* DropDownModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56885F92576819B00B37DA0 /* DropDownModel.swift */; };
+		E56BE94C25AB013700BD421F /* RegisterCoachRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56BE94B25AB013700BD421F /* RegisterCoachRequest.swift */; };
+		E56BE95125AB01C600BD421F /* RegisterCoachResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56BE95025AB01C600BD421F /* RegisterCoachResponse.swift */; };
+		E56BE95A25AB2CFE00BD421F /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = E56BE95925AB2CFE00BD421F /* KeychainAccess */; };
 		E575D0182567C7AF00BAC36E /* LineGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = E575D0172567C7AF00BAC36E /* LineGraph.swift */; };
 		E575D01E2567C8BA00BAC36E /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E575D01D2567C8BA00BAC36E /* GraphView.swift */; };
 		E575D0262567CEEF00BAC36E /* MeerdereGrafiekenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E575D0252567CEEF00BAC36E /* MeerdereGrafiekenView.swift */; };
@@ -149,6 +152,8 @@
 		E566CCB32562936000695A98 /* HomeSporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSporter.swift; sourceTree = "<group>"; };
 		E566CCB8256293C200695A98 /* CoachesPagina.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachesPagina.swift; sourceTree = "<group>"; };
 		E56885F92576819B00B37DA0 /* DropDownModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownModel.swift; sourceTree = "<group>"; };
+		E56BE94B25AB013700BD421F /* RegisterCoachRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCoachRequest.swift; sourceTree = "<group>"; };
+		E56BE95025AB01C600BD421F /* RegisterCoachResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCoachResponse.swift; sourceTree = "<group>"; };
 		E575D0172567C7AF00BAC36E /* LineGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineGraph.swift; sourceTree = "<group>"; };
 		E575D01D2567C8BA00BAC36E /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		E575D0252567CEEF00BAC36E /* MeerdereGrafiekenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeerdereGrafiekenView.swift; sourceTree = "<group>"; };
@@ -179,6 +184,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E56BE95A25AB2CFE00BD421F /* KeychainAccess in Frameworks */,
 				E5CF07AC2580E00D007E6855 /* SwiftUIPager in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -215,11 +221,11 @@
 		E5177AA9256C31180006AC6D /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				E552F7372583ECEE0063DCB3 /* RegisterChooseRole.swift */,
 				E5177AAA256C31500006AC6D /* RegisterSporterView.swift */,
+				E5A676002584E3C500A5B0E7 /* RegisterCoachView.swift */,
 				E5177AB7256C38400006AC6D /* RadioButtonFieldView.swift */,
 				E5634898257550770090E490 /* DropDownView.swift */,
-				E552F7372583ECEE0063DCB3 /* RegisterChooseRole.swift */,
-				E5A676002584E3C500A5B0E7 /* RegisterCoachView.swift */,
 				E5D3ADA82584F66A00A2F775 /* SuccesPopup.swift */,
 			);
 			path = Register;
@@ -232,6 +238,7 @@
 				E5C7B49E2571422B0097AF84 /* GetUsersResponse.swift */,
 				E5DBFBFB259B50F400C52F9A /* LoginResponse.swift */,
 				E555D2ED25A9C6750086144A /* GroeiberekeningResponse.swift */,
+				E56BE95025AB01C600BD421F /* RegisterCoachResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -242,6 +249,7 @@
 				E53E0EED256FDF7500371C89 /* RegisterRequest.swift */,
 				E5DBFC03259B543500C52F9A /* LoginRequest.swift */,
 				E555D2F225A9C8C70086144A /* GroeiberekeningRequest.swift */,
+				E56BE94B25AB013700BD421F /* RegisterCoachRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -491,6 +499,7 @@
 			name = "aphv-ios";
 			packageProductDependencies = (
 				E5CF07AB2580E00D007E6855 /* SwiftUIPager */,
+				E56BE95925AB2CFE00BD421F /* KeychainAccess */,
 			);
 			productName = "aphv-ios";
 			productReference = E5557085255A99BF00BB269E /* aphv-ios.app */;
@@ -565,6 +574,7 @@
 			mainGroup = E555707C255A99BF00BB269E;
 			packageReferences = (
 				E5CF07AA2580E00D007E6855 /* XCRemoteSwiftPackageReference "SwiftUIPager" */,
+				E56BE95825AB2CFE00BD421F /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 			);
 			productRefGroup = E5557086255A99BF00BB269E /* Products */;
 			projectDirPath = "";
@@ -615,6 +625,7 @@
 				E555708B255A99BF00BB269E /* ContentView.swift in Sources */,
 				E5D3ADA92584F66A00A2F775 /* SuccesPopup.swift in Sources */,
 				E566CCB9256293C200695A98 /* CoachesPagina.swift in Sources */,
+				E56BE95125AB01C600BD421F /* RegisterCoachResponse.swift in Sources */,
 				E53E0EFB2570293400371C89 /* CheckboxFieldView.swift in Sources */,
 				E555D2C925A99BB90086144A /* GroeiberekeningModel.swift in Sources */,
 				E5A676012584E3C500A5B0E7 /* RegisterCoachView.swift in Sources */,
@@ -627,6 +638,7 @@
 				E5DAC211257FD60900B527E8 /* Intro1View.swift in Sources */,
 				E5177AAB256C31500006AC6D /* RegisterSporterView.swift in Sources */,
 				E555D2FB25AA3D470086144A /* HomeCoach.swift in Sources */,
+				E56BE94C25AB013700BD421F /* RegisterCoachRequest.swift in Sources */,
 				E5DBFC04259B543500C52F9A /* LoginRequest.swift in Sources */,
 				E5C51DA8256565C600198EBD /* GroeiberekeningStap2.swift in Sources */,
 				E575D0182567C7AF00BAC36E /* LineGraph.swift in Sources */,
@@ -988,6 +1000,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E56BE95825AB2CFE00BD421F /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.2.1;
+			};
+		};
 		E5CF07AA2580E00D007E6855 /* XCRemoteSwiftPackageReference "SwiftUIPager" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/fermoya/SwiftUIPager.git";
@@ -999,6 +1019,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E56BE95925AB2CFE00BD421F /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E56BE95825AB2CFE00BD421F /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
 		E5CF07AB2580E00D007E6855 /* SwiftUIPager */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E5CF07AA2580E00D007E6855 /* XCRemoteSwiftPackageReference "SwiftUIPager" */;

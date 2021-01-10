@@ -9,6 +9,8 @@ import SwiftUI
 
 struct LandingPage: View {
     
+    @State var isLoginPresented: Bool = false
+    
     @State var isWithoutAccountPresented: Bool = false
     @State var isFlowStarted: Bool = false
     
@@ -16,7 +18,20 @@ struct LandingPage: View {
         NavigationView {
             ZStack {
                 TopCurve(title: "")
-                VStack {
+                VStack {                    
+                    HStack {
+                        Spacer()
+                        
+                        NavigationLink(
+                            destination: LoginView(),
+                            label: {
+                                Text("Inloggen")
+                                    .fontWeight(.medium)
+                                    .foregroundColor(.black)
+                            })
+                            .padding(.trailing)
+                    }
+                    
                     Image("ASMLogo")
                     
                     Spacer()
@@ -29,7 +44,7 @@ struct LandingPage: View {
                         destination: RegisterChooseRole(isFlowStarted: $isFlowStarted),
                         isActive: $isFlowStarted,
                         label: {
-                            Text("Registeren")
+                            Text("Aanmaken")
                                 .fontWeight(.bold)
                                 .frame(maxWidth: 325, minHeight: 44)
                                 .foregroundColor(.white)

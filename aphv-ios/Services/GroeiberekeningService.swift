@@ -25,7 +25,6 @@ final class GroeiberekeningService : ObservableObject {
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         urlRequest.httpMethod = "POST"
 
-
                 let parameters = GroeiberekeningRequest(
                     dateOfBirth: groeiberekeningModel.dateOfBirth ?? "",
                     gender: groeiberekeningModel.gender ?? "",

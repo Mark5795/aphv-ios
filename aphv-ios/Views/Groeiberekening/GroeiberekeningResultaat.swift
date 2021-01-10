@@ -18,7 +18,9 @@ struct GroeiberekeningResultaat: View {
             TopCurve(title: "Groeiberekening")
             VStack(alignment: .leading) {
                 HStack() {
+                    
                     Spacer()
+                    
                     Text("Resultaat")
                         .padding(.trailing, -50.0)
                         .font(.system(size: 20))
@@ -38,11 +40,11 @@ struct GroeiberekeningResultaat: View {
                                 .multilineTextAlignment(.trailing)
                         }
                     }
-                    .padding(.trailing)
                 }
-                Text("PHV: ,\(groeiberekeningViewModel.phv)")
-                Text("Huidige fase: ,\(groeiberekeningViewModel.growthPhase)")
+                Text("PHV: \(groeiberekeningViewModel.phv, specifier: "%.2f")")
+                Text("Huidige fase: \(groeiberekeningViewModel.growthPhase)")
                 //                GraphView()
+                Spacer()
                 
                 Button(action: { self.isCreateAccountPresented = true}, label: {
                     Text("Verdergaan zonder account")
@@ -55,15 +57,17 @@ struct GroeiberekeningResultaat: View {
                 }
                 .background(Color.ASMgreen)
                 .cornerRadius(8.0)
-                
             }
+            .padding(.horizontal, 25.0)
+            .padding(.top, 60.0)
+            
             //        .environmentObject(grafiekManger)
         }
     }
 }
 
-//struct GroeiberekeningResultaat_Previews: PreviewProvider {
-//    static var previews: some View {
-//        GroeiberekeningResultaat()
-//    }
-//}
+struct GroeiberekeningResultaat_Previews: PreviewProvider {
+    static var previews: some View {
+        GroeiberekeningResultaat(groeiberekeningViewModel: GroeiberekeningViewModel(groeiberekeningModel: GroeiberekeningModel()))
+    }
+}

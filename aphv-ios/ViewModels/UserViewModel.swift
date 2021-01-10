@@ -9,9 +9,9 @@ import SwiftUI
 import Combine
 
 class UserViewModel: ObservableObject {
-
-//    var checkedConditions : Bool = false
-//    var checkedApproval : Bool = false
+    
+    //    var checkedConditions : Bool = false
+    //    var checkedApproval : Bool = false
     
     @Published var userModel : UserModel
     
@@ -28,18 +28,44 @@ class UserViewModel: ObservableObject {
     @Published var email: String = ""
     @Published var password: String = ""
     @Published var passwordCheck: String = ""
-    @Published var roleOrCreatedBy : String = ""
+    
+//    @Published var accessToken: String = ""
+//    @Published var refreshToken: String = ""
     
     @Published var checkedConditions: Bool = false
     @Published var checkedApproval: Bool = false
+    
+    @Published var isAuthenticated: Bool = false
+    
+    private let keychain = Keychain()
+    private var accessTokenKeychainKey = "accessToken"
+    
+    var accessToken: String? {
+        get {
+            try? keychain.get(accessTokenKeychainKey)
+        }
+        set(newValue) {
+            guard let accessToken = newValue else {
+                try? keychain.remove(accessTokenKeychainKey)
+                isAuthenticated = false
+                return
+            }
+            try? keychain.set(accessToken, key: accessTokenKeychainKey)
+            isAuthenticated = true
+        }
+    }
+    
+    private init() {
+        isAuthenticated = accessToken != nil
+    }
     
     
     init(userModel : UserModel) {
         self.userModel = userModel
     }
     
-    func updateRegisterUserModel(role : String, firstName : String, lastName : String, sport : String, gender : String, dateOfBirth : String, email : String, password : String, roleOrCreatedBy : String) {
-
+    func updateRegisterUserModel(role : String, firstName : String, lastName : String, sport : String, gender : String, dateOfBirth : String, email : String, password : String) {
+        
         userModel.role = role
         userModel.firstName = firstName
         userModel.lastName = lastName
@@ -48,9 +74,8 @@ class UserViewModel: ObservableObject {
         userModel.dateOfBirth = dateOfBirth
         userModel.email = email
         userModel.password = password
-        userModel.roleOrCreatedBy = roleOrCreatedBy
     }
-
+    
     func updateLoginUserModel(email : String, password : String)
     {
         userModel.email = email
@@ -61,7 +86,9 @@ class UserViewModel: ObservableObject {
         updateLoginUserModel(email: email, password: password)
         LoginService.shared.Login(userModel: userModel) { (result) in
             switch result {
-            case .success(_):
+            case .success(let response):
+                self.accessToken = response.accessToken
+                self.refreshToken = response.refreshToken
                 self.alertTitle = "Inloggen gelukt!"
                 self.alertMessage = ""
                 self.alertSucces = true
@@ -97,8 +124,14 @@ class UserViewModel: ObservableObject {
     }
     
     func checkUserInput() -> Bool {
-        if (userModel.role == "" || userModel.firstName == "" || userModel.lastName == "" || userModel.sport == "" || userModel.gender == "" || userModel.dateOfBirth == "" || userModel.email == "" || userModel.password == "") {
-            return false
+        if(userModel.role == "Sporter") {
+            if (userModel.role == "" || userModel.firstName == "" || userModel.lastName == "" || userModel.sport == "" || userModel.gender == "" || userModel.dateOfBirth == "" || userModel.email == "" || userModel.password == "") {
+                return false
+            }
+        } else {
+            if (userModel.role == "" || userModel.firstName == "" || userModel.lastName == "" || userModel.sport == "" || userModel.email == "" || userModel.password == "") {
+                return false
+            }
         }
         return true
     }
@@ -125,9 +158,26 @@ class UserViewModel: ObservableObject {
     }
     
     func sendRegisterUserRequest() {
-        updateRegisterUserModel(role: role, firstName: firstName, lastName: lastName, sport: sport, gender: gender, dateOfBirth: dateOfBirth, email: email, password: password, roleOrCreatedBy: roleOrCreatedBy)
+        updateRegisterUserModel(role: role, firstName: firstName, lastName: lastName, sport: sport, gender: gender, dateOfBirth: dateOfBirth, email: email, password: password)
         if (checkConditions()) {
             RegisterService.shared.Register(userModel: userModel) { (result) in
+                switch result {
+                case .success(_):
+                    self.alertTitle = "Je account is aangemaakt!"
+                    self.alertMessage = "Druk op de bevestigingslink in je email om je account te activeren."
+                    self.alertSucces = true
+                case .failure(_):
+                    self.alertTitle = "Registreren Mislukt"
+                    self.alertMessage = "Het registreren is mislukt, heb je een goede wifi verbinding? Probeer het nog een keer."
+                }
+            }
+        }
+    }
+    
+    func sendRegisterCoachRequest() {
+        updateRegisterUserModel(role: role, firstName: firstName, lastName: lastName, sport: sport, gender: gender, dateOfBirth: dateOfBirth, email: email, password: password)
+        if (checkConditions()) {
+            RegisterService.shared.RegisterCoach(userModel: userModel) { (result) in
                 switch result {
                 case .success(_):
                     self.alertTitle = "Je account is aangemaakt!"

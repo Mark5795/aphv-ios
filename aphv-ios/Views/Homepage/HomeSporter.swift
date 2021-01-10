@@ -5,6 +5,15 @@
 //  Created by Mark Kea on 16/11/2020.
 //
 
+
+// Check if sporter got coaches
+
+// if sporter does not have coaches, show text and start groeiberekening button
+
+// else show date next meting, pager with calculations and pager with results. and start groeiberekenig button
+
+// navbar on bottom
+
 import SwiftUI
 
 struct HomeSporter: View {

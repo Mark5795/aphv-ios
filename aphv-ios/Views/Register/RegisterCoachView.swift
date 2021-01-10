@@ -11,14 +11,16 @@ struct RegisterCoachView: View {
     @ObservedObject var dropDownModel = DropDownModel()
     @ObservedObject var userViewModel = UserViewModel(userModel: UserModel())
     
+    let localStorage = LocalStorage()
+    
     @Binding var isFlowStarted: Bool
     
 //    @State var isWithoutAccountPresented: Bool = false
     
-    @State var role: String = "Coach"
+    @State var role: String = "coach"
     @State var firstName: String = ""
     @State var lastName: String = ""
-    @State var roleOrCreatedBy: String = ""
+    @State var sport: String = ""
     @State var email: String = ""
     @State var password: String = ""
     @State var passwordCheck: String = ""
@@ -52,7 +54,6 @@ struct RegisterCoachView: View {
                                         Text("Sporter")
                                             .fontWeight(.regular)
                                             .foregroundColor(Color.black)
-                                        
                                     }
                                     .padding(.leading)
                                     Spacer()
@@ -87,7 +88,7 @@ struct RegisterCoachView: View {
                         
                         InputTextFieldView(stateBinding: $lastName, title: "Achternaam", placeholder: "", secureTextField: false)
                         
-                        InputTextFieldView(stateBinding: $roleOrCreatedBy, title: "Beroep", placeholder: "", secureTextField: false)
+                        InputTextFieldView(stateBinding: $sport, title: "Beroep", placeholder: "", secureTextField: false)
                     }
                     
                     Group {                        
@@ -140,14 +141,14 @@ struct RegisterCoachView: View {
                             userViewModel.role = self.role
                             userViewModel.firstName = self.firstName
                             userViewModel.lastName = self.lastName
-                            userViewModel.roleOrCreatedBy = self.roleOrCreatedBy
-                            userViewModel.email = self.email
+                            userViewModel.sport = self.sport
+                            userViewModel.email = self.email.lowercased()
                             userViewModel.password = self.password
                             userViewModel.passwordCheck = self.passwordCheck
                             userViewModel.checkedConditions = self.checkedConditions
                             userViewModel.checkedApproval = self.checkedApproval
                             
-                            userViewModel.sendRegisterUserRequest()
+                            userViewModel.sendRegisterCoachRequest()
                             
                             self.showingErrorAlert.toggle()
                         }, label: {
@@ -159,7 +160,7 @@ struct RegisterCoachView: View {
                         .background(Color.ASMgreen)
                         .cornerRadius(8.0)
                         .alert(isPresented: $showingErrorAlert) {
-                            Alert(title: Text(userViewModel.alertTitle), message: Text(userViewModel.alertMessage), dismissButton: .default(Text("Verder"), action: {self.isHomeCoachPresented = true}))
+                            Alert(title: Text(userViewModel.alertTitle), message: Text(userViewModel.alertMessage), dismissButton: .default(Text("Verder"), action: {if(userViewModel.alertTitle == "Je account is aangemaakt!") {userViewModel.sendLoginUserRequest(); self.localStorage.createdAccount = true; self.isHomeCoachPresented = true}}))
                         }
                         .fullScreenCover(isPresented: $isHomeCoachPresented) {
                             HomeCoach()

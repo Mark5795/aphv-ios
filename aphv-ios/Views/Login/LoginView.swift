@@ -5,11 +5,21 @@
 //  Created by Mark Kea on 25/11/2020.
 //
 
+// log in with email and password
+// if credentails are correct check if user is coach or sporter
+// navigatie user the homepage
+
 import SwiftUI
 
 struct LoginView: View {
     
     @ObservedObject var userViewModel = UserViewModel(userModel: UserModel())
+    
+    let localStorage = LocalStorage()
+    
+    @State var showingErrorAlert: Bool = false
+    @State var showingSuccesAlert: Bool = false
+    @State var isHomeSportPresented: Bool = false
     
     @State var email: String = ""
     @State var password: String = ""
@@ -33,7 +43,7 @@ struct LoginView: View {
                         userViewModel.password = self.password
                         
                         userViewModel.sendLoginUserRequest()
-//                        self.showingErrorAlert.toggle()
+                        self.showingErrorAlert.toggle()
                     }, label: {
                         Text("Aanmaken")
                             .fontWeight(.bold)
@@ -42,6 +52,12 @@ struct LoginView: View {
                     })
                     .background(Color.ASMgreen)
                     .cornerRadius(8.0)
+                    .alert(isPresented: $showingErrorAlert) {
+                        Alert(title: Text(userViewModel.alertTitle), message: Text(userViewModel.alertMessage), dismissButton: .default(Text("Verder"), action: {if(userViewModel.alertTitle == "Inloggen gelukt!") { self.isHomeSportPresented = true}}))
+                    }
+                    .fullScreenCover(isPresented: $isHomeSportPresented) {
+                        HomeSporter()
+                    }
                     
                 }.padding(.horizontal, 25.0)
             }

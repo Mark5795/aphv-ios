@@ -102,7 +102,7 @@ struct Groeiberekeningstap3WithoutAccount: View {
                 .background(Color.ASMgreen)
                 .cornerRadius(8.0)
                 .alert(isPresented: $showingErrorAlert) {
-                    Alert(title: Text(groeiberekeningViewModel.alertTitle), message: Text(groeiberekeningViewModel.alertMessage), dismissButton: .default(Text("Verder"), action: { self.isGroeiberekeningResultaatPresented = true}))
+                    Alert(title: Text(groeiberekeningViewModel.alertTitle), message: Text(groeiberekeningViewModel.alertMessage), dismissButton: .default(Text("Verder"), action: { if(groeiberekeningViewModel.alertTitle == "Je groei word berekend!") {self.isGroeiberekeningResultaatPresented = true}}))
                 }
                 .fullScreenCover(isPresented: $isGroeiberekeningResultaatPresented) {
                     GroeiberekeningResultaat(groeiberekeningViewModel: groeiberekeningViewModel)

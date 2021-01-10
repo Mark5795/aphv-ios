@@ -12,6 +12,8 @@ struct RegisterSporterView: View {
     @ObservedObject var dropDownModel = DropDownModel()
     @ObservedObject var userViewModel = UserViewModel(userModel: UserModel())
     
+    let localStorage = LocalStorage()
+    
     @Binding var isFlowStarted: Bool
     
 //    @State var isWithoutAccountPresented: Bool = false
@@ -154,7 +156,7 @@ struct RegisterSporterView: View {
                             userViewModel.sport = self.sport
                             userViewModel.gender = self.gender
                             userViewModel.dateOfBirth = self.dateOfBirth
-                            userViewModel.email = self.email
+                            userViewModel.email = self.email.lowercased()
                             userViewModel.password = self.password
                             userViewModel.passwordCheck = self.passwordCheck
                             userViewModel.checkedConditions = self.checkedConditions
@@ -172,7 +174,7 @@ struct RegisterSporterView: View {
                         .background(Color.ASMgreen)
                         .cornerRadius(8.0)
                         .alert(isPresented: $showingErrorAlert) {
-                            Alert(title: Text(userViewModel.alertTitle), message: Text(userViewModel.alertMessage), dismissButton: .default(Text("Verder"), action: {self.isHomeSportPresented = true}))
+                            Alert(title: Text(userViewModel.alertTitle), message: Text(userViewModel.alertMessage), dismissButton: .default(Text("Verder"), action: {if(userViewModel.alertTitle == "Je account is aangemaakt!") {self.localStorage.createdAccount = true; self.isHomeSportPresented = true}}))
                         }
                         .fullScreenCover(isPresented: $isHomeSportPresented) {
                             HomeSporter()

@@ -15,14 +15,4 @@ struct RegisterRequest: Encodable {
     let dateOfBirth: String
     let gender: String
     let sport: String
-//    
-//    enum CodingKeys: String, CodingKey {
-//        case email = "email"
-//        case firstName = "firstName"
-//        case lastName = "lastName"
-//        case password = "password"
-//        case dateOfBirth = "dateOfBirth"
-//        case gender = "gender"
-//        case sport = "sport"
-//    }
 }

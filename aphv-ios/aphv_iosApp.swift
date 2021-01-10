@@ -5,6 +5,11 @@
 //  Created by Mark Kea on 10/11/2020.
 //
 
+
+// if users starts the app for the first time, show the intro
+// else if the users doesn't have a account show landingpage
+// else if the user have a account show loginpage
+
 import SwiftUI
 
 class LocalStorage {
@@ -37,7 +42,7 @@ struct aphv_iosApp: App {
     var body: some Scene {
         WindowGroup {
             if(localStorage.createdAccount) {
-                HomeSporter()
+                LoginView()
             }
             if (localStorage.hasSeenIntro) {
                 LandingPage()

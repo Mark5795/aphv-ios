@@ -39,18 +39,14 @@ final class LoginService: ObservableObject {
             .sink(receiveCompletion: { result in
                 switch result {
                 case .finished:
-                    print("Gelukt")
                     break
                 case .failure(let error):
                     switch error {
                     case let urlError as URLError:
-                        print(urlError)
                         completion(.failure(.urlError(urlError)))
                     case let decodingError as DecodingError:
-                        print(decodingError)
                         completion(.failure(.decodingError(decodingError)))
                     default:
-                        print(error)
                         completion(.failure(.genericError(error)))
                     }
                 }

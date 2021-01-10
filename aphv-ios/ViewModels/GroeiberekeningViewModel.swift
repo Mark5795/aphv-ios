@@ -37,16 +37,6 @@ class GroeiberekeningViewModel: ObservableObject {
         self.groeiberekeningModel = groeiberekeningModel
     }
     
-//    func getGroeiBerekeningResults(email : String, date : String, createdBy : String, age : Double, phv : Double, aphv : Double, growthPhase: String) {
-//        self.email = groeiberekeningModel.email ?? ""
-//        self.date = groeiberekeningModel.date ?? ""
-//        self.createdBy = groeiberekeningModel.createdBy ?? ""
-//        self.age = groeiberekeningModel.age ?? 0
-//        self.phv = groeiberekeningModel.phv ?? 0
-//        self.aphv = groeiberekeningModel.aphv ?? 0
-//        self.growthPhase = groeiberekeningModel.growthPhase ?? ""
-//    }
-    
     func updateWithoutAccountGroeiberekeningModel(dateOfBirth : String, gender : String, dateOfMeasurement : String, weight : Double, sittingHeight : Double, standingHeight : Double) {
 
         groeiberekeningModel.dateOfBirth = dateOfBirth
@@ -62,7 +52,9 @@ class GroeiberekeningViewModel: ObservableObject {
             if (checkConditions()) {
                 GroeiberekeningService.shared.GroeiberekeningWithoutAccount(groeiberekeningModel: groeiberekeningModel) { (result) in
                     switch result {
-                    case .success(_):
+                    case .success(let response):
+                        self.phv = response.phv
+                        self.growthPhase = response.growthPhase
                         self.alertTitle = "Je groei word berekend!"
                         self.alertMessage = ""
                         self.alertSucces = true
@@ -70,7 +62,6 @@ class GroeiberekeningViewModel: ObservableObject {
                         self.alertTitle = "Berekening Mislukt"
                         self.alertMessage = "Het berekenen is mislukt, heb je een goede wifi verbinding? Probeer het nog een keer."
                     }
-//                    self.getGroeiBerekeningResults(email: self.email, date: self.date, createdBy: self.createdBy, age: self.age, phv: self.phv, aphv: self.aphv, growthPhase: self.growthPhase)
                 }
             }
         }

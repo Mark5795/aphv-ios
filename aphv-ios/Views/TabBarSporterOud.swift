@@ -28,7 +28,7 @@ struct TabBarSporterOud: View {
                 .padding(.top, 10.0)
                 .padding(.trailing, 15.0)
 
-                NavigationLink(destination: GroeiberekeningIntroWithoutAccount(isFlowStarted: $isFlowStarted)){
+                NavigationLink(destination: GroeiberekeningIntro(isFlowStarted: $isFlowStarted)){
                     VStack {
                         Image("IconGroeiberekening")
                             .resizable()

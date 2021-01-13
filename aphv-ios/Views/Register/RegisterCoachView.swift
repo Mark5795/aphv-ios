@@ -15,8 +15,6 @@ struct RegisterCoachView: View {
     
     @Binding var isFlowStarted: Bool
     
-//    @State var isWithoutAccountPresented: Bool = false
-    
     @State var role: String = "coach"
     @State var firstName: String = ""
     @State var lastName: String = ""

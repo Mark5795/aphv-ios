@@ -30,6 +30,9 @@ struct HomeSporter: View {
             ZStack {
                 TopCurve(title: "Uitleg Groeiberekening")
                 VStack {
+                    
+                    Spacer()
+                    
                     Text("Om aan de slag te gaan met de")
                     Text("groeiberkenening, is het handig om eerst")
                     Text("jouw coach toe te voegen.")
@@ -46,7 +49,7 @@ struct HomeSporter: View {
                         .frame(height: 50)
                     
                     NavigationLink(
-                        destination: GroeiberekeningIntroWithoutAccount(isFlowStarted: $isFlowStarted),
+                        destination: GroeiberekeningIntro(isFlowStarted: $isFlowStarted),
                         isActive: $isFlowStarted,
                         label: {
                             Text("Start groeiberekening")
@@ -60,7 +63,6 @@ struct HomeSporter: View {
                         .cornerRadius(8.0)
                     
                     Spacer()
-                        .frame(height: 200)
                     
                     
                     //tabbar
@@ -81,7 +83,7 @@ struct HomeSporter: View {
 //                        .padding(.top, 10.0)
 //                        .padding(.trailing, 15.0)
 
-                        NavigationLink(destination: GroeiberekeningIntroWithoutAccount(isFlowStarted: $isFlowStarted)){
+                        NavigationLink(destination: GroeiberekeningIntro(isFlowStarted: $isFlowStarted)){
                             VStack {
                                 Image("IconGroeiberekening")
                                     .resizable()

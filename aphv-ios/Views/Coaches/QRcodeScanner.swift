@@ -5,13 +5,16 @@
 //  Created by Mark Kea on 10/01/2021.
 //
 
+// need to add: error handling
+
 import SwiftUI
 import AVFoundation
 import CarBode
 
 struct QRcodeScanner: View {
     
-    @ObservedObject var sporterToCoachesViewModel : SporterToCoachesViewModel
+    @Environment(\.presentationMode) var presentationMode
+    @ObservedObject var sporterToCoachesViewModel = SporterToCoachesViewModel(userModel: UserModel())
     
     var body: some View {
         CBScanner(
@@ -22,6 +25,8 @@ struct QRcodeScanner: View {
             //When you click the button on screen mock data will appear here
             print("BarCodeType =",$0.type.rawValue, " Value =",$0.value)
             sporterToCoachesViewModel.AddCoach(emailCoach: $0.value)
+            presentationMode.wrappedValue.dismiss()
+            
         }
     }
 }

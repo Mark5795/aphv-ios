@@ -13,7 +13,7 @@
 		E5177AAB256C31500006AC6D /* RegisterSporterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5177AAA256C31500006AC6D /* RegisterSporterView.swift */; };
 		E5177AB3256C358C0006AC6D /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5177AB2256C358C0006AC6D /* UserModel.swift */; };
 		E5177AB8256C38400006AC6D /* RadioButtonFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5177AB7256C38400006AC6D /* RadioButtonFieldView.swift */; };
-		E52512BD2583BC4A0009601E /* GroeiberekeningIntroWithoutAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52512BC2583BC4A0009601E /* GroeiberekeningIntroWithoutAccount.swift */; };
+		E52512BD2583BC4A0009601E /* GroeiberekeningIntro.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52512BC2583BC4A0009601E /* GroeiberekeningIntro.swift */; };
 		E52938392562D3F900635E51 /* TabBarSporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52938382562D3F900635E51 /* TabBarSporter.swift */; };
 		E533B94B25669CC6000A186F /* GroeiberekeningResultaat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E533B94A25669CC6000A186F /* GroeiberekeningResultaat.swift */; };
 		E533B95025669E73000A186F /* HelpInstructiefilmpje.swift in Sources */ = {isa = PBXBuildFile; fileRef = E533B94F25669E73000A186F /* HelpInstructiefilmpje.swift */; };
@@ -24,10 +24,10 @@
 		E54B9724255EC9B900CE8EA9 /* VideoGroeiberekeningUitleg.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54B9723255EC9B900CE8EA9 /* VideoGroeiberekeningUitleg.swift */; };
 		E54B983225ABB8980009ABDF /* AddCoachRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54B983125ABB8980009ABDF /* AddCoachRequest.swift */; };
 		E54B983725ABB8E80009ABDF /* AddCoachResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54B983625ABB8E80009ABDF /* AddCoachResponse.swift */; };
-		E552F70E2583C8050063DCB3 /* Groeiberekeningstap1WithoutAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = E552F70D2583C8050063DCB3 /* Groeiberekeningstap1WithoutAccount.swift */; };
-		E552F7132583C9960063DCB3 /* GroeiberekeningExtraStapWithoutAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = E552F7122583C9960063DCB3 /* GroeiberekeningExtraStapWithoutAccount.swift */; };
-		E552F71B2583DD040063DCB3 /* Groeiberekeningstap2WithoutAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = E552F71A2583DD040063DCB3 /* Groeiberekeningstap2WithoutAccount.swift */; };
-		E552F7202583DE8A0063DCB3 /* Groeiberekeningstap3WithoutAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = E552F71F2583DE8A0063DCB3 /* Groeiberekeningstap3WithoutAccount.swift */; };
+		E552F70E2583C8050063DCB3 /* Groeiberekeningstap1.swift in Sources */ = {isa = PBXBuildFile; fileRef = E552F70D2583C8050063DCB3 /* Groeiberekeningstap1.swift */; };
+		E552F7132583C9960063DCB3 /* GroeiberekeningExtraStap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E552F7122583C9960063DCB3 /* GroeiberekeningExtraStap.swift */; };
+		E552F71B2583DD040063DCB3 /* Groeiberekeningstap2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E552F71A2583DD040063DCB3 /* Groeiberekeningstap2.swift */; };
+		E552F7202583DE8A0063DCB3 /* Groeiberekeningstap3.swift in Sources */ = {isa = PBXBuildFile; fileRef = E552F71F2583DE8A0063DCB3 /* Groeiberekeningstap3.swift */; };
 		E552F7382583ECEE0063DCB3 /* RegisterChooseRole.swift in Sources */ = {isa = PBXBuildFile; fileRef = E552F7372583ECEE0063DCB3 /* RegisterChooseRole.swift */; };
 		E554E130256EA016008AC163 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E554E12F256EA016008AC163 /* LoginView.swift */; };
 		E554E139256EA280008AC163 /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E554E138256EA280008AC163 /* RegisterService.swift */; };
@@ -112,7 +112,7 @@
 		E5177AAA256C31500006AC6D /* RegisterSporterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSporterView.swift; sourceTree = "<group>"; };
 		E5177AB2256C358C0006AC6D /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		E5177AB7256C38400006AC6D /* RadioButtonFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonFieldView.swift; sourceTree = "<group>"; };
-		E52512BC2583BC4A0009601E /* GroeiberekeningIntroWithoutAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroeiberekeningIntroWithoutAccount.swift; sourceTree = "<group>"; };
+		E52512BC2583BC4A0009601E /* GroeiberekeningIntro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroeiberekeningIntro.swift; sourceTree = "<group>"; };
 		E52938382562D3F900635E51 /* TabBarSporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarSporter.swift; sourceTree = "<group>"; };
 		E533B94A25669CC6000A186F /* GroeiberekeningResultaat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroeiberekeningResultaat.swift; sourceTree = "<group>"; };
 		E533B94F25669E73000A186F /* HelpInstructiefilmpje.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpInstructiefilmpje.swift; sourceTree = "<group>"; };
@@ -123,10 +123,10 @@
 		E54B9723255EC9B900CE8EA9 /* VideoGroeiberekeningUitleg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoGroeiberekeningUitleg.swift; sourceTree = "<group>"; };
 		E54B983125ABB8980009ABDF /* AddCoachRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoachRequest.swift; sourceTree = "<group>"; };
 		E54B983625ABB8E80009ABDF /* AddCoachResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoachResponse.swift; sourceTree = "<group>"; };
-		E552F70D2583C8050063DCB3 /* Groeiberekeningstap1WithoutAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groeiberekeningstap1WithoutAccount.swift; sourceTree = "<group>"; };
-		E552F7122583C9960063DCB3 /* GroeiberekeningExtraStapWithoutAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroeiberekeningExtraStapWithoutAccount.swift; sourceTree = "<group>"; };
-		E552F71A2583DD040063DCB3 /* Groeiberekeningstap2WithoutAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groeiberekeningstap2WithoutAccount.swift; sourceTree = "<group>"; };
-		E552F71F2583DE8A0063DCB3 /* Groeiberekeningstap3WithoutAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groeiberekeningstap3WithoutAccount.swift; sourceTree = "<group>"; };
+		E552F70D2583C8050063DCB3 /* Groeiberekeningstap1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groeiberekeningstap1.swift; sourceTree = "<group>"; };
+		E552F7122583C9960063DCB3 /* GroeiberekeningExtraStap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroeiberekeningExtraStap.swift; sourceTree = "<group>"; };
+		E552F71A2583DD040063DCB3 /* Groeiberekeningstap2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groeiberekeningstap2.swift; sourceTree = "<group>"; };
+		E552F71F2583DE8A0063DCB3 /* Groeiberekeningstap3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groeiberekeningstap3.swift; sourceTree = "<group>"; };
 		E552F7372583ECEE0063DCB3 /* RegisterChooseRole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterChooseRole.swift; sourceTree = "<group>"; };
 		E554E12F256EA016008AC163 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E554E138256EA280008AC163 /* RegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterService.swift; sourceTree = "<group>"; };
@@ -379,10 +379,16 @@
 		E55588AC25669978001EA75B /* Groeiberekening */ = {
 			isa = PBXGroup;
 			children = (
-				E575D01C2567C8A700BAC36E /* Grafiek */,
+				E552F71F2583DE8A0063DCB3 /* Groeiberekeningstap3.swift */,
+				E552F71A2583DD040063DCB3 /* Groeiberekeningstap2.swift */,
+				E552F70D2583C8050063DCB3 /* Groeiberekeningstap1.swift */,
+				E552F7122583C9960063DCB3 /* GroeiberekeningExtraStap.swift */,
+				E52512BC2583BC4A0009601E /* GroeiberekeningIntro.swift */,
+				E557CE1D2583B88A00F9EAFA /* ConsWithoutAccount.swift */,
 				E533B94A25669CC6000A186F /* GroeiberekeningResultaat.swift */,
 				E54B9723255EC9B900CE8EA9 /* VideoGroeiberekeningUitleg.swift */,
 				E533B94F25669E73000A186F /* HelpInstructiefilmpje.swift */,
+				E575D01C2567C8A700BAC36E /* Grafiek */,
 			);
 			path = Groeiberekening;
 			sourceTree = "<group>";
@@ -414,26 +420,12 @@
 			path = Videos;
 			sourceTree = "<group>";
 		};
-		E557CE1C2583B7CC00F9EAFA /* GroeiberekeningWithoutAccount */ = {
-			isa = PBXGroup;
-			children = (
-				E557CE1D2583B88A00F9EAFA /* ConsWithoutAccount.swift */,
-				E52512BC2583BC4A0009601E /* GroeiberekeningIntroWithoutAccount.swift */,
-				E552F7122583C9960063DCB3 /* GroeiberekeningExtraStapWithoutAccount.swift */,
-				E552F70D2583C8050063DCB3 /* Groeiberekeningstap1WithoutAccount.swift */,
-				E552F71A2583DD040063DCB3 /* Groeiberekeningstap2WithoutAccount.swift */,
-				E552F71F2583DE8A0063DCB3 /* Groeiberekeningstap3WithoutAccount.swift */,
-			);
-			path = GroeiberekeningWithoutAccount;
-			sourceTree = "<group>";
-		};
 		E55E5BE9255D75D40038DA41 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				E591F17525ABAEE20004FD6D /* Coaches */,
 				E568367825795F5400F1BBD8 /* Homepage */,
 				E552F7292583EA0A0063DCB3 /* PagerViews */,
-				E557CE1C2583B7CC00F9EAFA /* GroeiberekeningWithoutAccount */,
 				E5DAC20F257FD58200B527E8 /* Intro */,
 				E554E12E256E9FF7008AC163 /* Login */,
 				E5177AA9256C31180006AC6D /* Register */,
@@ -658,7 +650,7 @@
 				E555D2C925A99BB90086144A /* GroeiberekeningModel.swift in Sources */,
 				E5A676012584E3C500A5B0E7 /* RegisterCoachView.swift in Sources */,
 				E5E92AED2583958700A511DE /* Intro3View.swift in Sources */,
-				E552F70E2583C8050063DCB3 /* Groeiberekeningstap1WithoutAccount.swift in Sources */,
+				E552F70E2583C8050063DCB3 /* Groeiberekeningstap1.swift in Sources */,
 				E5DBFBF7259B4D5200C52F9A /* RequestError.swift in Sources */,
 				E591F15025AB40970004FD6D /* getUserService.swift in Sources */,
 				E5C51DA325655D5200198EBD /* Color.swift in Sources */,
@@ -673,7 +665,7 @@
 				E53E0EF62570015C00371C89 /* InputTextFieldView.swift in Sources */,
 				E591F13B25AB32360004FD6D /* SporterToCoachesService.swift in Sources */,
 				E54B983725ABB8E80009ABDF /* AddCoachResponse.swift in Sources */,
-				E552F7202583DE8A0063DCB3 /* Groeiberekeningstap3WithoutAccount.swift in Sources */,
+				E552F7202583DE8A0063DCB3 /* Groeiberekeningstap3.swift in Sources */,
 				E591F17725ABAEFE0004FD6D /* QRcodeScanner.swift in Sources */,
 				E5DBFBFC259B50F400C52F9A /* LoginResponse.swift in Sources */,
 				E5571AFD25A78E4D00EF78C4 /* GroeiberekeningWithoutAccountPagerView.swift in Sources */,
@@ -695,7 +687,7 @@
 				E52938392562D3F900635E51 /* TabBarSporter.swift in Sources */,
 				E5E3057A258BA5910021E7B6 /* LandingPage.swift in Sources */,
 				E53E0EE5256FDD9500371C89 /* RegisterResponse.swift in Sources */,
-				E52512BD2583BC4A0009601E /* GroeiberekeningIntroWithoutAccount.swift in Sources */,
+				E52512BD2583BC4A0009601E /* GroeiberekeningIntro.swift in Sources */,
 				E556FCC8256D808000EACAF5 /* UserViewModel.swift in Sources */,
 				E555D2F325A9C8C70086144A /* GroeiberekeningRequest.swift in Sources */,
 				E55BA692255EC11000028DC2 /* TopCurve.swift in Sources */,
@@ -708,11 +700,11 @@
 				E555D2E925A9C4580086144A /* GroeiberekeningService.swift in Sources */,
 				E5557089255A99BF00BB269E /* aphv_iosApp.swift in Sources */,
 				E5CF07A52580D7DB007E6855 /* Intro2View.swift in Sources */,
-				E552F7132583C9960063DCB3 /* GroeiberekeningExtraStapWithoutAccount.swift in Sources */,
+				E552F7132583C9960063DCB3 /* GroeiberekeningExtraStap.swift in Sources */,
 				E5C6B40E25A8BF4D0092D548 /* IntroViewModel.swift in Sources */,
 				E591F14525AB33210004FD6D /* GetCoachesResponse.swift in Sources */,
 				E54B983225ABB8980009ABDF /* AddCoachRequest.swift in Sources */,
-				E552F71B2583DD040063DCB3 /* Groeiberekeningstap2WithoutAccount.swift in Sources */,
+				E552F71B2583DD040063DCB3 /* Groeiberekeningstap2.swift in Sources */,
 				E575D031256806B400BAC36E /* ResultaatItem.swift in Sources */,
 				E533B95025669E73000A186F /* HelpInstructiefilmpje.swift in Sources */,
 				E591F14025AB32D80004FD6D /* GetCoachesRequest.swift in Sources */,

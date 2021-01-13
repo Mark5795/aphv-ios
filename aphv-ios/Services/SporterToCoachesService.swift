@@ -59,22 +59,18 @@ final class SporterToCoachesService: ObservableObject {
     }
     
     
-    func GetListOfCoaches(userModel : UserModel, completion: @escaping (Result<GetCoachesResponse, RequestError>) -> Void) {
+    func GetListOfCoaches(emailUser : String, accessToken : String, completion: @escaping (Result<[UserModel], RequestError>) -> Void) {
+        
         
         let api = "https://aphv.azurewebsites.net"
-        let endpoint = "/api/users/\(userModel.email ?? "")/coaches"
+        let endpoint = "/api/users/\(emailUser)/coaches"
         let url = URL(string: api + endpoint)!
         
         var urlRequest = URLRequest(url: url)
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         urlRequest.httpMethod = "GET"
+        urlRequest.setValue(accessToken, forHTTPHeaderField: "authorization")
         
-//        let parameters = GetCoachesRequest(
-//            email: userModel.email ?? "",
-//            password: userModel.password ?? ""
-//        )
-        
-//        urlRequest.httpBody = try! JSONEncoder().encode(parameters)
         
         cancellable = URLSession.shared.dataTaskPublisher(for: urlRequest)
             .map({ $0.data })
@@ -95,7 +91,8 @@ final class SporterToCoachesService: ObservableObject {
                     }
                 }
             }) {(response) in
-                completion(.success(response))
+                completion(.success(response.coaches))
             }
     }
+    
 }

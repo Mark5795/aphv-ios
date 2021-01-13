@@ -8,13 +8,16 @@
 import Foundation
 
 struct GetCoachesResponse: Decodable {
-    let email, firstName, lastName, roleOrSport, accepted: String
     
-    enum CodingKeys: String, CodingKey {
-        case email = "email"
-        case firstName = "firstName"
-        case lastName = "lastName"
-        case roleOrSport = "roleOrSport"
-        case accepted = "accepted"
-    }
+    let coaches: [UserModel]
+    
+//    let email, firstName, lastName, roleOrSport, accepted: String
+//
+//    enum CodingKeys: String, CodingKey {
+//        case email = "email"
+//        case firstName = "firstName"
+//        case lastName = "lastName"
+//        case roleOrSport = "roleOrSport"
+//        case accepted = "accepted"
+//    }
 }

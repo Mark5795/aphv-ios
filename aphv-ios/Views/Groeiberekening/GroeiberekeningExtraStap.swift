@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct GroeiberekeningExtraStapWithoutAccount: View {
+struct GroeiberekeningExtraStap: View {
     
     @ObservedObject var groeiberekeningViewModel : GroeiberekeningViewModel
     
@@ -33,7 +33,7 @@ struct GroeiberekeningExtraStapWithoutAccount: View {
                 
                 Spacer()
                 
-                NavigationLink(destination: Groeiberekeningstap1WithoutAccount( groeiberekeningViewModel: groeiberekeningViewModel, isFlowStarted: $isFlowStarted)) {
+                NavigationLink(destination: Groeiberekeningstap1( groeiberekeningViewModel: groeiberekeningViewModel, isFlowStarted: $isFlowStarted)) {
                     Text("Volgende")
                         .font(.system(size: 20))
                         .fontWeight(.medium)
@@ -55,8 +55,8 @@ struct GroeiberekeningExtraStapWithoutAccount: View {
     }
 }
 
-//struct GroeiberekeningExtraStapWithoutAccount_Previews: PreviewProvider {
+//struct GroeiberekeningExtraStap_Previews: PreviewProvider {
 //    static var previews: some View {
-//        Groeiberekeningstap1WithoutAccount()
+//        Groeiberekeningstap1WithoutAccount(groeiberekeningViewModel: GroeiberekeningViewModel(groeiberekeningModel: GroeiberekeningModel()), isFlowStarted: .constant(true))
 //    }
 //}

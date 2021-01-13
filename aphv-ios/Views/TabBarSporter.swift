@@ -24,7 +24,7 @@ struct TabBarSporter: View {
                 }
                 .tag(0)
             
-            GroeiberekeningIntroWithoutAccount(isFlowStarted: $isFlowStarted)
+            GroeiberekeningIntro(isFlowStarted: $isFlowStarted)
                 .onTapGesture {
                     self.selectedTab = 1
                 }

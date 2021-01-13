@@ -14,20 +14,39 @@ import SwiftUI
 
 struct CoachesPagina: View {
     
+    @ObservedObject var sporterToCoachesViewModel = SporterToCoachesViewModel(userModel: UserModel())
+    
     @State private var isShowingScanner = false
+    @State var coaches: [UserModel] = []
     
     var body: some View {
         ZStack {
             TopCurve(title: "Coaches")
             VStack {
+                
+//                Button(action: {sporterToCoachesViewModel.GetListOfCoaches()}, label: {
+//                    Text("Button")
+//                })
+//                
+//                if(!sporterToCoachesViewModel.coaches.isEmpty) {
+//                    Text(sporterToCoachesViewModel.coaches[0].firstName ?? "")
+//                }
+                
+
+                
+//                List(sporterToCoachesViewModel.coaches) { coach in
+//                    Text(coach.firstName ?? "")
+//                }
+                
                 Text("Coaches")
                     .padding(.bottom, 40.0)
-
-                Text("Je hebt nog geen coaches toegevoegd")
+                
+                Text("Je hebt nog geen coaches toegevoegd.")
                     .padding(.bottom, 40.0)
-
-                Text("Voeg een nieuwe coach toe")
-
+                
+                Text("Voeg een nieuwe coach toe.")
+                    .padding(.bottom, 40.0)
+                
                 NavigationLink(
                     destination: QRcodeScanner(),
                     label: {
@@ -39,18 +58,6 @@ struct CoachesPagina: View {
                     .isDetailLink(false)
                     .background(Color.ASMgreen)
                     .cornerRadius(8.0)
-                
-//                Button(action: {self.isShowingScanner = true}, label: {
-//                    Text("Open QR code scanner")
-//                        .foregroundColor(Color.ASMgreen)
-//                        .padding(.vertical, 8.0)
-//                        .padding(.horizontal, 18.0)
-//                })
-//                .fullScreenCover(isPresented: $isShowingScanner) {
-//                    QRcodeScanner()
-//                }
-//                .border(/*@START_MENU_TOKEN@*/Color("ASMgreen")/*@END_MENU_TOKEN@*/, width: 2)
-//                .cornerRadius(8)
             }
         }
     }

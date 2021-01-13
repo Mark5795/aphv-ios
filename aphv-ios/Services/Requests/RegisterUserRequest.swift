@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct RegisterRequest: Encodable {
+struct RegisterUserRequest: Encodable {
     let email: String
     let firstName: String
     let lastName: String

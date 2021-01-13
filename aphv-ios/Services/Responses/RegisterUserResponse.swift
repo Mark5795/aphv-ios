@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct RegisterResponse: Decodable {
+struct RegisterUserResponse: Decodable {
     let email, firstName, lastName, password, dateOfBirth, gender, sport: String
     
     enum CodingKeys: String, CodingKey {

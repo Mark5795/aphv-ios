@@ -17,8 +17,8 @@
 		E52938392562D3F900635E51 /* TabBarSporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52938382562D3F900635E51 /* TabBarSporter.swift */; };
 		E533B94B25669CC6000A186F /* GroeiberekeningResultaat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E533B94A25669CC6000A186F /* GroeiberekeningResultaat.swift */; };
 		E533B95025669E73000A186F /* HelpInstructiefilmpje.swift in Sources */ = {isa = PBXBuildFile; fileRef = E533B94F25669E73000A186F /* HelpInstructiefilmpje.swift */; };
-		E53E0EE5256FDD9500371C89 /* RegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53E0EE4256FDD9500371C89 /* RegisterResponse.swift */; };
-		E53E0EEE256FDF7500371C89 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53E0EED256FDF7500371C89 /* RegisterRequest.swift */; };
+		E53E0EE5256FDD9500371C89 /* RegisterUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53E0EE4256FDD9500371C89 /* RegisterUserResponse.swift */; };
+		E53E0EEE256FDF7500371C89 /* RegisterUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53E0EED256FDF7500371C89 /* RegisterUserRequest.swift */; };
 		E53E0EF62570015C00371C89 /* InputTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53E0EF52570015C00371C89 /* InputTextFieldView.swift */; };
 		E53E0EFB2570293400371C89 /* CheckboxFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53E0EFA2570293400371C89 /* CheckboxFieldView.swift */; };
 		E54B9724255EC9B900CE8EA9 /* VideoGroeiberekeningUitleg.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54B9723255EC9B900CE8EA9 /* VideoGroeiberekeningUitleg.swift */; };
@@ -116,8 +116,8 @@
 		E52938382562D3F900635E51 /* TabBarSporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarSporter.swift; sourceTree = "<group>"; };
 		E533B94A25669CC6000A186F /* GroeiberekeningResultaat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroeiberekeningResultaat.swift; sourceTree = "<group>"; };
 		E533B94F25669E73000A186F /* HelpInstructiefilmpje.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpInstructiefilmpje.swift; sourceTree = "<group>"; };
-		E53E0EE4256FDD9500371C89 /* RegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponse.swift; sourceTree = "<group>"; };
-		E53E0EED256FDF7500371C89 /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
+		E53E0EE4256FDD9500371C89 /* RegisterUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserResponse.swift; sourceTree = "<group>"; };
+		E53E0EED256FDF7500371C89 /* RegisterUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserRequest.swift; sourceTree = "<group>"; };
 		E53E0EF52570015C00371C89 /* InputTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextFieldView.swift; sourceTree = "<group>"; };
 		E53E0EFA2570293400371C89 /* CheckboxFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxFieldView.swift; sourceTree = "<group>"; };
 		E54B9723255EC9B900CE8EA9 /* VideoGroeiberekeningUitleg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoGroeiberekeningUitleg.swift; sourceTree = "<group>"; };
@@ -247,7 +247,7 @@
 		E53E0EE2256FDD7200371C89 /* Responses */ = {
 			isa = PBXGroup;
 			children = (
-				E53E0EE4256FDD9500371C89 /* RegisterResponse.swift */,
+				E53E0EE4256FDD9500371C89 /* RegisterUserResponse.swift */,
 				E5C7B49E2571422B0097AF84 /* GetUsersResponse.swift */,
 				E5DBFBFB259B50F400C52F9A /* LoginResponse.swift */,
 				E555D2ED25A9C6750086144A /* GroeiberekeningResponse.swift */,
@@ -261,7 +261,7 @@
 		E53E0EEC256FDF4B00371C89 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
-				E53E0EED256FDF7500371C89 /* RegisterRequest.swift */,
+				E53E0EED256FDF7500371C89 /* RegisterUserRequest.swift */,
 				E5DBFC03259B543500C52F9A /* LoginRequest.swift */,
 				E555D2F225A9C8C70086144A /* GroeiberekeningRequest.swift */,
 				E56BE94B25AB013700BD421F /* RegisterCoachRequest.swift */,
@@ -423,19 +423,19 @@
 		E55E5BE9255D75D40038DA41 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E591F17525ABAEE20004FD6D /* Coaches */,
-				E568367825795F5400F1BBD8 /* Homepage */,
-				E552F7292583EA0A0063DCB3 /* PagerViews */,
-				E5DAC20F257FD58200B527E8 /* Intro */,
-				E554E12E256E9FF7008AC163 /* Login */,
-				E5177AA9256C31180006AC6D /* Register */,
-				E55588AC25669978001EA75B /* Groeiberekening */,
 				E55BA691255EC11000028DC2 /* TopCurve.swift */,
+				E5E30579258BA5910021E7B6 /* LandingPage.swift */,
+				E5DAC20F257FD58200B527E8 /* Intro */,
+				E5177AA9256C31180006AC6D /* Register */,
+				E554E12E256E9FF7008AC163 /* Login */,
+				E568367825795F5400F1BBD8 /* Homepage */,
+				E591F17525ABAEE20004FD6D /* Coaches */,
+				E55588AC25669978001EA75B /* Groeiberekening */,
 				E52938382562D3F900635E51 /* TabBarSporter.swift */,
 				E566CCAE2562903200695A98 /* TabBarSporterOud.swift */,
 				E53E0EF52570015C00371C89 /* InputTextFieldView.swift */,
 				E53E0EFA2570293400371C89 /* CheckboxFieldView.swift */,
-				E5E30579258BA5910021E7B6 /* LandingPage.swift */,
+				E552F7292583EA0A0063DCB3 /* PagerViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -686,13 +686,13 @@
 				E5E30568258B733C0021E7B6 /* FlowViewModel.swift in Sources */,
 				E52938392562D3F900635E51 /* TabBarSporter.swift in Sources */,
 				E5E3057A258BA5910021E7B6 /* LandingPage.swift in Sources */,
-				E53E0EE5256FDD9500371C89 /* RegisterResponse.swift in Sources */,
+				E53E0EE5256FDD9500371C89 /* RegisterUserResponse.swift in Sources */,
 				E52512BD2583BC4A0009601E /* GroeiberekeningIntro.swift in Sources */,
 				E556FCC8256D808000EACAF5 /* UserViewModel.swift in Sources */,
 				E555D2F325A9C8C70086144A /* GroeiberekeningRequest.swift in Sources */,
 				E55BA692255EC11000028DC2 /* TopCurve.swift in Sources */,
 				E5E3056D258B7DAA0021E7B6 /* MainView.swift in Sources */,
-				E53E0EEE256FDF7500371C89 /* RegisterRequest.swift in Sources */,
+				E53E0EEE256FDF7500371C89 /* RegisterUserRequest.swift in Sources */,
 				E575D01E2567C8BA00BAC36E /* GraphView.swift in Sources */,
 				E554E130256EA016008AC163 /* LoginView.swift in Sources */,
 				E533B94B25669CC6000A186F /* GroeiberekeningResultaat.swift in Sources */,

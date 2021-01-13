@@ -17,32 +17,40 @@ struct CoachesPagina: View {
     @ObservedObject var sporterToCoachesViewModel = SporterToCoachesViewModel(userModel: UserModel())
     
     @State private var isShowingScanner = false
-    @State var coaches: [UserModel] = []
+    @State var coaches : [CoachModel] = []
+    
+    @State var showingErrorAlert: Bool = false
+    @State var showingSuccesAlert: Bool = false
+    
+    init() {
+        sporterToCoachesViewModel.GetListOfCoaches()
+    }
     
     var body: some View {
         ZStack {
             TopCurve(title: "Coaches")
             VStack {
                 
-//                Button(action: {sporterToCoachesViewModel.GetListOfCoaches()}, label: {
-//                    Text("Button")
-//                })
-//                
-//                if(!sporterToCoachesViewModel.coaches.isEmpty) {
-//                    Text(sporterToCoachesViewModel.coaches[0].firstName ?? "")
-//                }
-                
-
-                
-//                List(sporterToCoachesViewModel.coaches) { coach in
-//                    Text(coach.firstName ?? "")
-//                }
-                
                 Text("Coaches")
-                    .padding(.bottom, 40.0)
+                                
+                if(coaches.isEmpty) {
+                    Text("Je hebt nog geen coaches toegevoegd.")
+                        .padding(.bottom, 40.0)
+                }
                 
-                Text("Je hebt nog geen coaches toegevoegd.")
-                    .padding(.bottom, 40.0)
+                List(coaches) { coach in
+                    VStack(alignment: .leading) {
+                        Text(coach.firstName + " " + coach.lastName)
+                        Text(coach.roleOrSport)
+                        Text(coach.email)
+                    }
+                    .padding(.horizontal, 50.0)
+                    .background(Color.ASMgreen)
+
+                }
+                .onAppear {
+                    coaches = sporterToCoachesViewModel.coaches
+                }
                 
                 Text("Voeg een nieuwe coach toe.")
                     .padding(.bottom, 40.0)
@@ -59,6 +67,7 @@ struct CoachesPagina: View {
                     .background(Color.ASMgreen)
                     .cornerRadius(8.0)
             }
+            .padding(.top, 75.0)
         }
     }
 }

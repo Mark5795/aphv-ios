@@ -14,7 +14,7 @@ class SporterToCoachesViewModel: ObservableObject {
     let localStorage = LocalStorage()
     let userViewModel = UserViewModel(userModel: UserModel())
     
-    @State var coaches: [UserModel] = []
+    @Published var coaches: [CoachModel] = []
     
     @Published var alertTitle : String = "Error"
     @Published var alertMessage : String = "Error"
@@ -29,7 +29,7 @@ class SporterToCoachesViewModel: ObservableObject {
     func AddCoach(emailCoach: String) {
         SporterToCoachesService.shared.AddCoach(emailCoach: emailCoach, emailUser: localStorage.emailUser, accessToken: userViewModel.accessToken ?? "") { (result) in
             switch result {
-            case .success(let response):
+            case .success(_):
                 self.alertTitle = "Toevoegen gelukt!"
                 //                self.alertMessage = ""
                 self.alertSucces = true
@@ -40,20 +40,18 @@ class SporterToCoachesViewModel: ObservableObject {
         }
     }
     
-    func GetListOfCoaches() -> Bool{
-        //        updateLoginUserModel(email: email, accessToken, accessToken)
+    func GetListOfCoaches() -> Void{
         SporterToCoachesService.shared.GetListOfCoaches(emailUser: localStorage.emailUser, accessToken: userViewModel.accessToken ?? "") { (result) in
             switch result {
             case .success(let response):
                 self.coaches = response
-                self.alertTitle = "Toevoegen gelukt!"
+                self.alertTitle = "Coaches laden gelukt!"
                 //                self.alertMessage = ""
                 self.alertSucces = true
             case .failure(_):
-                self.alertTitle = "Toevoegen mislukt"
+                self.alertTitle = "Coaches laden mislukt"
             //                self.alertMessage = "Het inloggen is mislukt, heb je een goede wifi verbinding? Probeer het nog een keer."
             }
         }
-        return true
     }
 }

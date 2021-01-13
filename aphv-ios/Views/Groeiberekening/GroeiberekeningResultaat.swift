@@ -22,9 +22,7 @@ struct GroeiberekeningResultaat: View {
                 TopCurve(title: "Groeiberekening")
                 
                 VStack(alignment: .leading) {
-                    
                     HStack() {
-                        
                         if(localStorage.isLoggedIn) {
                             Button(action: {self.isHomeSporterPresented = true }, label: {
                                 Text("Terug")
@@ -58,6 +56,7 @@ struct GroeiberekeningResultaat: View {
                             }
                         }
                     }
+                    
                     Text("PHV: \(groeiberekeningViewModel.phv, specifier: "%.2f")")
                     Text("Huidige fase: \(groeiberekeningViewModel.growthPhase)")
                     //                GraphView()

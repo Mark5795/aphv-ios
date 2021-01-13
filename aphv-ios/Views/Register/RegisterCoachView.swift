@@ -33,7 +33,6 @@ struct RegisterCoachView: View {
     @State var showingSuccesAlert: Bool = false
     @State var isHomeCoachPresented: Bool = false
     
-    
     var body: some View {
         ZStack {
             TopCurve(title: "Account aanmaken")
@@ -170,8 +169,8 @@ struct RegisterCoachView: View {
     }
 }
 
-//struct RegisterCoachView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        RegisterCoachView()
-//    }
-//}
+struct RegisterCoachView_Previews: PreviewProvider {
+    static var previews: some View {
+        RegisterCoachView( isFlowStarted: .constant(true))
+    }
+}

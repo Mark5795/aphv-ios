@@ -17,7 +17,6 @@ final class SporterToCoachesService: ObservableObject {
     
     func AddCoach(emailCoach : String, emailUser : String, accessToken : String, completion: @escaping (Result<AddCoachesResponse, RequestError>) -> Void) {
         
-        
         let api = "https://aphv.azurewebsites.net"
         let endpoint = "/api/users/\(emailUser)/coaches"
         let url = URL(string: api + endpoint)!
@@ -58,13 +57,15 @@ final class SporterToCoachesService: ObservableObject {
             }
     }
     
-    
-    func GetListOfCoaches(emailUser : String, accessToken : String, completion: @escaping (Result<[UserModel], RequestError>) -> Void) {
-        
+    //retreives list of coaches from a specific child
+    //if you look at .decode you see 
+    func GetListOfCoaches(emailUser : String, accessToken : String, completion: @escaping (Result<[CoachModel], RequestError>) -> Void) {
         
         let api = "https://aphv.azurewebsites.net"
         let endpoint = "/api/users/\(emailUser)/coaches"
         let url = URL(string: api + endpoint)!
+        
+        let accessToken = "Bearer \(accessToken)"
         
         var urlRequest = URLRequest(url: url)
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -74,7 +75,7 @@ final class SporterToCoachesService: ObservableObject {
         
         cancellable = URLSession.shared.dataTaskPublisher(for: urlRequest)
             .map({ $0.data })
-            .decode(type: GetCoachesResponse.self, decoder: JSONDecoder())
+            .decode(type: [CoachModel].self, decoder: JSONDecoder())
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { result in
                 switch result {
@@ -91,7 +92,8 @@ final class SporterToCoachesService: ObservableObject {
                     }
                 }
             }) {(response) in
-                completion(.success(response.coaches))
+                completion(.success(response))
+                print(response)
             }
     }
     

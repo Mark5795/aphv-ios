@@ -10,6 +10,7 @@
 // navigatie user the homepage
 
 import SwiftUI
+import AlertX
 
 struct LoginView: View {
     
@@ -21,8 +22,14 @@ struct LoginView: View {
     @State var showingSuccesAlert: Bool = false
     @State var isHomeSportPresented: Bool = false
     
-    @State var email: String = ""
-    @State var password: String = ""
+    @State var showAlertX: Bool = false
+    
+//    @State var email: String = ""
+//    @State var password: String = ""
+  
+    //!!! Temporary for developing !!!
+    @State var email: String = "markmark@gmail.com"
+    @State var password: String = "Welkom01!"
     
     var body: some View {
         NavigationView {
@@ -46,12 +53,13 @@ struct LoginView: View {
                     Spacer()
                         .frame(height: 20)
                     
+                    
                     Button(action: {
                         userViewModel.email = self.email.lowercased()
                         userViewModel.password = self.password
                         
                         if(userViewModel.sendLoginUserRequest()) {
-                            self.showingErrorAlert.toggle()
+                            self.showAlertX = true
                         }
 
                     }, label: {
@@ -62,12 +70,35 @@ struct LoginView: View {
                     })
                     .background(Color.ASMgreen)
                     .cornerRadius(8.0)
-                    .alert(isPresented: $showingErrorAlert) {
-                        Alert(title: Text(userViewModel.alertTitle), message: Text(userViewModel.alertMessage), dismissButton: .default(Text("Verder"), action: {if(userViewModel.alertTitle == "Inloggen gelukt!") {self.localStorage.isLoggedIn = true; self.isHomeSportPresented = true}}))
+                    .alertX(isPresented: $showAlertX) {
+                        AlertX(title: Text(userViewModel.alertTitle), message: Text(userViewModel.alertMessage), primaryButton: .default(Text("Verder"), action: {if(userViewModel.alertTitle == "Inloggen gelukt!") {self.localStorage.isLoggedIn = true; self.isHomeSportPresented = true}}))
                     }
                     .fullScreenCover(isPresented: $isHomeSportPresented) {
                         HomeSporter()
                     }
+//
+//                    Button(action: {
+//                        userViewModel.email = self.email.lowercased()
+//                        userViewModel.password = self.password
+//
+//                        if(userViewModel.sendLoginUserRequest()) {
+//                            self.showingErrorAlert.toggle()
+//                        }
+//
+//                    }, label: {
+//                        Text("Aanmaken")
+//                            .fontWeight(.bold)
+//                            .frame(maxWidth: .infinity, minHeight: 44)
+//                            .foregroundColor(.white)
+//                    })
+//                    .background(Color.ASMgreen)
+//                    .cornerRadius(8.0)
+//                    .alert(isPresented: $showingErrorAlert) {
+//                        Alert(title: Text(userViewModel.alertTitle), message: Text(userViewModel.alertMessage), dismissButton: .default(Text("Verder"), action: {if(userViewModel.alertTitle == "Inloggen gelukt!") {self.localStorage.isLoggedIn = true; self.isHomeSportPresented = true}}))
+//                    }
+//                    .fullScreenCover(isPresented: $isHomeSportPresented) {
+//                        HomeSporter()
+//                    }
                     
                 }.padding(.horizontal, 25.0)
                 Spacer()

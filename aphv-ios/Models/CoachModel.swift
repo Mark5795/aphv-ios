@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CoachModel : Codable, Identifiable {
+struct CoachModel : Codable, Identifiable, Hashable {
     let id = UUID()
     let email : String
     let firstName : String

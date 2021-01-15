@@ -13,7 +13,7 @@ import AlertX
 // Add this coach by this email
 // Show the coaches in a list.
 
-struct CoachesPagina: View {
+struct CoachesPage: View {
     
 //    @ObservedObject var sporterToCoachesViewModel = SporterToCoachesViewModel(userModel: UserModel())
 //    @State var coaches : [CoachModel] = []
@@ -246,8 +246,8 @@ struct CoachesPagina: View {
     }
 //}
 //}
-struct CoachesPagina_Previews: PreviewProvider {
+struct CoachesPage_Previews: PreviewProvider {
     static var previews: some View {
-        CoachesPagina()
+        CoachesPage()
     }
 }

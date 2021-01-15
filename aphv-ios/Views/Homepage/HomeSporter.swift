@@ -67,6 +67,7 @@ struct HomeSporter: View {
                     
                     //tabbar
                     HStack {
+                        //command out because we are already on the homepage
 //                        NavigationLink(destination: HomeSporter()){
                             VStack {
                                 Image("IconHome")
@@ -95,7 +96,7 @@ struct HomeSporter: View {
                                 }
                             }
                         .padding([.top, .leading, .trailing], 10.0)
-                        NavigationLink(destination: CoachesPagina()){
+                        NavigationLink(destination: TestCoachesPage()){
                             VStack {
                                 Image("IconSportersEnCoaches")
                                     .resizable()
@@ -107,8 +108,6 @@ struct HomeSporter: View {
                                 }
                         }
                         .padding(.top, 10.0)
-                        
-                        
                     }
                     .frame(minWidth: 0, maxWidth: .infinity, minHeight: 73)
                     .border(Color("BorderGrey"), width: 2)

@@ -37,7 +37,7 @@ struct TabBarSporter: View {
                 }
                 .tag(1)
             
-            CoachesPagina()
+            CoachesPage()
                 .onTapGesture {
                     self.selectedTab = 2
                 }

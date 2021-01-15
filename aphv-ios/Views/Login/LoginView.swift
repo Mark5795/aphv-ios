@@ -10,7 +10,6 @@
 // navigatie user the homepage
 
 import SwiftUI
-import AlertX
 
 struct LoginView: View {
     
@@ -19,10 +18,10 @@ struct LoginView: View {
     let localStorage = LocalStorage()
     
     @State var showingErrorAlert: Bool = false
-    @State var showingSuccesAlert: Bool = false
+//    @State var showingSuccesAlert: Bool = false
     @State var isHomeSportPresented: Bool = false
     
-    @State var showAlertX: Bool = false
+    @State var showMenu = false
     
 //    @State var email: String = ""
 //    @State var password: String = ""
@@ -32,10 +31,35 @@ struct LoginView: View {
     @State var password: String = "Welkom01!"
     
     var body: some View {
+        let drag = DragGesture()
+            .onEnded {
+                if $0.translation.width < -100 {
+                    withAnimation {
+                        self.showMenu = false
+                    }
+                }
+            }
+        
+        return NavigationView {
+            GeometryReader { geometry in
+                ZStack(alignment: .leading) {
+                    TestTopCurve(showMenu: self.$showMenu)
+                        .frame(width: geometry.size.width, height: geometry.size.height)
+                        .offset(x: self.showMenu ? geometry.size.width/2 : 0)
+                        .disabled(self.showMenu ? true : false)
+                    if self.showMenu {
+                        TestTopCurve()
+                            .frame(width: geometry.size.width/2)
+                            .transition(.move(edge: .leading))
+                    }
+                }
+                    .gesture(drag)
+            }
+        
         NavigationView {
             VStack() {
                 ZStack() {
-                    TopCurve(title: "Aanmelden")
+                    TestTopCurve(title: "Aanmelden", showHamburgerMenu: false)
                 }
                 .navigationTitle(Text(""))
                 .zIndex(0)
@@ -52,53 +76,29 @@ struct LoginView: View {
                     
                     Spacer()
                         .frame(height: 20)
-                    
-                    
+
                     Button(action: {
                         userViewModel.email = self.email.lowercased()
                         userViewModel.password = self.password
-                        
+
                         if(userViewModel.sendLoginUserRequest()) {
-                            self.showAlertX = true
+                            self.showingErrorAlert.toggle()
                         }
 
                     }, label: {
-                        Text("Aanmaken")
+                        Text("Aanmelden")
                             .fontWeight(.bold)
                             .frame(maxWidth: .infinity, minHeight: 44)
                             .foregroundColor(.white)
                     })
                     .background(Color.ASMgreen)
                     .cornerRadius(8.0)
-                    .alertX(isPresented: $showAlertX) {
-                        AlertX(title: Text(userViewModel.alertTitle), message: Text(userViewModel.alertMessage), primaryButton: .default(Text("Verder"), action: {if(userViewModel.alertTitle == "Inloggen gelukt!") {self.localStorage.isLoggedIn = true; self.isHomeSportPresented = true}}))
+                    .alert(isPresented: $showingErrorAlert) {
+                        Alert(title: Text(userViewModel.alertTitle), message: Text(userViewModel.alertMessage), dismissButton: .default(Text("Verder"), action: {if(userViewModel.alertTitle == "Inloggen gelukt!") {self.localStorage.isLoggedIn = true; self.isHomeSportPresented = true}}))
                     }
                     .fullScreenCover(isPresented: $isHomeSportPresented) {
                         HomeSporter()
                     }
-//
-//                    Button(action: {
-//                        userViewModel.email = self.email.lowercased()
-//                        userViewModel.password = self.password
-//
-//                        if(userViewModel.sendLoginUserRequest()) {
-//                            self.showingErrorAlert.toggle()
-//                        }
-//
-//                    }, label: {
-//                        Text("Aanmaken")
-//                            .fontWeight(.bold)
-//                            .frame(maxWidth: .infinity, minHeight: 44)
-//                            .foregroundColor(.white)
-//                    })
-//                    .background(Color.ASMgreen)
-//                    .cornerRadius(8.0)
-//                    .alert(isPresented: $showingErrorAlert) {
-//                        Alert(title: Text(userViewModel.alertTitle), message: Text(userViewModel.alertMessage), dismissButton: .default(Text("Verder"), action: {if(userViewModel.alertTitle == "Inloggen gelukt!") {self.localStorage.isLoggedIn = true; self.isHomeSportPresented = true}}))
-//                    }
-//                    .fullScreenCover(isPresented: $isHomeSportPresented) {
-//                        HomeSporter()
-//                    }
                     
                 }.padding(.horizontal, 25.0)
                 Spacer()

@@ -26,6 +26,20 @@ class SporterToCoachesViewModel: ObservableObject {
         self.userModel = userModel
     }
     
+    func DeleteSporterToCoach(emailCoach: String) {
+        SporterToCoachesService.shared.DeleteSporterToCoach(emailCoach: emailCoach, emailUser: localStorage.emailUser, accessToken: userViewModel.accessToken ?? "") { (result) in
+            switch result {
+            case .success(_):
+                self.alertTitle = "Verwijderen gelukt!"
+                //                self.alertMessage = ""
+                self.alertSucces = true
+            case .failure(_):
+                self.alertTitle = "Verwijderen mislukt"
+            //                self.alertMessage = "Het inloggen is mislukt, heb je een goede wifi verbinding? Probeer het nog een keer."
+            }
+        }
+    }
+    
     func AddCoach(emailCoach: String) {
         SporterToCoachesService.shared.AddCoach(emailCoach: emailCoach, emailUser: localStorage.emailUser, accessToken: userViewModel.accessToken ?? "") { (result) in
             switch result {

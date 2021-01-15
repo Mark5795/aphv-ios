@@ -40,7 +40,7 @@ struct TabBarSporterOud: View {
                         }
                     }
                 .padding([.top, .leading, .trailing], 10.0)
-                NavigationLink(destination: CoachesPagina()){
+                NavigationLink(destination: CoachesPage()){
                     VStack {
                         Image("IconSportersEnCoaches")
                             .resizable()

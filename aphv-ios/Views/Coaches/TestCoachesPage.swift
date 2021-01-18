@@ -18,14 +18,16 @@ struct TestCoachesPage: View {
     @ObservedObject var sporterToCoachesViewModel = SporterToCoachesViewModel(userModel: UserModel())
     @State var coaches : [CoachModel] = []
     
-        init() {
-            sporterToCoachesViewModel.GetListOfCoaches()
-        }
+
     
-//    @State var coaches : [CoachModel] = [CoachModel(email: "kees@gmail.com", firstName: "kees", lastName: "tol", roleOrSport: "Tennis", accepted: false),
+//    @State var coaches : [CoachModel] = [CoachModel(email: "kees@gmail.com", firstName: "kees",                                       lastName: "tol", roleOrSport: "Tennis", accepted: false),
 //                                         CoachModel(email: "dennis@gmail.com", firstName: "dennis", lastName: "Haak", roleOrSport: "Voetbal", accepted: false)]
     
 //    @State var showAlertX: Bool = false
+    init() {
+        sporterToCoachesViewModel.GetListOfCoaches()
+        self.coaches = sporterToCoachesViewModel.coaches
+    }
     
     var body: some View {
         List(coaches) { coach in

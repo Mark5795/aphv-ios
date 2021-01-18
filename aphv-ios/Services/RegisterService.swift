@@ -78,7 +78,7 @@ final class RegisterService: ObservableObject {
             firstName: userModel.firstName ?? "",
             lastName: userModel.lastName ?? "",
             password: userModel.password ?? "",
-            role: userModel.sport ?? ""
+            role: userModel.roleOrSport ?? ""
         )
         
         urlRequest.httpBody = try! JSONEncoder().encode(parameters)

@@ -31,35 +31,10 @@ struct LoginView: View {
     @State var password: String = "Welkom01!"
     
     var body: some View {
-        let drag = DragGesture()
-            .onEnded {
-                if $0.translation.width < -100 {
-                    withAnimation {
-                        self.showMenu = false
-                    }
-                }
-            }
-        
-        return NavigationView {
-            GeometryReader { geometry in
-                ZStack(alignment: .leading) {
-                    TestTopCurve(showMenu: self.$showMenu)
-                        .frame(width: geometry.size.width, height: geometry.size.height)
-                        .offset(x: self.showMenu ? geometry.size.width/2 : 0)
-                        .disabled(self.showMenu ? true : false)
-                    if self.showMenu {
-                        TestTopCurve()
-                            .frame(width: geometry.size.width/2)
-                            .transition(.move(edge: .leading))
-                    }
-                }
-                    .gesture(drag)
-            }
-        
         NavigationView {
             VStack() {
                 ZStack() {
-                    TestTopCurve(title: "Aanmelden", showHamburgerMenu: false)
+                    TopCurve(title: "Aanmelden")
                 }
                 .navigationTitle(Text(""))
                 .zIndex(0)

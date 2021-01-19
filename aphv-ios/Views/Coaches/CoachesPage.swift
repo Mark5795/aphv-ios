@@ -67,6 +67,10 @@ struct CoachesPage: View {
             .cornerRadius(8.0)
             
         }
+//        .onAppear {
+//            coaches = sporterToCoachesViewModel.coaches
+//        }
+        
         .alertX(isPresented: $showAlertX, content: {
             AlertX(title: Text("Wil je de coach verwijderen?")
                     .fontWeight(.medium)

@@ -19,7 +19,7 @@ class UserViewModel: ObservableObject {
     @Published var alertMessage : String = "Error"
     @Published var alertSucces : Bool = false
     
-    @Published var role: String = "Sporter"
+    @Published var role: String = ""
     @Published var firstName: String = ""
     @Published var lastName: String = ""
     @Published var sport: String = ""
@@ -59,9 +59,19 @@ class UserViewModel: ObservableObject {
         self.userModel = userModel
     }
     
-//    private init() {
-//        isAuthenticated = accessToken != nil
-//    }
+    func getUser() {
+        getUserService.shared.GetUser(userModel: userModel, accessToken: accessToken ?? "") { (result) in
+            switch result {
+            case .success(let response):
+                self.role = response.role ?? ""
+            case .failure(_):
+                self.alertTitle = "Ophalen mislukt"
+                self.alertMessage = "Het inloggen is mislukt, heb je een goede wifi verbinding? Probeer het nog een keer."
+            }
+        }
+    }
+    
+    
     
     func updateRegisterUserModel(role : String, firstName : String, lastName : String, sport : String, gender : String, dateOfBirth : String, email : String, password : String) {
         

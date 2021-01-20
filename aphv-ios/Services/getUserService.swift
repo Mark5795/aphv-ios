@@ -18,26 +18,22 @@ final class getUserService: ObservableObject {
     
     private var cancellable: AnyCancellable?
     
-    func GetUser(userModel : UserModel, completion: @escaping (Result<LoginResponse, RequestError>) -> Void) {
+    func GetUser(userModel : UserModel, accessToken : String, completion: @escaping (Result<GetUsersResponse, RequestError>) -> Void) {
         
         let api = "https://aphv.azurewebsites.net"
         let endpoint = "/api/users/\(userModel.email ?? "")"
         let url = URL(string: api + endpoint)!
         
+        let accessToken = "Bearer \(accessToken)"
+        
         var urlRequest = URLRequest(url: url)
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         urlRequest.httpMethod = "GET"
-        
-        let parameters = LoginRequest(
-            email: userModel.email ?? "",
-            password: userModel.password ?? ""
-        )
-        
-        urlRequest.httpBody = try! JSONEncoder().encode(parameters)
+        urlRequest.setValue(accessToken, forHTTPHeaderField: "authorization")
         
         cancellable = URLSession.shared.dataTaskPublisher(for: urlRequest)
             .map({ $0.data })
-            .decode(type: LoginResponse.self, decoder: JSONDecoder())
+            .decode(type: GetUsersResponse.self, decoder: JSONDecoder())
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { result in
                 switch result {
@@ -49,6 +45,7 @@ final class getUserService: ObservableObject {
                         completion(.failure(.urlError(urlError)))
                     case let decodingError as DecodingError:
                         completion(.failure(.decodingError(decodingError)))
+                        print(decodingError)
                     default:
                         completion(.failure(.genericError(error)))
                     }

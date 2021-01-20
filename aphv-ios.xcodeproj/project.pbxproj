@@ -13,6 +13,10 @@
 		E5177AAB256C31500006AC6D /* RegisterSporterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5177AAA256C31500006AC6D /* RegisterSporterView.swift */; };
 		E5177AB3256C358C0006AC6D /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5177AB2256C358C0006AC6D /* UserModel.swift */; };
 		E5177AB8256C38400006AC6D /* RadioButtonFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5177AB7256C38400006AC6D /* RadioButtonFieldView.swift */; };
+		E517C08D25B8494100988EAB /* SportersPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E517C08C25B8494100988EAB /* SportersPage.swift */; };
+		E517C09525B8503200988EAB /* ModalBarcodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E517C09425B8503200988EAB /* ModalBarcodeGenerator.swift */; };
+		E517C09A25B867CA00988EAB /* CoachesToSportersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E517C09925B867CA00988EAB /* CoachesToSportersService.swift */; };
+		E517C09F25B8694200988EAB /* CoachToSportersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E517C09E25B8694200988EAB /* CoachToSportersViewModel.swift */; };
 		E52512BD2583BC4A0009601E /* GroeiberekeningIntro.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52512BC2583BC4A0009601E /* GroeiberekeningIntro.swift */; };
 		E52938392562D3F900635E51 /* TabBarSporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52938382562D3F900635E51 /* TabBarSporter.swift */; };
 		E533B94B25669CC6000A186F /* GroeiberekeningResultaat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E533B94A25669CC6000A186F /* GroeiberekeningResultaat.swift */; };
@@ -21,6 +25,7 @@
 		E53E0EEE256FDF7500371C89 /* RegisterUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53E0EED256FDF7500371C89 /* RegisterUserRequest.swift */; };
 		E53E0EF62570015C00371C89 /* InputTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53E0EF52570015C00371C89 /* InputTextFieldView.swift */; };
 		E53E0EFB2570293400371C89 /* CheckboxFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53E0EFA2570293400371C89 /* CheckboxFieldView.swift */; };
+		E5452C4425B7183A00C63275 /* TestGroeiberekeningResultaat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5452C4325B7183A00C63275 /* TestGroeiberekeningResultaat.swift */; };
 		E54B9724255EC9B900CE8EA9 /* VideoGroeiberekeningUitleg.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54B9723255EC9B900CE8EA9 /* VideoGroeiberekeningUitleg.swift */; };
 		E54B983225ABB8980009ABDF /* AddCoachRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54B983125ABB8980009ABDF /* AddCoachRequest.swift */; };
 		E54B983725ABB8E80009ABDF /* AddCoachResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54B983625ABB8E80009ABDF /* AddCoachResponse.swift */; };
@@ -51,7 +56,7 @@
 		E5634899257550770090E490 /* DropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5634898257550770090E490 /* DropDownView.swift */; };
 		E566CCAF2562903200695A98 /* TabBarSporterOud.swift in Sources */ = {isa = PBXBuildFile; fileRef = E566CCAE2562903200695A98 /* TabBarSporterOud.swift */; };
 		E566CCB42562936000695A98 /* HomeSporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E566CCB32562936000695A98 /* HomeSporter.swift */; };
-		E566CCB9256293C200695A98 /* CoachesPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E566CCB8256293C200695A98 /* CoachesPage.swift */; };
+		E566CCB9256293C200695A98 /* TestCoachesPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E566CCB8256293C200695A98 /* TestCoachesPage.swift */; };
 		E56885FA2576819B00B37DA0 /* DropDownModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56885F92576819B00B37DA0 /* DropDownModel.swift */; };
 		E56BE94C25AB013700BD421F /* RegisterCoachRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56BE94B25AB013700BD421F /* RegisterCoachRequest.swift */; };
 		E56BE95125AB01C600BD421F /* RegisterCoachResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56BE95025AB01C600BD421F /* RegisterCoachResponse.swift */; };
@@ -73,7 +78,8 @@
 		E5C6B40E25A8BF4D0092D548 /* IntroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C6B40D25A8BF4D0092D548 /* IntroViewModel.swift */; };
 		E5C7B49F2571422B0097AF84 /* GetUsersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C7B49E2571422B0097AF84 /* GetUsersResponse.swift */; };
 		E5CCFFC525B061BE00861814 /* AlertX in Frameworks */ = {isa = PBXBuildFile; productRef = E5CCFFC425B061BE00861814 /* AlertX */; };
-		E5CDFFED25B1CE6000AEE568 /* TestCoachesPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CDFFEC25B1CE5F00AEE568 /* TestCoachesPage.swift */; };
+		E5CDFFED25B1CE6000AEE568 /* CoachesPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CDFFEC25B1CE5F00AEE568 /* CoachesPage.swift */; };
+		E5CEFDCE25B6FCC400A47272 /* TestLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CEFDCD25B6FCC400A47272 /* TestLoginView.swift */; };
 		E5CF07A52580D7DB007E6855 /* Intro2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CF07A42580D7DB007E6855 /* Intro2View.swift */; };
 		E5CF07AC2580E00D007E6855 /* SwiftUIPager in Frameworks */ = {isa = PBXBuildFile; productRef = E5CF07AB2580E00D007E6855 /* SwiftUIPager */; };
 		E5D3ADA92584F66A00A2F775 /* SuccesPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D3ADA82584F66A00A2F775 /* SuccesPopup.swift */; };
@@ -114,6 +120,10 @@
 		E5177AAA256C31500006AC6D /* RegisterSporterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSporterView.swift; sourceTree = "<group>"; };
 		E5177AB2256C358C0006AC6D /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		E5177AB7256C38400006AC6D /* RadioButtonFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonFieldView.swift; sourceTree = "<group>"; };
+		E517C08C25B8494100988EAB /* SportersPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportersPage.swift; sourceTree = "<group>"; };
+		E517C09425B8503200988EAB /* ModalBarcodeGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalBarcodeGenerator.swift; sourceTree = "<group>"; };
+		E517C09925B867CA00988EAB /* CoachesToSportersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachesToSportersService.swift; sourceTree = "<group>"; };
+		E517C09E25B8694200988EAB /* CoachToSportersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachToSportersViewModel.swift; sourceTree = "<group>"; };
 		E52512BC2583BC4A0009601E /* GroeiberekeningIntro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroeiberekeningIntro.swift; sourceTree = "<group>"; };
 		E52938382562D3F900635E51 /* TabBarSporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarSporter.swift; sourceTree = "<group>"; };
 		E533B94A25669CC6000A186F /* GroeiberekeningResultaat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroeiberekeningResultaat.swift; sourceTree = "<group>"; };
@@ -122,6 +132,7 @@
 		E53E0EED256FDF7500371C89 /* RegisterUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserRequest.swift; sourceTree = "<group>"; };
 		E53E0EF52570015C00371C89 /* InputTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextFieldView.swift; sourceTree = "<group>"; };
 		E53E0EFA2570293400371C89 /* CheckboxFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxFieldView.swift; sourceTree = "<group>"; };
+		E5452C4325B7183A00C63275 /* TestGroeiberekeningResultaat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestGroeiberekeningResultaat.swift; sourceTree = "<group>"; };
 		E54B9723255EC9B900CE8EA9 /* VideoGroeiberekeningUitleg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoGroeiberekeningUitleg.swift; sourceTree = "<group>"; };
 		E54B983125ABB8980009ABDF /* AddCoachRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoachRequest.swift; sourceTree = "<group>"; };
 		E54B983625ABB8E80009ABDF /* AddCoachResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoachResponse.swift; sourceTree = "<group>"; };
@@ -158,7 +169,7 @@
 		E5634898257550770090E490 /* DropDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownView.swift; sourceTree = "<group>"; };
 		E566CCAE2562903200695A98 /* TabBarSporterOud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarSporterOud.swift; sourceTree = "<group>"; };
 		E566CCB32562936000695A98 /* HomeSporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSporter.swift; sourceTree = "<group>"; };
-		E566CCB8256293C200695A98 /* CoachesPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachesPage.swift; sourceTree = "<group>"; };
+		E566CCB8256293C200695A98 /* TestCoachesPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCoachesPage.swift; sourceTree = "<group>"; };
 		E56885F92576819B00B37DA0 /* DropDownModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownModel.swift; sourceTree = "<group>"; };
 		E56BE94B25AB013700BD421F /* RegisterCoachRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCoachRequest.swift; sourceTree = "<group>"; };
 		E56BE95025AB01C600BD421F /* RegisterCoachResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCoachResponse.swift; sourceTree = "<group>"; };
@@ -177,7 +188,8 @@
 		E5C51DA225655D5200198EBD /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		E5C6B40D25A8BF4D0092D548 /* IntroViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewModel.swift; sourceTree = "<group>"; };
 		E5C7B49E2571422B0097AF84 /* GetUsersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUsersResponse.swift; sourceTree = "<group>"; };
-		E5CDFFEC25B1CE5F00AEE568 /* TestCoachesPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCoachesPage.swift; sourceTree = "<group>"; };
+		E5CDFFEC25B1CE5F00AEE568 /* CoachesPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachesPage.swift; sourceTree = "<group>"; };
+		E5CEFDCD25B6FCC400A47272 /* TestLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLoginView.swift; sourceTree = "<group>"; };
 		E5CF07A42580D7DB007E6855 /* Intro2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intro2View.swift; sourceTree = "<group>"; };
 		E5D3ADA82584F66A00A2F775 /* SuccesPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccesPopup.swift; sourceTree = "<group>"; };
 		E5D9BF6E25B20952008E1BAA /* TestTopCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTopCurve.swift; sourceTree = "<group>"; };
@@ -231,6 +243,7 @@
 				E5177A94256BC1FE0006AC6D /* GrafiekManager.swift */,
 				E5E30567258B733C0021E7B6 /* FlowViewModel.swift */,
 				E591F13525AB311C0004FD6D /* SporterToCoachesViewModel.swift */,
+				E517C09E25B8694200988EAB /* CoachToSportersViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -246,6 +259,15 @@
 				E5D3ADA82584F66A00A2F775 /* SuccesPopup.swift */,
 			);
 			path = Register;
+			sourceTree = "<group>";
+		};
+		E517C08B25B8492800988EAB /* Sporters */ = {
+			isa = PBXGroup;
+			children = (
+				E517C08C25B8494100988EAB /* SportersPage.swift */,
+				E517C09425B8503200988EAB /* ModalBarcodeGenerator.swift */,
+			);
+			path = Sporters;
 			sourceTree = "<group>";
 		};
 		E53E0EE2256FDD7200371C89 /* Responses */ = {
@@ -294,6 +316,7 @@
 			isa = PBXGroup;
 			children = (
 				E554E12F256EA016008AC163 /* LoginView.swift */,
+				E5CEFDCD25B6FCC400A47272 /* TestLoginView.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -309,6 +332,7 @@
 				E591F13A25AB32360004FD6D /* SporterToCoachesService.swift */,
 				E591F14F25AB40970004FD6D /* getUserService.swift */,
 				E5DBFBF6259B4D5200C52F9A /* RequestError.swift */,
+				E517C09925B867CA00988EAB /* CoachesToSportersService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -391,6 +415,7 @@
 				E54B9723255EC9B900CE8EA9 /* VideoGroeiberekeningUitleg.swift */,
 				E533B94F25669E73000A186F /* HelpInstructiefilmpje.swift */,
 				E575D01C2567C8A700BAC36E /* Grafiek */,
+				E5452C4325B7183A00C63275 /* TestGroeiberekeningResultaat.swift */,
 			);
 			path = Groeiberekening;
 			sourceTree = "<group>";
@@ -433,6 +458,7 @@
 				E554E12E256E9FF7008AC163 /* Login */,
 				E568367825795F5400F1BBD8 /* Homepage */,
 				E591F17525ABAEE20004FD6D /* Coaches */,
+				E517C08B25B8492800988EAB /* Sporters */,
 				E55588AC25669978001EA75B /* Groeiberekening */,
 				E52938382562D3F900635E51 /* TabBarSporter.swift */,
 				E566CCAE2562903200695A98 /* TabBarSporterOud.swift */,
@@ -486,9 +512,9 @@
 		E591F17525ABAEE20004FD6D /* Coaches */ = {
 			isa = PBXGroup;
 			children = (
-				E566CCB8256293C200695A98 /* CoachesPage.swift */,
+				E566CCB8256293C200695A98 /* TestCoachesPage.swift */,
 				E591F17625ABAEFE0004FD6D /* QRcodeScanner.swift */,
-				E5CDFFEC25B1CE5F00AEE568 /* TestCoachesPage.swift */,
+				E5CDFFEC25B1CE5F00AEE568 /* CoachesPage.swift */,
 			);
 			path = Coaches;
 			sourceTree = "<group>";
@@ -650,7 +676,7 @@
 				E557CE1E2583B88A00F9EAFA /* ConsWithoutAccount.swift in Sources */,
 				E555708B255A99BF00BB269E /* ContentView.swift in Sources */,
 				E5D3ADA92584F66A00A2F775 /* SuccesPopup.swift in Sources */,
-				E566CCB9256293C200695A98 /* CoachesPage.swift in Sources */,
+				E566CCB9256293C200695A98 /* TestCoachesPage.swift in Sources */,
 				E56BE95125AB01C600BD421F /* RegisterCoachResponse.swift in Sources */,
 				E53E0EFB2570293400371C89 /* CheckboxFieldView.swift in Sources */,
 				E555D2C925A99BB90086144A /* GroeiberekeningModel.swift in Sources */,
@@ -665,7 +691,7 @@
 				E5634899257550770090E490 /* DropDownView.swift in Sources */,
 				E5DAC211257FD60900B527E8 /* Intro1View.swift in Sources */,
 				E5177AAB256C31500006AC6D /* RegisterSporterView.swift in Sources */,
-				E5CDFFED25B1CE6000AEE568 /* TestCoachesPage.swift in Sources */,
+				E5CDFFED25B1CE6000AEE568 /* CoachesPage.swift in Sources */,
 				E555D2FB25AA3D470086144A /* HomeCoach.swift in Sources */,
 				E56BE94C25AB013700BD421F /* RegisterCoachRequest.swift in Sources */,
 				E5DBFC04259B543500C52F9A /* LoginRequest.swift in Sources */,
@@ -687,12 +713,15 @@
 				E54B9724255EC9B900CE8EA9 /* VideoGroeiberekeningUitleg.swift in Sources */,
 				E5C7B49F2571422B0097AF84 /* GetUsersResponse.swift in Sources */,
 				E56885FA2576819B00B37DA0 /* DropDownModel.swift in Sources */,
+				E517C09525B8503200988EAB /* ModalBarcodeGenerator.swift in Sources */,
+				E5CEFDCE25B6FCC400A47272 /* TestLoginView.swift in Sources */,
 				E5177A9D256BC4ED0006AC6D /* ValueItem.swift in Sources */,
 				E575D0262567CEEF00BAC36E /* MeerdereGrafiekenView.swift in Sources */,
 				E5DBFBF2259B4D0200C52F9A /* LoginService.swift in Sources */,
 				E566CCB42562936000695A98 /* HomeSporter.swift in Sources */,
 				E5177A95256BC1FE0006AC6D /* GrafiekManager.swift in Sources */,
 				E5E30568258B733C0021E7B6 /* FlowViewModel.swift in Sources */,
+				E517C09F25B8694200988EAB /* CoachToSportersViewModel.swift in Sources */,
 				E52938392562D3F900635E51 /* TabBarSporter.swift in Sources */,
 				E5E3057A258BA5910021E7B6 /* LandingPage.swift in Sources */,
 				E53E0EE5256FDD9500371C89 /* RegisterUserResponse.swift in Sources */,
@@ -702,11 +731,13 @@
 				E55BA692255EC11000028DC2 /* TopCurve.swift in Sources */,
 				E53E0EEE256FDF7500371C89 /* RegisterUserRequest.swift in Sources */,
 				E575D01E2567C8BA00BAC36E /* GraphView.swift in Sources */,
+				E517C08D25B8494100988EAB /* SportersPage.swift in Sources */,
 				E554E130256EA016008AC163 /* LoginView.swift in Sources */,
 				E533B94B25669CC6000A186F /* GroeiberekeningResultaat.swift in Sources */,
 				E575D02B2567CF6300BAC36E /* Data.swift in Sources */,
 				E555D2E925A9C4580086144A /* GroeiberekeningService.swift in Sources */,
 				E5557089255A99BF00BB269E /* aphv_iosApp.swift in Sources */,
+				E5452C4425B7183A00C63275 /* TestGroeiberekeningResultaat.swift in Sources */,
 				E5CF07A52580D7DB007E6855 /* Intro2View.swift in Sources */,
 				E552F7132583C9960063DCB3 /* GroeiberekeningExtraStap.swift in Sources */,
 				E5C6B40E25A8BF4D0092D548 /* IntroViewModel.swift in Sources */,
@@ -714,6 +745,7 @@
 				E54B983225ABB8980009ABDF /* AddCoachRequest.swift in Sources */,
 				E552F71B2583DD040063DCB3 /* Groeiberekeningstap2.swift in Sources */,
 				E575D031256806B400BAC36E /* ResultaatItem.swift in Sources */,
+				E517C09A25B867CA00988EAB /* CoachesToSportersService.swift in Sources */,
 				E533B95025669E73000A186F /* HelpInstructiefilmpje.swift in Sources */,
 				E591F14025AB32D80004FD6D /* GetCoachesRequest.swift in Sources */,
 				E554E139256EA280008AC163 /* RegisterService.swift in Sources */,

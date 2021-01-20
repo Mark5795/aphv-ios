@@ -25,8 +25,9 @@ struct QRcodeScanner: View {
             //When you click the button on screen mock data will appear here
             print("BarCodeType =",$0.type.rawValue, " Value =",$0.value)
             sporterToCoachesViewModel.AddCoach(emailCoach: $0.value)
-            presentationMode.wrappedValue.dismiss()
-            
+            if(sporterToCoachesViewModel.alertTitle == "Toevoegen gelukt!") {
+                presentationMode.wrappedValue.dismiss()
+            }
         }
     }
 }

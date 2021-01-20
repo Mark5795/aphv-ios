@@ -52,6 +52,9 @@ struct aphv_iosApp: App {
         WindowGroup {
             if(localStorage.isLoggedIn) {
                 LoginView()
+                
+//                To test AlextX
+//                TestLoginView()
             } else{
                 if (localStorage.hasSeenIntro) {
                     LandingPage()

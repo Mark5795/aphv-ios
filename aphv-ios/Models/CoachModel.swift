@@ -9,11 +9,8 @@ import Foundation
 
 struct CoachModel : Codable, Identifiable, Hashable {
     let id = UUID()
-    let email : String
-    let firstName : String
-    let lastName : String
-    let roleOrSport : String
-    let accepted : Bool
+    let email, firstName, lastName, roleOrSport : String?
+    let accepted : Bool?
         
     enum CodingKeys: String, CodingKey {
         case email = "email"

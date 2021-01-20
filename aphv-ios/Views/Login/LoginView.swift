@@ -19,7 +19,7 @@ struct LoginView: View {
     
     @State var showingErrorAlert: Bool = false
 //    @State var showingSuccesAlert: Bool = false
-    @State var isHomeSportPresented: Bool = false
+    @State var isHomePresented: Bool = false
     
     @State var showMenu = false
     
@@ -27,7 +27,8 @@ struct LoginView: View {
 //    @State var password: String = ""
   
     //!!! Temporary for developing !!!
-    @State var email: String = "markmark@gmail.com"
+//    @State var email: String = "markmark@gmail.com"
+    @State var email: String = "markcoach@gmail.com"
     @State var password: String = "Welkom01!"
     
     var body: some View {
@@ -58,6 +59,7 @@ struct LoginView: View {
 
                         if(userViewModel.sendLoginUserRequest()) {
                             self.showingErrorAlert.toggle()
+                            self.userViewModel.getUser()
                         }
 
                     }, label: {
@@ -69,10 +71,14 @@ struct LoginView: View {
                     .background(Color.ASMgreen)
                     .cornerRadius(8.0)
                     .alert(isPresented: $showingErrorAlert) {
-                        Alert(title: Text(userViewModel.alertTitle), message: Text(userViewModel.alertMessage), dismissButton: .default(Text("Verder"), action: {if(userViewModel.alertTitle == "Inloggen gelukt!") {self.localStorage.isLoggedIn = true; self.isHomeSportPresented = true}}))
+                        Alert(title: Text(userViewModel.alertTitle), message: Text(userViewModel.alertMessage), dismissButton: .default(Text("Verder"), action: {if(userViewModel.alertTitle == "Inloggen gelukt!") {self.localStorage.isLoggedIn = true; self.isHomePresented = true}}))
                     }
-                    .fullScreenCover(isPresented: $isHomeSportPresented) {
-                        HomeSporter()
+                    .fullScreenCover(isPresented: $isHomePresented) {
+                        if(userViewModel.role == "") {
+                            HomeSporter()
+                        } else {
+                            HomeCoach()
+                        }
                     }
                     
                 }.padding(.horizontal, 25.0)

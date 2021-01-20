@@ -50,6 +50,7 @@ final class SporterToCoachesService: ObservableObject {
                 }
             }) {(response) in
                 completion(.success("Succes"))
+                print("Deleted connection")
             }
     }
     

@@ -140,7 +140,7 @@ struct HomeSporter: View {
                             }
                         }
                         .padding([.top, .leading, .trailing], 10.0)
-                        NavigationLink(destination: TestCoachesPage()){
+                        NavigationLink(destination: CoachesPage()){
                             VStack {
                                 Image("IconSportersEnCoaches")
                                     .resizable()

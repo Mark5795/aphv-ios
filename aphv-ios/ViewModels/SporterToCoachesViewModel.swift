@@ -31,10 +31,14 @@ class SporterToCoachesViewModel: ObservableObject {
             switch result {
             case .success(_):
                 self.alertTitle = "Verwijderen gelukt!"
+                self.GetListOfCoaches()
+                self.objectWillChange.send()
                 //                self.alertMessage = ""
                 self.alertSucces = true
             case .failure(_):
                 self.alertTitle = "Verwijderen mislukt"
+                self.GetListOfCoaches()
+                self.objectWillChange.send()
             //                self.alertMessage = "Het inloggen is mislukt, heb je een goede wifi verbinding? Probeer het nog een keer."
             }
         }
@@ -43,8 +47,10 @@ class SporterToCoachesViewModel: ObservableObject {
     func AddCoach(emailCoach: String) {
         SporterToCoachesService.shared.AddCoach(emailCoach: emailCoach, emailUser: localStorage.emailUser, accessToken: userViewModel.accessToken ?? "") { (result) in
             switch result {
-            case .success(_):
+            case .success(let response):
                 self.alertTitle = "Toevoegen gelukt!"
+                self.GetListOfCoaches()
+                self.objectWillChange.send()
                 //                self.alertMessage = ""
                 self.alertSucces = true
             case .failure(_):
@@ -63,6 +69,7 @@ class SporterToCoachesViewModel: ObservableObject {
                 //                self.alertMessage = ""
                 self.alertSucces = true
             case .failure(_):
+                self.coaches = []
                 self.alertTitle = "Coaches laden mislukt"
             //                self.alertMessage = "Het inloggen is mislukt, heb je een goede wifi verbinding? Probeer het nog een keer."
             }

@@ -24,16 +24,17 @@ struct CoachesPage: View {
                 if(sporterToCoachesViewModel.coaches == []) {
                     Text("Je hebt nog geen coaches toegevoegd.")
                 }
-                else {
+                
                     List(sporterToCoachesViewModel.coaches) { coach in
                         VStack(alignment: .leading) {
                             HStack{
-                                Text(coach.firstName)
+                                Text(coach.firstName ?? "")
                                     .fontWeight(.medium)
                                     .font(.system(size: 18))
+                                
                                 Spacer()
                                 
-                                Button(action: {sporterToCoachesViewModel.DeleteSporterToCoach(emailCoach: coach.email)}, label: {
+                                Button(action: {sporterToCoachesViewModel.DeleteSporterToCoach(emailCoach: coach.email ?? "")}, label: {
                                     Image("IconCross")
                                 })
                             }
@@ -41,17 +42,19 @@ struct CoachesPage: View {
                             
                             Group {
                                 HStack{
-                                    Text(coach.roleOrSport)
+                                    Text(coach.roleOrSport ?? "")
                                         .fontWeight(.medium)
                                         .font(.system(size: 16))
+                                    
                                     Spacer()
                                 }
                                 .padding(.leading)
                                 
                                 HStack{
-                                    Text(coach.email)
+                                    Text(coach.email ?? "")
                                         .fontWeight(.medium)
                                         .font(.system(size: 16))
+                                    
                                     Spacer()
                                 }
                                 .padding(.leading)
@@ -67,7 +70,8 @@ struct CoachesPage: View {
                     .onAppear {
                         sporterToCoachesViewModel.GetListOfCoaches()
                     }
-                }
+                
+
                 
                 
                 Text("Voeg een nieuwe coach toe.")

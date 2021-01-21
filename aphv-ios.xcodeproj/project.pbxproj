@@ -48,6 +48,7 @@
 		E555D2EE25A9C6750086144A /* GroeiberekeningResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E555D2ED25A9C6750086144A /* GroeiberekeningResponse.swift */; };
 		E555D2F325A9C8C70086144A /* GroeiberekeningRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E555D2F225A9C8C70086144A /* GroeiberekeningRequest.swift */; };
 		E555D2FB25AA3D470086144A /* HomeCoach.swift in Sources */ = {isa = PBXBuildFile; fileRef = E555D2FA25AA3D470086144A /* HomeCoach.swift */; };
+		E5563A6F25B9EF5000434F6A /* TestCoachesPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5563A6E25B9EF5000434F6A /* TestCoachesPage.swift */; };
 		E556FCC8256D808000EACAF5 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E556FCC7256D808000EACAF5 /* UserViewModel.swift */; };
 		E5571AFD25A78E4D00EF78C4 /* GroeiberekeningWithoutAccountPagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5571AFC25A78E4D00EF78C4 /* GroeiberekeningWithoutAccountPagerView.swift */; };
 		E5572F0D255E83C000D25FA4 /* UitlegGroeiberekeningResultaten.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E5572F06255E81BF00D25FA4 /* UitlegGroeiberekeningResultaten.mp4 */; };
@@ -56,7 +57,6 @@
 		E5634899257550770090E490 /* DropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5634898257550770090E490 /* DropDownView.swift */; };
 		E566CCAF2562903200695A98 /* TabBarSporterOud.swift in Sources */ = {isa = PBXBuildFile; fileRef = E566CCAE2562903200695A98 /* TabBarSporterOud.swift */; };
 		E566CCB42562936000695A98 /* HomeSporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E566CCB32562936000695A98 /* HomeSporter.swift */; };
-		E566CCB9256293C200695A98 /* TestCoachesPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E566CCB8256293C200695A98 /* TestCoachesPage.swift */; };
 		E56885FA2576819B00B37DA0 /* DropDownModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56885F92576819B00B37DA0 /* DropDownModel.swift */; };
 		E56BE94C25AB013700BD421F /* RegisterCoachRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56BE94B25AB013700BD421F /* RegisterCoachRequest.swift */; };
 		E56BE95125AB01C600BD421F /* RegisterCoachResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56BE95025AB01C600BD421F /* RegisterCoachResponse.swift */; };
@@ -161,6 +161,7 @@
 		E555D2ED25A9C6750086144A /* GroeiberekeningResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroeiberekeningResponse.swift; sourceTree = "<group>"; };
 		E555D2F225A9C8C70086144A /* GroeiberekeningRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroeiberekeningRequest.swift; sourceTree = "<group>"; };
 		E555D2FA25AA3D470086144A /* HomeCoach.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoach.swift; sourceTree = "<group>"; };
+		E5563A6E25B9EF5000434F6A /* TestCoachesPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCoachesPage.swift; sourceTree = "<group>"; };
 		E556FCC7256D808000EACAF5 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		E5571AFC25A78E4D00EF78C4 /* GroeiberekeningWithoutAccountPagerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroeiberekeningWithoutAccountPagerView.swift; sourceTree = "<group>"; };
 		E5572F06255E81BF00D25FA4 /* UitlegGroeiberekeningResultaten.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = UitlegGroeiberekeningResultaten.mp4; sourceTree = "<group>"; };
@@ -169,7 +170,6 @@
 		E5634898257550770090E490 /* DropDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownView.swift; sourceTree = "<group>"; };
 		E566CCAE2562903200695A98 /* TabBarSporterOud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarSporterOud.swift; sourceTree = "<group>"; };
 		E566CCB32562936000695A98 /* HomeSporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSporter.swift; sourceTree = "<group>"; };
-		E566CCB8256293C200695A98 /* TestCoachesPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCoachesPage.swift; sourceTree = "<group>"; };
 		E56885F92576819B00B37DA0 /* DropDownModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownModel.swift; sourceTree = "<group>"; };
 		E56BE94B25AB013700BD421F /* RegisterCoachRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCoachRequest.swift; sourceTree = "<group>"; };
 		E56BE95025AB01C600BD421F /* RegisterCoachResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCoachResponse.swift; sourceTree = "<group>"; };
@@ -512,7 +512,7 @@
 		E591F17525ABAEE20004FD6D /* Coaches */ = {
 			isa = PBXGroup;
 			children = (
-				E566CCB8256293C200695A98 /* TestCoachesPage.swift */,
+				E5563A6E25B9EF5000434F6A /* TestCoachesPage.swift */,
 				E591F17625ABAEFE0004FD6D /* QRcodeScanner.swift */,
 				E5CDFFEC25B1CE5F00AEE568 /* CoachesPage.swift */,
 			);
@@ -676,7 +676,6 @@
 				E557CE1E2583B88A00F9EAFA /* ConsWithoutAccount.swift in Sources */,
 				E555708B255A99BF00BB269E /* ContentView.swift in Sources */,
 				E5D3ADA92584F66A00A2F775 /* SuccesPopup.swift in Sources */,
-				E566CCB9256293C200695A98 /* TestCoachesPage.swift in Sources */,
 				E56BE95125AB01C600BD421F /* RegisterCoachResponse.swift in Sources */,
 				E53E0EFB2570293400371C89 /* CheckboxFieldView.swift in Sources */,
 				E555D2C925A99BB90086144A /* GroeiberekeningModel.swift in Sources */,
@@ -699,6 +698,7 @@
 				E53E0EF62570015C00371C89 /* InputTextFieldView.swift in Sources */,
 				E591F13B25AB32360004FD6D /* SporterToCoachesService.swift in Sources */,
 				E54B983725ABB8E80009ABDF /* AddCoachResponse.swift in Sources */,
+				E5563A6F25B9EF5000434F6A /* TestCoachesPage.swift in Sources */,
 				E552F7202583DE8A0063DCB3 /* Groeiberekeningstap3.swift in Sources */,
 				E591F17725ABAEFE0004FD6D /* QRcodeScanner.swift in Sources */,
 				E5D9BF6F25B20952008E1BAA /* TestTopCurve.swift in Sources */,

@@ -125,8 +125,10 @@ final class SporterToCoachesService: ObservableObject {
                     switch error {
                     case let urlError as URLError:
                         completion(.failure(.urlError(urlError)))
+                        print(urlError)
                     case let decodingError as DecodingError:
                         completion(.failure(.decodingError(decodingError)))
+                        print(decodingError)
                     default:
                         completion(.failure(.genericError(error)))
                     }

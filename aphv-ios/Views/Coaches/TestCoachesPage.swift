@@ -13,80 +13,80 @@ import AlertX
 // Add this coach by this email
 // Show the coaches in a list.
 
-struct TestCoachesPage: View {
+//struct TestCoachesPage: View {
     
 //    @ObservedObject var sporterToCoachesViewModel = SporterToCoachesViewModel(userModel: UserModel())
 //    @State var coaches : [CoachModel] = []
     
-    @State var coaches : [CoachModel] = [CoachModel(email: "kees@gmail.com", firstName: "kees", lastName: "tol", roleOrSport: "Tennis", accepted: false),
-        CoachModel(email: "dennis@gmail.com", firstName: "dennis", lastName: "Haak", roleOrSport: "Voetbal", accepted: false)]
-    
-//    @State var showingErrorAlert: Bool = false
-//    @State var showingSuccesAlert: Bool = false
-    @State var showAlertX: Bool = false
-//    @State var showAlertX_preview: Bool = false
-    
-    var body: some View {
-        List(coaches) { coach in
-            VStack(alignment: .leading) {
-                HStack{
-                    Text(coach.firstName)
-                        .fontWeight(.medium)
-                        .font(.system(size: 18))
-                    Spacer()
-                    Button(action: {self.showAlertX.toggle()}, label: {
-                        Image("IconCross")
-                    })
-                }
-                .padding(.leading)
-                
-                HStack{
-                    Text(coach.roleOrSport)
-                        .fontWeight(.medium)
-                        .font(.system(size: 16))
-                    Spacer()
-                }
-                .padding(.leading)
-                
-                HStack{
-                    Text(coach.email)
-                        .fontWeight(.medium)
-                        .font(.system(size: 16))
-                    Spacer()
-                }
-                .padding(.leading)
-            }
-            .padding(.horizontal, 10)
-            .padding(.vertical, 15)
-            .frame(width: 275.0)
-            .background(Color.green)
-            .cornerRadius(8.0)
-            
-        }
-//        .onAppear {
-//            coaches = sporterToCoachesViewModel.coaches
+//    @State var coaches : [CoachModel] = [CoachModel(email: "kees@gmail.com", firstName: "kees", lastName: "tol", roleOrSport: "Tennis", accepted: false),
+//        CoachModel(email: "dennis@gmail.com", firstName: "dennis", lastName: "Haak", roleOrSport: "Voetbal", accepted: false)]
+//
+////    @State var showingErrorAlert: Bool = false
+////    @State var showingSuccesAlert: Bool = false
+//    @State var showAlertX: Bool = false
+////    @State var showAlertX_preview: Bool = false
+//
+//    var body: some View {
+//        List(coaches) { coach in
+//            VStack(alignment: .leading) {
+//                HStack{
+//                    Text(coach.firstName)
+//                        .fontWeight(.medium)
+//                        .font(.system(size: 18))
+//                    Spacer()
+//                    Button(action: {self.showAlertX.toggle()}, label: {
+//                        Image("IconCross")
+//                    })
+//                }
+//                .padding(.leading)
+//                
+//                HStack{
+//                    Text(coach.roleOrSport)
+//                        .fontWeight(.medium)
+//                        .font(.system(size: 16))
+//                    Spacer()
+//                }
+//                .padding(.leading)
+//                
+//                HStack{
+//                    Text(coach.email)
+//                        .fontWeight(.medium)
+//                        .font(.system(size: 16))
+//                    Spacer()
+//                }
+//                .padding(.leading)
+//            }
+//            .padding(.horizontal, 10)
+//            .padding(.vertical, 15)
+//            .frame(width: 275.0)
+//            .background(Color.green)
+//            .cornerRadius(8.0)
+//            
 //        }
-        
-        .alertX(isPresented: $showAlertX, content: {
-            AlertX(title: Text("Wil je de coach verwijderen?")
-                    .fontWeight(.medium)
-                    .font(.system(size: 18)),
-                   primaryButton: .default(Text("Ja"), action: {
-                    print("delete coach")
-                   }),
-                   secondaryButton: .cancel(Text("Nee")),
-                   theme: .custom(windowColor: Color.green,
-                                  alertTextColor: Color.white,
-                                  enableShadow: true,
-                                  enableRoundedCorners: true,
-                                  enableTransparency: true,
-                                  cancelButtonColor: Color.white,
-                                  cancelButtonTextColor: Color.green,
-                                  defaultButtonColor: Color.white,
-                                  defaultButtonTextColor: Color.green),
-                   animation: .classicEffect()
-            )
-        })
+////        .onAppear {
+////            coaches = sporterToCoachesViewModel.coaches
+////        }
+//        
+//        .alertX(isPresented: $showAlertX, content: {
+//            AlertX(title: Text("Wil je de coach verwijderen?")
+//                    .fontWeight(.medium)
+//                    .font(.system(size: 18)),
+//                   primaryButton: .default(Text("Ja"), action: {
+//                    print("delete coach")
+//                   }),
+//                   secondaryButton: .cancel(Text("Nee")),
+//                   theme: .custom(windowColor: Color.green,
+//                                  alertTextColor: Color.white,
+//                                  enableShadow: true,
+//                                  enableRoundedCorners: true,
+//                                  enableTransparency: true,
+//                                  cancelButtonColor: Color.white,
+//                                  cancelButtonTextColor: Color.green,
+//                                  defaultButtonColor: Color.white,
+//                                  defaultButtonTextColor: Color.green),
+//                   animation: .classicEffect()
+//            )
+//        })
 //        ZStack {
 //            TopCurve(title: "Coaches")
 //            VStack {
@@ -242,12 +242,12 @@ struct TestCoachesPage: View {
 //
 //            }
 //            .padding(.top, 75.0)
-        }
-    }
+//        }
+//    }
 //}
 //}
-struct TestCoachesPage_Previews: PreviewProvider {
-    static var previews: some View {
-        TestCoachesPage()
-    }
-}
+//struct TestCoachesPage_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TestCoachesPage()
+//    }
+//}
